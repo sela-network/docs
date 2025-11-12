@@ -16,15 +16,63 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: "Guides",
+          label: "Introduction",
           items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
+            { label: "Welcome to SelaNetwork", slug: "introduction/welcome" },
           ],
         },
         {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
+          label: "SelaNetwork Node Sale",
+          items: [
+            {
+              label: "Introduction",
+              items: [
+                {
+                  label: "What is Sela Node?",
+                  slug: "node-sale/introduction/what-is-sela-node",
+                },
+                {
+                  label: "Sela Node Rewards",
+                  slug: "node-sale/introduction/sela-node-rewards",
+                },
+              ],
+            },
+            {
+              label: "Node Sale Overview",
+              items: [
+                {
+                  label: "Node Sale Tiers",
+                  slug: "node-sale/overview/node-sale-tiers",
+                },
+                { label: "Whitelist", slug: "node-sale/overview/whitelist" },
+              ],
+            },
+          ],
+        },
+        {
+          label: "Rewards",
+          items: [
+            {
+              label: "SelaNetwork Rewards System",
+              slug: "rewards/rewards-system",
+            },
+            { label: "SelaNetwork Points", slug: "rewards/points" },
+            { label: "$SELA Token", slug: "rewards/sela-token" },
+          ],
+        },
+        {
+          label: "SelaNetwork Architecture",
+          items: [
+            { label: "Overview", slug: "architecture/overview" },
+            { label: "Data Layer", slug: "architecture/data-layer" },
+            { label: "LLM Layer", slug: "architecture/llm-layer" },
+          ],
+        },
+        {
+          label: "Setup SelaNetwork",
+          items: [
+            { label: "Installation Guide", slug: "setup/installation-guide" },
+          ],
         },
       ],
     }),
