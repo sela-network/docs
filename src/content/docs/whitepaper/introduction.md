@@ -1,11 +1,11 @@
 ---
 title: Whitepaper Introduction
-description: Sela Network Whitepaper - Verifiable Decentralized Web Interaction Layer for Autonomous AI Agent Economy
+description: Sela Network Whitepaper - Decentralized Web Interaction Layer for AI Agent
 ---
 
 ## Whitepaper v1.1 — Comprehensive Edition
 
-**Verifiable Decentralized Web Interaction Layer for Autonomous AI Agent Economy**
+**Decentralized Web Interaction Layer for AI Agent**
 
 ---
 

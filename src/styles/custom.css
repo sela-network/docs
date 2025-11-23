@@ -879,3 +879,169 @@ div[class*="table"] {
   max-width: 100% !important;
   overflow-x: auto !important;
 }
+
+/* ============================================ */
+/* HEADING ANCHOR LINKS - PREVENT LINE WRAP */
+/* ============================================ */
+
+/* Starlight heading wrapper - make it flexbox to prevent line wrap */
+.sl-heading-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Anchor link should be positioned to the right */
+.sl-heading-wrapper .sl-anchor-link {
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+/* ============================================ */
+/* MOBILE RESPONSIVE DESIGN */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  /* Reduce heading sizes for mobile */
+  h1,
+  .content h1,
+  .sl-markdown-content h1,
+  main h1,
+  article h1,
+  section h1 {
+    font-size: 2rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  h2,
+  .content h2,
+  .sl-markdown-content h2,
+  main h2,
+  article h2,
+  section h2 {
+    font-size: 1.5rem !important;
+    margin-top: 2rem !important;
+  }
+
+  h3,
+  .content h3,
+  .sl-markdown-content h3,
+  main h3,
+  article h3,
+  section h3 {
+    font-size: 1.25rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  h4,
+  .content h4,
+  .sl-markdown-content h4,
+  main h4,
+  article h4,
+  section h4 {
+    font-size: 1.1rem !important;
+  }
+
+  /* Reduce padding on mobile */
+  .content-panel,
+  .sl-container,
+  main .content-panel,
+  article,
+  .sl-markdown-content {
+    padding: 0 1rem !important;
+  }
+
+  /* Adjust hero section for mobile */
+  .hero h1,
+  hero h1,
+  [class*="hero"] h1 {
+    font-size: 1.75rem !important;
+  }
+
+  /* Adjust yellow underline width for mobile */
+  h2::after,
+  .content-panel h2::after,
+  .sl-markdown-content h2::after,
+  main h2::after,
+  article h2::after,
+  section h2::after {
+    width: 40px !important;
+    height: 2px !important;
+  }
+
+  /* Better table scrolling on mobile */
+  table,
+  .content table,
+  .sl-markdown-content table,
+  main table,
+  article table {
+    font-size: 0.85rem !important;
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  table thead th,
+  .content table thead th,
+  .sl-markdown-content table thead th,
+  main table thead th,
+  article table thead th {
+    padding: 0.75rem 0.875rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  table tbody td,
+  .content table tbody td,
+  .sl-markdown-content table tbody td,
+  main table tbody td,
+  article table tbody td {
+    padding: 0.75rem 0.875rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Reduce code block padding */
+  pre {
+    padding: 1rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Reduce blockquote padding */
+  blockquote,
+  .content blockquote,
+  .sl-markdown-content blockquote,
+  main blockquote,
+  article blockquote {
+    padding: 1rem 1.25rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Better list spacing on mobile */
+  ul,
+  ol {
+    padding-left: 1.5rem !important;
+  }
+
+  li {
+    margin-bottom: 0.5rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Adjust paragraph font size */
+  p {
+    font-size: 0.95rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Heading wrapper adjustments for mobile */
+  .sl-heading-wrapper {
+    gap: 0.25rem !important;
+  }
+
+  .sl-heading-wrapper .sl-anchor-link {
+    font-size: 0.8em !important;
+  }
+}
