@@ -40,6 +40,14 @@ export default defineConfig({
           ],
         },
         {
+          label: "아키텍처",
+          items: [
+            { label: "시스템 아키텍처 개요", slug: "architecture/overview" },
+            { label: "데이터 계층", slug: "architecture/data-layer" },
+            { label: "LLM 계층", slug: "architecture/llm-layer" },
+          ],
+        },
+        {
           label: "활용 사례",
           items: [{ label: "개요", slug: "use-cases/overview" }],
         },
