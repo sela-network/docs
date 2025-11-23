@@ -56,14 +56,14 @@ export default defineConfig({
             { label: "Complete Guide", slug: "node-operators/complete-guide" },
           ],
         },
-        {
-          label: "Rewards",
-          items: [
-            { label: "Rewards System", slug: "rewards/rewards-system" },
-            { label: "Node Rewards", slug: "rewards/node-rewards" },
-            { label: "$SPWR", slug: "rewards/points" },
-          ],
-        },
+        // {
+        //   label: "Rewards",
+        //   items: [
+        //     { label: "Rewards System", slug: "rewards/rewards-system" },
+        //     { label: "Node Rewards", slug: "rewards/node-rewards" },
+        //     { label: "$SPWR", slug: "rewards/points" },
+        //   ],
+        // },
         {
           label: "Roadmap",
           items: [
@@ -77,17 +77,17 @@ export default defineConfig({
             { label: "Market Overview", slug: "competitive-analysis/overview" },
           ],
         },
-        {
-          label: "Reference",
-          items: [
-            { label: "API", slug: "reference/overview" },
-            {
-              label: "System Requirements",
-              slug: "reference/system-requirements",
-            },
-            { label: "Installation", slug: "reference/installation-guide" },
-          ],
-        },
+        // {
+        //   label: "Reference",
+        //   items: [
+        //     { label: "API", slug: "reference/overview" },
+        //     {
+        //       label: "System Requirements",
+        //       slug: "reference/system-requirements",
+        //     },
+        //     { label: "Installation", slug: "reference/installation-guide" },
+        //   ],
+        // },
       ],
     }),
   ],
