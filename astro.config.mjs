@@ -44,43 +44,11 @@ export default defineConfig({
               label: "Core Technologies",
               slug: "technology/core-technologies",
             },
-            { label: "Workflow", slug: "technology/workflow" },
-            {
-              label: "Browser Automation",
-              slug: "technology/browser-automation",
-            },
-            {
-              label: "Vision Language Models",
-              slug: "technology/vision-language-models",
-            },
-            {
-              label: "zkTLS Verification",
-              slug: "technology/zktls-verification",
-            },
           ],
         },
         {
           label: "Use Cases",
-          items: [
-            { label: "Overview", slug: "use-cases/overview" },
-            { label: "Finance & Trading", slug: "use-cases/finance-trading" },
-            {
-              label: "Enterprise Automation",
-              slug: "use-cases/enterprise-automation",
-            },
-            {
-              label: "Research & Intelligence",
-              slug: "use-cases/research-intelligence",
-            },
-            {
-              label: "E-commerce & Retail",
-              slug: "use-cases/ecommerce-retail",
-            },
-          ],
-        },
-        {
-          label: "AI Agent Integration",
-          items: [{ label: "LangChain", slug: "integrations/langchain" }],
+          items: [{ label: "Overview", slug: "use-cases/overview" }],
         },
         {
           label: "Node Operators",
@@ -89,17 +57,11 @@ export default defineConfig({
           ],
         },
         {
-          label: "Tokenomics",
-          items: [{ label: "Overview", slug: "tokenomics/overview" }],
-        },
-        {
           label: "Rewards",
           items: [
             { label: "Rewards System", slug: "rewards/rewards-system" },
             { label: "Node Rewards", slug: "rewards/node-rewards" },
-            { label: "Developer Rewards", slug: "rewards/developer-rewards" },
-            { label: "Points System", slug: "rewards/points" },
-            { label: "SELA Token", slug: "rewards/sela-token" },
+            { label: "$SPWR", slug: "rewards/points" },
           ],
         },
         {
@@ -108,18 +70,6 @@ export default defineConfig({
             { label: "Vision", slug: "roadmap/vision" },
             { label: "Development Phases", slug: "roadmap/phases" },
           ],
-        },
-        {
-          label: "Security",
-          items: [
-            { label: "Architecture", slug: "security/architecture" },
-            { label: "Threat Model", slug: "security/threat-model" },
-            { label: "Data Protection", slug: "security/data-protection" },
-          ],
-        },
-        {
-          label: "Performance",
-          items: [{ label: "Benchmarks", slug: "performance/performance" }],
         },
         {
           label: "Competitive Analysis",

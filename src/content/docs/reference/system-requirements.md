@@ -78,6 +78,7 @@ Sela Network는 **마이크로서비스 아키텍처**로 구성되며, 각 컴�
 **왜 c6i.4xlarge인가**:
 
 [AWS c6i 인스턴스](https://aws.amazon.com/ec2/instance-types/c6i/)는 **컴퓨팅 최적화** 워크로드를 위해 설계되었습니다. Sela API는:
+
 - CPU 집약적 (HTML 파싱, VLM 추론)
 - 메모리 중간 (캐시 크기 적정)
 - 네트워크 집약적 (높은 RPS)
@@ -131,16 +132,19 @@ CPU:
 **왜 이 스펙이 필요한가**:
 
 **CPU 16 vCPU**:
+
 - API 요청 처리: 스레드당 50-100 RPS
 - 총 처리량: 800-1,600 RPS (단일 인스턴스)
 - VLM 추론: CPU 집약적 (AVX-512 활용)
 
 **메모리 32 GB**:
+
 - Node.js 프로세스: 약 2 GB/인스턴스 × 8 인스턴스 = 16 GB
 - Redis 캐시: 8 GB
 - OS + Buffer: 8 GB
 
 **NVMe SSD**:
+
 - 로그 쓰기: 초당 수천 건 (높은 IOPS 필요)
 - 임시 파일 (스크린샷 등): 빠른 I/O
 
@@ -234,13 +238,14 @@ NODE_OPTIONS="--max-old-space-size=2048"  # 2GB 힙
 
 ---
 
-## dBrowser 노드 사양 (Node Operator Guide)
+## Sela 노드 사양 (Node Operator Guide)
 
 ### 노드 유형별 상세 요구사항
 
 **왜 티어별로 나누는가**:
 
 [DIVI, Syscoin 등의 티어형 마스터노드 연구](https://masternode.buzz/learn/opinion-improving-decentralization-with-tiered-masternode-structures/)에 따르면, 다중 티어는:
+
 - ✅ **탈중앙화 개선**: 낮은 진입 장벽으로 더 많은 노드
 - ✅ **접근성**: 소규모 참여자도 네트워크 기여 가능
 - ✅ **비례 보상**: 더 많이 기여하면 더 많이 받음
@@ -248,6 +253,7 @@ NODE_OPTIONS="--max-old-space-size=2048"  # 2GB 힙
 ### 티어 1: Bronze Node - 일반 사용자용
 
 **타겟 사용자**:
+
 - 일반 가정용 PC/노트북 소유자
 - 암호화폐에 관심 있는 초보자
 - 부업으로 수동 소득 원하는 사람
@@ -342,6 +348,7 @@ Firefox 지원:
 ### 티어 2: Silver Node - 전문 개인 운영자
 
 **타겟 사용자**:
+
 - 크립토 애호가
 - 재택근무자 (항상 켜진 PC 보유)
 - 부업으로 안정적 수익 원하는 사람
@@ -426,6 +433,7 @@ sudo ip link set dev eth0 mtu 1500
 ### 티어 3: Gold Node - 전문 운영자
 
 **타겟 사용자**:
+
 - 본업으로 노드 운영
 - 다수의 노드 운영
 - 데이터센터 접근 가능
@@ -483,6 +491,7 @@ ROI: 약 650% (초기 투자 $1,200 가정)
 ### 티어 4: Platinum Node - 데이터센터급
 
 **타겟 사용자**:
+
 - 기업
 - 데이터센터
 - 프로페셔널 노드 오퍼레이터
@@ -524,15 +533,16 @@ ROI: 약 650% (초기 투자 $1,200 가정)
 
 **데이터센터 vs 클라우드**:
 
-| 요소 | 자체 데이터센터 | 클라우드 (AWS) |
-|------|-----------------|----------------|
-| **초기 투자** | $3,000-5,000 | $0 |
-| **월 운영** | $150-300 (코로케이션) | $300-500 (c6i.2xlarge) |
-| **확장성** | 제한적 (하드웨어 구매) | 즉시 (클릭 한 번) |
-| **관리** | 직접 | AWS가 관리 |
-| **장기 비용** | 저렴 (2년+) | 비쌈 |
+| 요소          | 자체 데이터센터        | 클라우드 (AWS)         |
+| ------------- | ---------------------- | ---------------------- |
+| **초기 투자** | $3,000-5,000           | $0                     |
+| **월 운영**   | $150-300 (코로케이션)  | $300-500 (c6i.2xlarge) |
+| **확장성**    | 제한적 (하드웨어 구매) | 즉시 (클릭 한 번)      |
+| **관리**      | 직접                   | AWS가 관리             |
+| **장기 비용** | 저렴 (2년+)            | 비쌈                   |
 
-**권장**: 
+**권장**:
+
 - 1-3개 노드: 클라우드 (유연성)
 - 4+ 노드: 자체 하드웨어 (비용 효율)
 
@@ -626,26 +636,26 @@ Platinum 노드 (일 8,000 요청):
 
 ### 운영체제별 지원
 
-| OS | 크롬 확장 | 독립형 | Docker | K8s | 지원 수준 |
-|----|-----------|--------|--------|-----|-----------|
-| **Windows 10/11** | ✅ | ✅ | ✅ (WSL2) | ❌ | Full |
-| **macOS 12+** | ✅ | ✅ | ✅ (Docker Desktop) | ❌ | Full |
-| **Ubuntu 20.04+** | ✅ | ✅ | ✅ | ✅ | Full (권장) |
-| **Debian 11+** | ✅ | ✅ | ✅ | ✅ | Full |
-| **Fedora 35+** | ✅ | ✅ | ✅ | ✅ | Community |
-| **CentOS/RHEL 8+** | ✅ | ✅ | ✅ | ✅ | Community |
-| **Raspberry Pi OS** | ⚠️ | ⚠️ | ✅ | ❌ | Limited (ARM64) |
+| OS                  | 크롬 확장 | 독립형 | Docker              | K8s | 지원 수준       |
+| ------------------- | --------- | ------ | ------------------- | --- | --------------- |
+| **Windows 10/11**   | ✅        | ✅     | ✅ (WSL2)           | ❌  | Full            |
+| **macOS 12+**       | ✅        | ✅     | ✅ (Docker Desktop) | ❌  | Full            |
+| **Ubuntu 20.04+**   | ✅        | ✅     | ✅                  | ✅  | Full (권장)     |
+| **Debian 11+**      | ✅        | ✅     | ✅                  | ✅  | Full            |
+| **Fedora 35+**      | ✅        | ✅     | ✅                  | ✅  | Community       |
+| **CentOS/RHEL 8+**  | ✅        | ✅     | ✅                  | ✅  | Community       |
+| **Raspberry Pi OS** | ⚠️        | ⚠️     | ✅                  | ❌  | Limited (ARM64) |
 
 ### 브라우저 호환성
 
-| 브라우저 | 버전 | 확장 프로그램 | Headless | 지원 | 비고 |
-|----------|------|---------------|----------|------|------|
-| **Chrome** | 120+ | ✅ Full | ✅ Full | Official | 권장 |
-| **Chromium** | 120+ | ✅ Full | ✅ Full | Official | 권장 |
-| **Edge** | 120+ | ✅ Full | ✅ Full | Official | 권장 |
-| **Brave** | 1.60+ | ✅ Full | ✅ Full | Official | 권장 |
-| **Firefox** | 121+ | ⚠️ Limited | ⚠️ Limited | Community | 일부 기능 제한 |
-| **Safari** | 17+ | ❌ | ❌ | Not Supported | WebExtension 차이 |
+| 브라우저     | 버전  | 확장 프로그램 | Headless   | 지원          | 비고              |
+| ------------ | ----- | ------------- | ---------- | ------------- | ----------------- |
+| **Chrome**   | 120+  | ✅ Full       | ✅ Full    | Official      | 권장              |
+| **Chromium** | 120+  | ✅ Full       | ✅ Full    | Official      | 권장              |
+| **Edge**     | 120+  | ✅ Full       | ✅ Full    | Official      | 권장              |
+| **Brave**    | 1.60+ | ✅ Full       | ✅ Full    | Official      | 권장              |
+| **Firefox**  | 121+  | ⚠️ Limited    | ⚠️ Limited | Community     | 일부 기능 제한    |
+| **Safari**   | 17+   | ❌            | ❌         | Not Supported | WebExtension 차이 |
 
 **Chrome vs Firefox**:
 
@@ -880,10 +890,12 @@ Total: 1,680ms
 **왜 TLS 1.3만 허용하는가**:
 
 [TLS 1.2 이하의 취약점](https://www.cloudflare.com/learning/ssl/why-use-tls-1.3/):
+
 - TLS 1.0/1.1: POODLE, BEAST 공격에 취약 (2020년 공식 지원 종료)
 - TLS 1.2: 안전하지만 느림 (2-RTT 핸드셰이크)
 
 TLS 1.3 장점:
+
 - 1-RTT 핸드셰이크 (40% 빠름)
 - 0-RTT Resumption (재연결 시)
 - 약한 Cipher Suite 제거
@@ -970,15 +982,15 @@ Sela의 준수:
 
 ### API 한도
 
-| 제한 타입 | Free | Starter | Pro | Enterprise |
-|-----------|------|---------|-----|------------|
-| **Rate Limit** | 10/min | 60/min | 300/min | Custom |
-| **요청 Body 크기** | 1 MB | 5 MB | 10 MB | 50 MB |
-| **응답 크기** | 10 MB | 25 MB | 50 MB | 100 MB |
-| **Timeout** | 30초 | 60초 | 120초 | 300초 |
-| **동시 요청** | 2 | 10 | 50 | Unlimited |
-| **세션 수** | 5 | 20 | 100 | Unlimited |
-| **스크린샷 크기** | 2 MB | 5 MB | 10 MB | 20 MB |
+| 제한 타입          | Free   | Starter | Pro     | Enterprise |
+| ------------------ | ------ | ------- | ------- | ---------- |
+| **Rate Limit**     | 10/min | 60/min  | 300/min | Custom     |
+| **요청 Body 크기** | 1 MB   | 5 MB    | 10 MB   | 50 MB      |
+| **응답 크기**      | 10 MB  | 25 MB   | 50 MB   | 100 MB     |
+| **Timeout**        | 30초   | 60초    | 120초   | 300초      |
+| **동시 요청**      | 2      | 10      | 50      | Unlimited  |
+| **세션 수**        | 5      | 20      | 100     | Unlimited  |
+| **스크린샷 크기**  | 2 MB   | 5 MB    | 10 MB   | 20 MB      |
 
 ### 기술적 제한
 
@@ -1059,7 +1071,7 @@ Sela의 준수:
 
 ---
 
-## dBrowser 노드 사양
+## Sela 노드 사양
 
 ### 최소 요구사항 (크롬 확장 프로그램)
 

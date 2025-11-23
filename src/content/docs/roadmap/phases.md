@@ -1,191 +1,177 @@
 ---
-title: 로드맵
-description: Sela Network 개발 로드맵 - 검증된 전략과 달성 가능한 마일스톤
+title: Development Roadmap
+description: Sela Network strategic development phases and milestones
 ---
 
 ## Executive Summary
 
-Sela Network는 **AI 에이전트 경제의 Layer 0 인프라**로서, 2024년부터 2027년까지 4단계에 걸쳐 구축됩니다. 이 로드맵은 다음 검증된 시장 데이터를 기반으로 합니다:
+Sela Network is a decentralized web-interaction layer that enables AI agents to see, understand, and act on the web, overcoming the limitations of traditional scraping and centralized automation. This roadmap outlines a four-phase development strategy from 2024 through 2027, grounded in verified market data and realistic technical objectives.
 
-- **AI 에이전트 시장**: $5.4B (2024) → $52.6B (2030), [CAGR 46.3%](https://www.marketsandmarkets.com/Market-Reports/ai-agents-market-15761548.html)
-- **웹 스크래핑 시장**: $754M (2024) → $2.87B (2034), [CAGR 14.3%](https://market.us/report/web-scraping-market/)
-- **DePIN 섹터**: $20B 시가총액 (2024) → [$3.5T 예상 (2028)](https://hacken.io/discover/decentralized-physical-infrastructure/)
+The network operates through a global infrastructure of nodes that execute browser sessions, structure data, and perform actions while ensuring data integrity through LLM-based parsing, DOM-to-JSON transformation, and zk-TLS verification. The long-term objective is to establish Sela as the foundational operating layer for AI agents interacting with the web.
 
-**차별화 전략**: Browserbase, BrightData 등 중앙화 서비스 대비 70-87% 비용 절감과 암호학적 검증 가능성을 결합한 유일한 탈중앙 솔루션
+### Market Context
 
----
+The following market data informs this roadmap:
 
-## Phase 1 — Foundation (2024 Q4 ~ 2025 Q2)
+- **AI Agents Market**: The global AI agents market was valued at $5.40 billion in 2024 and is projected to reach $50.31 billion by 2030, representing a CAGR of 45.8%.
+- **Web Scraping Market**: Valued at $754 million in 2024, projected to reach $2.87 billion by 2034 at a CAGR of 14.3%.
+- **DePIN Sector**: Decentralized physical infrastructure networks have exceeded $30 billion in combined market capitalization, demonstrating significant growth in distributed infrastructure models.
 
-**핵심 목표**: 프로토타입에서 프로덕션 레디 인프라로 전환
+### Strategic Differentiation
 
-### 1.1 dBrowser Node 네트워크 (2024 Q4 - 2025 Q1)
-
-#### 기술 스택
-
-**노드 소프트웨어:**
-
-- Chrome Extension 기반 경량 노드 (2 CPU, 4GB RAM)
-- Standalone 독립 실행형 노드 (4-8 CPU, 8-16GB RAM)
-- Enterprise 고성능 노드 (16+ CPU, 32GB+ RAM)
-
-**핵심 기능:**
-
-- 실제 사용자 브라우저 환경 제공 (Puppeteer/Playwright 대비 **[98.7% 봇 탐지 우회율](https://www.zenrows.com/blog/bypass-cloudflare)**검증)
-- Residential Proxy 통합 ([PerimeterX, DataDome 우회](https://datadome.co/anti-detect-tools/cloudflare-captcha/))
-- Session 관리 및 쿠키 저장소
-- P2P 메시 네트워크 (중앙 SPOF 제거)
-
-#### 마일스톤 및 검증 가능 목표
-
-**Phase 1A (2024 Q4):**
-
-```
-목표: 알파 네트워크 런칭
-- 노드 수: 100-500개
-- 지역 분산: 5-10개 국가
-- Uptime: 90%+
-- 처리량: 100 requests/min
-```
-
-**Phase 1B (2025 Q1):**
-
-```
-목표: 베타 네트워크 확장
-- 노드 수: 1,000-3,000개
-- 지역 분산: 20개 국가
-- Uptime: 95%+
-- 처리량: 1,000 requests/min
-```
-
-**벤치마크 기준** (다른 DePIN 프로젝트 성장 곡선과 비교):
-
-- [Filecoin](https://hacken.io/discover/decentralized-physical-infrastructure/): 첫 6개월 동안 ~5,000 노드 달성
-- [Render Network](https://hacken.io/discover/decentralized-physical-infrastructure/): 대기자 100,000+ 명 보유, 점진적 온보딩
-- [Akash Network](https://hacken.io/discover/decentralized-physical-infrastructure/): 2024년 GPU 리스 3배 증가
-
-**Sela의 현실적 목표**: Filecoin 성장 곡선의 50-70% 수준 (더 작은 초기 자본 고려)
+Sela Network represents the only decentralized solution combining cryptographic verifiability with substantial cost advantages compared to centralized browser automation services. The architecture eliminates single points of failure while providing verifiable proof of web interactions through zero-knowledge protocols.
 
 ---
 
-### 1.2 Semantic Rendering Engine (2025 Q1 - Q2)
+## Phase 1: Foundation (2024 Q4 - 2025 Q2)
 
-#### 아키텍처: 하이브리드 Vision + DOM 접근
+**Primary Objective**: Transition from prototype to production-ready infrastructure
 
-**Layer 2.1: DOM Parser**
+### 1.1 Node Network Deployment
 
+#### Network Architecture
+
+The Sela node network comprises three operational tiers:
+
+**Chrome Extension Nodes (Lightweight)**
+- Requirements: 2 CPU cores, 4GB RAM
+- Target: Consumer-grade hardware participation
+- Use case: Geographic distribution and residential IP diversity
+
+**Standalone Nodes (Standard)**
+- Requirements: 4-8 CPU cores, 8-16GB RAM
+- Target: Dedicated node operators
+- Use case: Consistent availability and performance
+
+**Enterprise Nodes (High-Performance)**
+- Requirements: 16+ CPU cores, 32GB+ RAM
+- Target: Professional infrastructure providers
+- Use case: High-throughput workloads
+
+#### Core Technical Capabilities
+
+The node software provides:
+
+- Real browser environments indistinguishable from human users, achieving high bypass rates for bot detection systems
+- Integration with residential proxy networks for enhanced access to protected content
+- Persistent session management and secure cookie storage
+- Peer-to-peer mesh networking architecture eliminating central points of failure
+
+#### Network Growth Milestones
+
+**Phase 1A (2024 Q4) - Alpha Network:**
 ```
-목적: HTML 구조를 JSON으로 고속 변환
-정확도: 99.2% (단순 구조화 데이터)
-처리 속도: ~200ms per page
-비용: ~$0.0001 per request
+Target: 100-500 active nodes
+Geographic distribution: 5-10 countries
+Network uptime: 90%+
+Processing capacity: 100 requests/minute
 ```
 
-**Layer 2.2: Vision Language Model (VLM) 통합**
-
+**Phase 1B (2025 Q1) - Beta Network:**
 ```
-목적: 복잡한 UI 요소 시각적 인식
-모델: GPT-4 Vision, Claude 3.5 Sonnet 또는 오픈소스 대안
-정확도: 72-74% (복잡한 멀티모달 작업)
-처리 속도: ~2-4초 per page
-비용: ~$0.01-0.05 per request
+Target: 1,000-3,000 active nodes
+Geographic distribution: 20 countries
+Network uptime: 95%+
+Processing capacity: 1,000 requests/minute
 ```
 
-**근거**:
+#### DePIN Growth Benchmarks
 
-- [GPT-4o OCR 정확도: 65-80%](https://www.clarifai.com/blog/best-vision-language-models-vlms-for-image-classification-performance-benchmarks)
-- [Claude 3.5 Sonnet: 74% 의료 도메인 정확도](https://www.clarifai.com/blog/best-vision-language-models-vlms-for-image-classification-performance-benchmarks)
-- VLM은 [기본 시각 작업에서 58.57% 정확도](https://bdtechtalks.com/2024/08/01/vlms-visual-test-failures/) (한계 인지 필요)
+These targets align with established patterns in decentralized infrastructure networks. Filecoin achieved approximately 5,000 nodes during its first six months of operation. Render Network accumulated over 100,000 participants in its waitlist, implementing gradual onboarding. The Sela growth model reflects conservative estimates accounting for market conditions and available resources.
 
-**Hybrid Strategy (비용 최적화):**
+---
 
-1. 먼저 DOM Parser 시도 (99%의 경우)
-2. 실패 시에만 VLM 호출 (1-5%의 경우)
-3. 결과를 캐시하여 재사용 (24시간 TTL)
+### 1.2 Semantic Rendering Engine
 
-**예상 비용 절감**: Browserbase 대비 **82%** (DOM 우선 전략)
+#### Hybrid Architecture: Vision and DOM Processing
 
-#### Self-Healing Selector 시스템
+The rendering engine employs a two-layer approach optimized for accuracy and cost efficiency:
 
-**문제**: UI 변경 시 CSS 셀렉터 손상 → 자동화 중단
+**Layer 1: DOM Parser**
+```
+Purpose: High-speed HTML structure to JSON conversion
+Accuracy: 99%+ for structured data
+Processing time: ~200ms per page
+Cost: Minimal computational overhead
+```
 
-**솔루션**:
+**Layer 2: Vision Language Model Integration**
+```
+Purpose: Visual recognition of complex UI elements
+Models: GPT-4 Vision, Claude 3.5 Sonnet, or open-source alternatives
+Accuracy: 70-75% for complex multimodal tasks
+Processing time: 2-4 seconds per page
+Cost: Variable based on model selection
+```
 
-1. AI 기반 셀렉터 재생성 (VLM + DOM 구조 분석)
-2. Fuzzy matching 알고리즘 (유사도 90%+ 자동 매칭)
-3. 사용자 피드백 루프 (수동 수정 데이터 학습)
+Research demonstrates that vision language models have achieved significant progress in UI understanding. Google Research's ScreenAI, at only 5 billion parameters, achieves state-of-the-art results on UI-based tasks. OmniParser improved GPT-4V's accuracy from 70.5% to 93.8% by incorporating local semantic information. These advances inform the Sela approach to visual element recognition.
 
-**검증된 성공률** (내부 테스트):
+#### Cost Optimization Strategy
 
-- Amazon, eBay, Walmart 3개 사이트 6개월 추적
-- 98.5% 자동 복구 성공
-- 평균 복구 시간: 2.3시간
+The hybrid processing model follows this sequence:
 
-**확장 계획**: 2025 Q2까지 100+ 주요 사이트 커버리지
+1. Initial DOM parser attempt (successful in majority of cases)
+2. Vision language model invocation only when DOM parsing insufficient
+3. Result caching with time-to-live policies
+4. Progressive enhancement based on page complexity
 
-#### 지원 사이트 및 Use Cases
+This approach substantially reduces operational costs compared to vision-only processing while maintaining high accuracy.
 
-**Phase 1 Target Sites** (우선순위):
+#### Self-Healing Selector System
 
-- E-commerce: Amazon, eBay, Walmart, AliExpress, Coupang
-- Social Media: LinkedIn (공개 프로필), Twitter/X (공개 피드)
+**Challenge**: UI changes frequently break CSS selectors, disrupting automation workflows.
+
+**Solution Architecture**:
+
+1. AI-based selector regeneration using vision language models and DOM structural analysis
+2. Fuzzy matching algorithms for automatic element identification
+3. User feedback integration for continuous learning
+
+The system maintains automation reliability across UI changes by automatically adapting to structural modifications.
+
+#### Supported Platforms and Use Cases
+
+**Phase 1 Priority Sites**:
+
+- E-commerce: Amazon, eBay, Walmart, AliExpress
+- Social Media: LinkedIn, Twitter
 - Travel: Booking.com, Airbnb, Expedia
-- News: NYTimes, WSJ, Bloomberg (공개 기사)
+- News: Major publications
 
-**JSON Schema 표준화**:
+**JSON Standardization**:
+
+All extracted data conforms to versioned schema standards ensuring consistency across data sources:
 
 ```json
 {
   "schema_version": "1.0",
   "type": "product",
   "data": {
-    "name": "Apple AirPods Pro (2nd Gen)",
+    "name": "Product Name",
     "price": {
       "amount": 249.99,
-      "currency": "USD",
-      "original": 299.99,
-      "discount_percent": 16.67
+      "currency": "USD"
     },
     "availability": "in_stock",
-    "seller": {
-      "name": "Amazon",
-      "verified": true,
-      "rating": 4.8
-    },
-    "shipping": {
-      "free": true,
-      "prime_eligible": true,
-      "estimated_days": 2
-    },
     "timestamp": "2025-01-15T10:30:00Z",
-    "proof_hash": "0x7f9a8b3c..."
+    "proof_hash": "0x..."
   }
 }
 ```
 
 ---
 
-### 1.3 AI Framework 통합 (2025 Q1 - Q2)
+### 1.3 AI Framework Integration
 
-#### SDK & 개발자 경험
+#### Developer SDK
 
-**Python SDK** ([LangChain 통합](https://python.langchain.com/v0.1/docs/use_cases/web_scraping/) 기반):
+**Python SDK**:
 
 ```python
 from sela_network import SelaClient
-from langchain.agents import create_sela_agent
 
-# 기본 사용
 client = SelaClient(api_key="your_api_key")
-result = client.browse("amazon.com", query="airpods pro")
-
-# LangChain 통합
-agent = create_sela_agent(
-    client=client,
-    llm="gpt-4",
-    tools=["browse", "extract", "verify"]
-)
-agent.run("Find the cheapest AirPods Pro with free shipping")
+result = client.browse("amazon.com", query="product search")
 ```
 
 **JavaScript/TypeScript SDK**:
@@ -195,488 +181,390 @@ import { SelaClient } from "@sela-network/sdk";
 
 const client = new SelaClient({
   apiKey: process.env.SELA_API_KEY,
-  network: "mainnet", // or "testnet"
+  network: "mainnet",
 });
 
 const result = await client.browse({
-  url: "https://amazon.com",
+  url: "https://example.com",
   actions: [
-    { type: "search", query: "airpods pro" },
-    { type: "extract", selector: "product_grid" },
+    { type: "search", query: "term" },
+    { type: "extract", selector: "element" },
   ],
   format: "json",
-  verify: true, // zk-TLS proof 생성
+  verify: true,
 });
 ```
 
-#### 벤치마크 목표 (vs Browserbase)
+#### Performance Objectives
 
-| 지표                   | Browserbase                | Sela Network     | 개선율          |
-| ---------------------- | -------------------------- | ---------------- | --------------- |
-| **응답 시간 (P50)**    | ~650ms                     | ~420ms           | **35% 빠름**    |
-| **응답 시간 (P95)**    | ~1,580ms                   | ~1,200ms         | **24% 빠름**    |
-| **봇 탐지 우회율**     | ~94-96%                    | **98.7%**        | **+3-5%p**      |
-| **비용 (1M requests)** | $4,000-6,000               | **$1,200-1,800** | **70-82% 절감** |
-| **동시 연결 제한**     | 50 (Startup), 100+ (Scale) | **무제한** (P2P) | **무한대**      |
-
-**근거**:
-
-- Browserbase 가격: [$0.10/browser hour + $10/GB proxy](https://www.browserbase.com/pricing)
-- Sela 분산 모델: 노드 운영자 보상 기반 (토큰 인센티브)
-- [Playwright 벤치마크](https://www.skyvern.com/blog/puppeteer-vs-playwright-complete-performance-comparison-2025/): 4.513초 평균 (Sela는 최적화 목표)
+| Metric | Target | Advantage |
+| --- | --- | --- |
+| Response time (P50) | ~420ms | 35% improvement over baseline |
+| Response time (P95) | ~1,200ms | 24% improvement over baseline |
+| Bot detection bypass | 98%+ | Enhanced reliability |
+| Concurrent connections | Unlimited (P2P) | No artificial limits |
+| Cost efficiency | Significant reduction | Token-based incentive model |
 
 ---
 
-## Phase 2 — Verification Layer (2025 Q2 ~ Q3)
+## Phase 2: Verification Layer (2025 Q2 - Q3)
 
-**핵심 목표**: 검증 가능성(Verifiability)으로 신뢰 확보 및 Enterprise 시장 진입
+**Primary Objective**: Establish verifiability and trust for enterprise adoption
 
-### 2.1 zk-TLS 프로토콜 통합 (2025 Q2)
+### 2.1 Zero-Knowledge TLS Integration
 
-#### 기술 배경: 왜 zk-TLS인가?
+#### Technical Background
 
-**문제**:
+**Challenge**: Web data lacks inherent verifiability. Screenshots and HTML sources can be manipulated. This creates barriers to adoption in high-trust domains such as finance, legal, and healthcare.
 
-- 웹 데이터는 조작 가능 (스크린샷, HTML 소스 모두)
-- API 없는 웹사이트의 데이터 신뢰성 검증 불가
-- 금융, 법률, 의료 등 고신뢰 도메인 진입 장벽
+**Solution: zkTLS Protocol**
 
-**솔루션: [zkTLS (TLSNotary 프로토콜)](https://arxiv.org/html/2409.17670v1)**
+Zero-knowledge Transport Layer Security provides cryptographic proof of TLS session authenticity while preserving privacy. The protocol uses multi-party computation to maintain data confidentiality while enabling verification.
 
-- TLS 세션의 암호학적 증명 생성
-- Multi-Party Computation (MPC)로 데이터 프라이버시 유지
-- Zero-Knowledge Proof로 필요한 부분만 공개
+zkTLS represents the integration of zero-knowledge proofs with the TLS protocol, creating a system that facilitates secure data transmission with a verifiable privacy layer. The MPC-TLS approach uses secure multi-party computation to add a verifier to the TLS connection, with the prover and verifier working together to compute key encryption and decryption during the TLS handshake.
 
-#### 구현 전략
+#### Implementation Approach
 
-**프로토콜 선택**:
+**Protocol Selection**:
 
-1. **TLSNotary** ([2024년 TLS 1.3 지원](https://mirror.xyz/privacy-scaling-explorations.eth/T4MR2PgBzBmN2I3dhDJpILXkQsqZp1Bp8GSm_Oo3Vnw))
-2. **zkPass** (3P-TLS 기반 [대안](https://medium.com/zkpass/zktls-the-cornerstone-of-verifiable-internet-da8609a32754))
+Primary consideration: TLSNotary protocol with TLS 1.3 support
 
-**아키텍처**:
+**Architecture**:
 
 ```
 Client (Prover) ↔ Notary (Verifier) ↔ Web Server
        ↓
-    MPC Protocol (Garbled Circuits + Oblivious Transfer)
+Multi-Party Computation (Garbled Circuits + Oblivious Transfer)
        ↓
-    ZK Proof Generation
+Zero-Knowledge Proof Generation
        ↓
-    On-Chain Verification (Optional)
+On-Chain Verification (Optional)
 ```
 
-**성능 목표**:
+**Performance Targets**:
 
 ```
-Proof 생성 시간: < 450ms (평균)
-Proof 크기: < 10KB
-검증 시간: < 100ms
-네트워크 지연 영향: MPC는 latency-sensitive
+Proof generation: <450ms average
+Proof size: <10KB
+Verification time: <100ms
 ```
 
-**제약 사항 (투명한 공개)**:
+**Technical Constraints**:
 
-- MPC 실행 시간은 [네트워크 지연에 민감](https://arxiv.org/html/2409.17670v1)
-- Proof 생성 일관성에 영향 (물리적 거리 중요)
-- 해결책: 지역별 Notary 노드 배치 (Phase 2B)
+Multi-party computation protocols exhibit sensitivity to network latency, which can affect consistency. This is addressed through geographic distribution of notary nodes to minimize physical distance and associated delays.
 
-#### Use Cases
+#### Application Domains
 
-**금융 (DeFi 언더콜라터럴 대출)**:
+**Financial Services**:
+Proof of account balance ranges without revealing exact amounts, enabling undercollateralized lending protocols.
 
-```
-증명: "이 사용자의 은행 잔고가 $50,000 이상이다"
-공개: 정확한 금액은 비공개, 범위만 증명
-활용: 담보 없는 대출 승인
-```
+**Legal Evidence**:
+Cryptographically verified proof that specific web content existed at a particular timestamp, admissible in legal proceedings.
 
-**법률 (디지털 증거)**:
-
-```
-증명: "이 웹페이지가 2025-01-15 10:30:00에 이 내용을 표시했다"
-공개: 페이지 스크린샷 + TLS 서명
-활용: 법정 증거로 사용 가능
-```
-
-**의료 (환자 데이터 검증)**:
-
-```
-증명: "이 환자가 COVID-19 음성 판정을 받았다"
-공개: 진단 결과만, 개인 정보는 비공개
-활용: 여행 증명서, 직장 복귀 확인
-```
+**Healthcare**:
+Verification of medical records or test results without exposing complete patient information, enabling privacy-preserving health credentials.
 
 #### Proof Explorer
 
-**기능**:
+The Proof Explorer provides public access to verify any generated proof:
 
-- 모든 생성된 Proof 검색 및 검증
-- On-chain 기록 (Ethereum, Polygon 등)
-- Public API for verification
-
-**예시**:
-
-```
-https://explorer.sela.network/proof/0x7f9a8b3c...
-
-Proof Details:
-- URL: https://amazon.com/dp/B0CHWRXH8B
-- Timestamp: 2025-01-15T10:30:00Z
-- Data Hash: 0x4a2b9c...
-- Notary Signature: 0x8d3e5f...
-- Verification Status: Valid
-```
+- Searchable proof registry
+- On-chain proof anchoring
+- Public verification API
+- Timestamp and data hash verification
 
 ---
 
-### 2.2 Session Cloud (세션 관리 서비스) (2025 Q3)
+### 2.2 Session Management Infrastructure
 
-#### 문제: 로그인 자동화의 난제
+#### Challenge: Authentication Automation
 
-**현재 한계**:
+**Current Limitations**:
+- Two-factor authentication requirements
+- CAPTCHA challenges
+- Manual credential management
 
-- 2FA (Two-Factor Authentication) 우회 불가
-- CAPTCHA 반복 해결 필요
-- 쿠키/세션 수동 관리 번거로움
-
-**솔루션**:
+**Solution: Session Cloud**
 
 ```
-User ─ 1회 로그인 ─> Sela Session Cloud
-                         ↓
-                    E2E 암호화 저장
-                         ↓
-            AI Agent가 필요 시 재사용
+User → One-time authentication → Sela Session Cloud
+                                      ↓
+                                E2E encrypted storage
+                                      ↓
+                          AI agents reuse authenticated sessions
 ```
 
-**보안 설계**:
+#### Security Architecture
 
-- **E2E 암호화**: 사용자만 복호화 키 보유
-- **Zero-Knowledge 자격증명 처리**: Sela는 비밀번호 볼 수 없음
-- **Secure Enclave 저장**: HSM (Hardware Security Module) 활용
-- **시간 제한 액세스**: 세션 만료 정책 (기본 24시간)
+- **End-to-end encryption**: Users maintain exclusive control of decryption keys
+- **Zero-knowledge credential handling**: Sela infrastructure cannot access passwords
+- **Hardware security module storage**: Secure enclave protection
+- **Time-limited access**: Configurable session expiration policies
 
-**사용 예시**:
+**Regulatory Compliance**:
 
-```python
-# 1회만 로그인 수동 수행
-client.save_session('amazon', credentials={
-    'username': 'user@example.com',
-    'password_encrypted': encrypt_with_user_key('password123')
-})
-
-# 이후 자동 재사용
-result = client.browse_with_session('amazon',
-    session_id='session_abc123',
-    action='add_to_cart',
-    product_id='B0CHWRXH8B'
-)
-```
-
-**규제 준수**:
-
-- GDPR 컴플라이언스 (EU)
-- CCPA 컴플라이언스 (California)
-- SOC 2 Type II 인증 (계획)
+- GDPR compliance (European Union)
+- CCPA compliance (California)
+- SOC 2 Type II certification (planned)
 
 ---
 
-### 2.3 Enterprise 고객 온보딩 (2025 Q2 - Q3)
+### 2.3 Enterprise Customer Acquisition
 
-#### Target Segments
+#### Target Market Segments
 
-**Tier 1: AI 스타트업**
+**Tier 1: AI Startups**
+- AI agent development companies
+- Browser automation requirements
+- Volume: 100K-1M requests/month
 
-- LangChain/AutoGPT 기반 제품 개발사
-- 브라우저 자동화 필요 AI 에이전트
-- 월 100K-1M requests
+**Tier 2: Data Intelligence Firms**
+- Price monitoring and competitive analysis
+- E-commerce data aggregation
+- Volume: 1M-10M requests/month
 
-**Tier 2: 데이터 인텔리전스 기업**
+**Tier 3: Fintech and Healthcare**
+- Financial data verification for DeFi protocols
+- Patient data verification for healthcare platforms
+- Volume: 10M+ requests/month with zk-TLS proofs
 
-- 가격 모니터링, 경쟁사 분석 솔루션
-- E-commerce aggregator
-- 월 1M-10M requests
+#### Pricing Model
 
-**Tier 3: 핀테크 & 헬스케어**
+**Starter Plan**: $79/month
+- 750 browser hours
+- 10GB proxies
+- Unlimited concurrent connections
+- Basic zk-TLS proofs included
 
-- 금융 데이터 검증 필요 DeFi 프로토콜
-- 환자 데이터 확인 필요 의료 플랫폼
-- 월 10M+ requests + zk-TLS 증명
-
-#### 가격 모델 (Browserbase 대비)
-
-**Browserbase Startup Plan**: $99/월
-
-- 500 browser hours
-- 5GB proxies
-- 50 concurrent browsers
-
-**Sela Network Starter Plan**: $79/월 (20% 저렴)
-
-- 750 browser hours (50% 더 많음)
-- 10GB proxies (100% 더 많음)
-- Unlimited concurrent (P2P 장점)
-- Basic zk-TLS proofs 포함
-
-**Sela Network Enterprise Plan**: Custom (대규모 할인)
-
-- Dedicated node pool
-- SLA 99.9% uptime 보장
-- Priority support (24/7)
+**Enterprise Plan**: Custom pricing
+- Dedicated node pools
+- 99.9% uptime SLA
+- 24/7 priority support
 - Advanced zk-TLS analytics
 
-**예상 고객 확보 목표**:
+#### Acquisition Targets
 
 ```
-2025 Q2: 10-20 Enterprise 고객
-2025 Q3: 50+ Enterprise 고객
-2025 Q4: 100+ Enterprise 고객
-API Calls: 10M+/월 (Q2) → 100M+/월 (Q4)
+2025 Q2: 10-20 enterprise customers
+2025 Q3: 50+ enterprise customers
+2025 Q4: 100+ enterprise customers
+API volume: 10M+/month (Q2) → 100M+/month (Q4)
 ```
 
 ---
 
-## Phase 3 — Agent Marketplace (2025 Q4 ~ 2026 Q4)
+## Phase 3: Agent Marketplace (2025 Q4 - 2026 Q4)
 
-**핵심 목표**: 개발자 생태계 구축 및 No-Code 도구 제공
+**Primary Objective**: Establish developer ecosystem and expand accessibility
 
-### 3.1 Agent App Marketplace 런칭 (2026 Q1)
+### 3.1 Agent Application Marketplace
 
-#### 마켓플레이스 구조
+#### Marketplace Structure
 
-**카테고리 1: 기본 액션스크립트**
-
+**Category 1: Basic Automation Scripts**
 ```
-설명: 단순한 자동화 스크립트 (클릭, 입력, 스크롤)
-가격: 5-20 SELA
-예시:
-- "Instagram 좋아요 자동화" - 10 SELA
-- "YouTube 댓글 자동 작성" - 15 SELA
-- "LinkedIn 연결 요청 자동화" - 20 SELA
-수수료: 판매액의 70% → 개발자, 20% → 프로토콜, 10% → 큐레이터/검증자
+Description: Simple automation workflows (clicks, inputs, scrolls)
+Pricing: 5-20 SELA tokens
+Examples: Social media automation, form filling, data collection
+Revenue split: 70% developer, 20% protocol, 10% curators
 ```
 
-**카테고리 2: 고급 데이터 파서**
-
+**Category 2: Advanced Data Parsers**
 ```
-설명: 복잡한 웹사이트의 구조화된 데이터 추출
-가격: 30-100 SELA (일회성) 또는 10-30 SELA/월 (구독)
-예시:
-- "Nike 신상품 추적 파서" - 50 SELA
-- "항공권 가격 비교 API" - 30 SELA/월
-- "암호화폐 거래소 실시간 데이터" - 100 SELA/월
-수수료: 판매액의 70% → 개발자, 20% → 프로토콜, 10% → 큐레이터/검증자
+Description: Complex structured data extraction from websites
+Pricing: 30-100 SELA (one-time) or 10-30 SELA/month (subscription)
+Examples: Product tracking, price comparison APIs, real-time data feeds
+Revenue split: 70% developer, 20% protocol, 10% curators
 ```
 
-**카테고리 3: 산업별 API 솔루션**
-
+**Category 3: Industry-Specific APIs**
 ```
-설명: 특정 산업을 위한 완전한 API
-가격: 200-1,000 SELA/월
-예시:
-- "글로벌 부동산 가격 추적 API" - 200 SELA/월
-- "뉴스 미디어 감정 분석 API" - 300 SELA/월
-- "소셜 미디어 인플루언서 분석 API" - 500 SELA/월
-수수료: 판매액의 70% → 개발자, 20% → 프로토콜, 10% → 큐레이터/검증자
+Description: Complete API solutions for vertical markets
+Pricing: 200-1,000 SELA/month
+Examples: Real estate tracking, media sentiment analysis, influencer analytics
+Revenue split: 70% developer, 20% protocol, 10% curators
 ```
 
-#### 개발자 인센티브
+#### Developer Incentive Structure
 
-**Phase 3 개발자 보상 풀**: 총 토큰 공급량의 15% (초기 5년간)
+**Reward Pool**: 15% of total token supply allocated over initial five years
 
-**보상 구조**:
+**Reward Components**:
 
-1. **판매 수익**: 70% (즉시 지급)
-2. **품질 보너스**: Top 10 파서/스크립트에 월 10,000 SELA 추가
-3. **사용량 보상**: API 호출 1,000회당 1 SELA (누적)
+1. **Sales revenue**: 70% immediate distribution
+2. **Quality bonus**: Top 10 parsers receive monthly bonus allocation
+3. **Usage rewards**: Token rewards based on API call volume
 
-**예상 수익 (Top 개발자)**:
+**Projected Earnings (Top Developers)**:
 
 ```
-월 판매: $5,000 (100 구독 × $50)
-품질 보너스: $2,000 (10,000 SELA × $0.20)
-사용량 보상: $1,000 (API 호출 500만회)
-───────────────────
-총 월 수익: $8,000
+Monthly sales: $5,000 (100 subscriptions × $50)
+Quality bonus: $2,000 (token rewards)
+Usage rewards: $1,000 (API call volume)
+─────────────
+Total monthly: $8,000
 ```
-
-**성공 사례 벤치마크**:
-
-- [Apify 마켓플레이스](https://blog.apify.com/best-web-scraping-tools/): 1,000+ 액터, Top 개발자 월 $10K+ 수익
-- Sela 목표: 2026년 말까지 500+ 파서/스크립트, Top 10 개발자 월 $5K+ 수익
 
 ---
 
-### 3.2 No-Code Agent Builder (2026 Q2)
+### 3.2 No-Code Agent Builder
 
-#### 비전: "모든 사람이 AI Agent 개발자"
+#### Vision: Democratizing Agent Development
 
-**UI/UX**:
+**User Interface Features**:
 
-- 드래그 앤 드롭 워크플로우 빌더
-- 시각적 CSS 셀렉터 선택 (브라우저 내 하이라이트)
-- 템플릿 라이브러리 (100+ 사전 구성 워크플로우)
-- 실시간 테스트 및 디버깅
+- Drag-and-drop workflow builder
+- Visual CSS selector tool with in-browser highlighting
+- Template library with 100+ pre-configured workflows
+- Real-time testing and debugging environment
 
-**예시 워크플로우**:
+**Example Workflow**:
 
 ```
 ┌─────────────────────────────────────┐
-│ 1. Amazon에서 "airpods" 검색        │
+│ 1. Search Amazon for "product"      │
 │    → URL: https://amazon.com         │
 │    → Action: Search                  │
-│    → Query: "airpods"                │
+│    → Query: "product"                │
 ├─────────────────────────────────────┤
-│ 2. 가격이 $200 이하인 상품 필터     │
+│ 2. Filter by price <= $200           │
 │    → Condition: price <= 200         │
 ├─────────────────────────────────────┤
-│ 3. 평점 4.5성 이상만 추출            │
+│ 3. Extract items with rating >= 4.5  │
 │    → Condition: rating >= 4.5        │
 ├─────────────────────────────────────┤
-│ 4. 상품 리스트 Webhook으로 전송     │
+│ 4. Send to webhook                   │
 │    → Destination: webhook.site/xyz   │
 ├─────────────────────────────────────┤
-│ 5. 매일 오전 9시 자동 실행           │
+│ 5. Schedule daily at 9 AM            │
 │    → Schedule: cron(0 9 * * *)       │
 └─────────────────────────────────────┘
 ```
 
-**수익화**:
+**Monetization Tiers**:
 
-- 무료: 월 100회 실행
-- Pro: $29/월 → 월 10,000회 실행
-- Enterprise: Custom → 무제한 + 우선 지원
+- Free: 100 executions/month
+- Pro: $29/month for 10,000 executions
+- Enterprise: Custom pricing for unlimited usage
 
-**Target Users**:
+**Target User Base**:
 
-- 이커머스 셀러 (경쟁사 가격 모니터링)
-- 마케터 (소셜 미디어 자동화)
-- 리서처 (데이터 수집)
-- 일반 사용자 (항공권 가격 추적 등)
-
----
-
-### 3.3 Sela 전용 VLM 연구 개발 (2026 Q3 - 2027 Q2)
-
-#### 문제: 기존 VLM의 한계
-
-**GPT-4 Vision / Claude 3.5 Sonnet**:
-
-- 높은 정확도 (72-74%)
-- 비싼 비용 ($0.01-0.05 per image)
-- 느린 속도 (2-4초 per image)
-- API 의존성 (외부 서비스)
-
-**오픈소스 대안 (Qwen2-VL, LLaVA)**:
-
-- 자체 호스팅 가능
-- 저렴한 비용
-- 정확도 낮음 (60-70%)
-- 웹 UI 특화 학습 부족
-
-#### Sela VLM 목표
-
-**특화 모델 개발**:
-
-```
-모델명: Sela-VLM-1
-목적: 웹 UI 요소 인식 전문 모델
-데이터셋: 100만+ 웹페이지 스크린샷 + 라벨
-파라미터: 7B-13B (효율성 중시)
-정확도 목표: 85%+ (웹 UI 도메인)
-추론 속도: < 500ms per image
-메모리 사용: < 8GB (소비자 GPU)
-```
-
-**학습 데이터**:
-
-- Sela Network 실사용 데이터 (사용자 동의 하)
-- 합성 데이터 생성 (Diffusion Model 활용)
-- 크라우드소싱 라벨링 (커뮤니티 기여)
-
-**배포 전략**:
-
-- Phase 1: Cloud API (GPT-4V 대체)
-- Phase 2: 엣지 배포 (노드에서 직접 실행)
-- Phase 3: ASIC 하드웨어 가속 (2027+)
-
-**파트너십 계획**:
-
-- GPU 제조사 (NVIDIA, AMD)
-- AI 연구소 (대학 협력)
-- 오픈소스 커뮤니티 (HuggingFace)
+- E-commerce sellers (competitive price monitoring)
+- Marketing professionals (social media automation)
+- Researchers (data collection)
+- General users (price tracking, notifications)
 
 ---
 
-## Phase 4 — Global Standard (2027 ~ 2030)
+### 3.3 Specialized Vision Language Model Development
 
-**핵심 목표**: AI-Web 인터랙션 글로벌 표준 확립
+#### Current VLM Limitations
 
-### 4.1 초대규모 노드 네트워크 (100,000+ 노드)
+**Proprietary Models (GPT-4 Vision, Claude 3.5 Sonnet)**:
+- High accuracy (72-74%)
+- Significant cost ($0.01-0.05 per image)
+- Processing latency (2-4 seconds per image)
+- External API dependency
 
-#### 성장 모델 (DePIN 벤치마크 기반)
+**Open-Source Alternatives (Qwen2-VL, LLaVA)**:
+- Self-hosting capability
+- Lower operational costs
+- Reduced accuracy (60-70%)
+- Limited web UI specialization
 
-**Filecoin 성장 곡선**:
+#### Sela VLM Objectives
 
-- 2020 Mainnet: ~500 노드
-- 2021: ~3,000 노드
-- 2022: ~10,000 노드
-- 2024: ~20,000 노드 (추정)
-
-**Render Network 성장 곡선**:
-
-- 2020 베타: ~100 노드
-- 2024: **100,000+ 대기자**
-- 점진적 온보딩 (KYC 프로세스)
-
-**Sela 성장 예측** (보수적 추정):
+**Model Specifications**:
 
 ```
-2025: 3,000-5,000 노드 (Phase 1-2)
-2026: 15,000-25,000 노드 (Phase 3, 마켓플레이스 효과)
-2027: 50,000-75,000 노드 (Phase 4 초기)
-2028-2030: 100,000+ 노드 (글로벌 확산)
+Model designation: Sela-VLM-1
+Purpose: Web UI element recognition specialist
+Training data: 1M+ labeled webpage screenshots
+Parameters: 7B-13B (efficiency optimized)
+Target accuracy: 85%+ (web UI domain)
+Inference speed: <500ms per image
+Memory footprint: <8GB (consumer GPU compatible)
 ```
 
-**지역별 분산 목표** (2027):
+**Training Data Sources**:
 
-```
-북미: 30% (30,000 노드)
-유럽: 25% (25,000 노드)
-아시아: 35% (35,000 노드)
-기타: 10% (10,000 노드)
-```
+- Production network data (with user consent)
+- Synthetic data generation using diffusion models
+- Crowdsourced labeling from community contributors
 
-**인센티브 조정**:
+**Deployment Strategy**:
 
-- 저밀도 지역 보상 2배 (아프리카, 남미 우대)
-- 고성능 노드 보상 1.5배 (Enterprise 티어)
-- Uptime 99%+ 달성 시 보너스 20%
+- Phase 1: Cloud API (GPT-4V alternative)
+- Phase 2: Edge deployment (node-level inference)
+- Phase 3: Hardware acceleration (2027+)
 
 ---
 
-### 4.2 산업 표준 및 프로토콜 제안
+## Phase 4: Global Standard (2027 - 2030)
+
+**Primary Objective**: Establish Sela as the global standard for AI-web interaction
+
+### 4.1 Large-Scale Node Network
+
+#### Growth Projections
+
+**DePIN Growth Patterns**:
+
+Filecoin's network growth trajectory:
+- 2020 Mainnet: ~500 nodes
+- 2021: ~3,000 nodes
+- 2022: ~10,000 nodes
+- 2024: ~20,000 nodes (estimated)
+
+Render Network accumulated over 100,000 participants in its waitlist, implementing controlled onboarding processes.
+
+**Sela Conservative Estimates**:
+
+```
+2025: 3,000-5,000 nodes (Phase 1-2)
+2026: 15,000-25,000 nodes (Phase 3, marketplace effect)
+2027: 50,000-75,000 nodes (Phase 4 initial)
+2028-2030: 100,000+ nodes (global expansion)
+```
+
+**Geographic Distribution Targets (2027)**:
+
+```
+North America: 30% (30,000 nodes)
+Europe: 25% (25,000 nodes)
+Asia: 35% (35,000 nodes)
+Other regions: 10% (10,000 nodes)
+```
+
+**Incentive Optimization**:
+
+- 2x rewards for underserved geographic regions
+- 1.5x rewards for high-performance enterprise tier nodes
+- 20% bonus for 99%+ uptime achievement
+
+---
+
+### 4.2 Industry Standards and Protocol Proposals
 
 #### Web Interaction Protocol (WIP)
 
-**목표**: HTTP처럼 보편적인 AI-Web 통신 표준
+**Objective**: Establish a universal AI-web communication standard analogous to HTTP
 
-**제안 스펙**:
+**Proposed Specification**:
 
 ```
 Protocol: wip://
 Version: 1.0
 Features:
-- Semantic Action Primitives (click, scroll, extract 등)
-- Verifiable Response Format (zk-TLS 증명 포함)
-- Cross-Platform Compatibility (모든 브라우저)
+- Semantic action primitives (click, scroll, extract)
+- Verifiable response format (zk-TLS proof inclusion)
+- Cross-platform browser compatibility
 ```
 
-**예시 요청**:
+**Example Request**:
 
 ```
-wip://amazon.com/search?q=airpods&action=extract&format=json&verify=true
+wip://amazon.com/search?q=product&action=extract&format=json&verify=true
 
 Response:
 {
@@ -689,251 +577,243 @@ Response:
 }
 ```
 
-#### 표준화 기구 협력
+#### Standards Organization Collaboration
 
 **W3C (World Wide Web Consortium)**:
-
-- AI Agent User Agent Specification 제안
-- Verifiable Web Data Standard 논의
+- AI Agent User Agent Specification proposal
+- Verifiable Web Data Standard discussion
 
 **IEEE**:
-
 - Decentralized Web Automation Standard
-- 학술 논문 발표 및 피어 리뷰
+- Academic publication and peer review
 
 **IETF (Internet Engineering Task Force)**:
+- zk-TLS RFC proposal
+- Web Proof Protocol standardization
 
-- zk-TLS RFC 제안
-- Web Proof Protocol 표준화
+**Timeline**:
 
-**타임라인**:
-
-- 2027: 초안 제출
-- 2028: 산업 피드백 수렴
-- 2029: 표준 승인 목표
-- 2030: 주요 브라우저 채택
+```
+2027: Initial draft submission
+2028: Industry feedback incorporation
+2029: Standard approval target
+2030: Major browser adoption
+```
 
 ---
 
-### 4.3 글로벌 파트너십
+### 4.3 Global Partnerships
 
-#### AI 플랫폼 통합
+#### AI Platform Integration
 
 **OpenAI GPT Store**:
-
-- Sela Plugin 출시
-- "Browse verified web data with Sela"
-- 월간 활성 사용자 100만+ 목표
+- Sela plugin release
+- Target: 1M+ monthly active users
 
 **Google Gemini / Anthropic Claude**:
-
-- Native 통합 (API 레벨)
-- Enterprise 고객 공동 타겟팅
+- Native API-level integration
+- Enterprise customer co-targeting
 
 **Microsoft Copilot**:
+- Office 365 integration
+- Web research with verifiable sources
 
-- Office 365 통합
-- "Web research with verifiable sources"
-
-#### 기업 고객 목표
-
-**예상 규모** (2027):
+#### Projected Scale (2027)
 
 ```
-노드 운영자: 100,000+
-개발자 (마켓플레이스): 10,000+
-앱/파서 게시: 50,000+
-월간 API 호출: 1B+
-Enterprise 고객: 1,000+
-최종 사용자: 10M+
+Node operators: 100,000+
+Marketplace developers: 10,000+
+Published apps/parsers: 50,000+
+Monthly API calls: 1B+
+Enterprise customers: 1,000+
+End users: 10M+
 ```
 
-**매출 모델** (다양화):
+**Revenue Model Diversification**:
 
-1. **API 사용료**: $10M-50M/년
-2. **Enterprise 구독**: $20M-100M/년
-3. **마켓플레이스 수수료**: $5M-20M/년
-4. **토큰 유틸리티**: 네트워크 활성화에 따라 변동
-
----
-
-## 리스크 관리 및 컨틴전시 플랜
-
-### 기술 리스크
-
-**Risk 1: VLM 정확도 목표 미달**
-
-- **현재 SoTA**: 72-74% ([GPT-4o, Claude 3.5](https://www.clarifai.com/blog/best-vision-language-models-vlms-for-image-classification-performance-benchmarks))
-- **Sela 목표**: 85%+
-- **컨틴전시**: 하이브리드 DOM+VLM으로 80% 달성 시에도 상업적 가치 충분
-- **대안**: 오픈소스 VLM 지속 개선 (Qwen, LLaVA)
-
-**Risk 2: zk-TLS 성능 이슈**
-
-- **문제**: [MPC 지연 민감성](https://arxiv.org/html/2409.17670v1)
-- **완화**: 지역별 Notary 배치, Quicksilver 등 VOLE 기반 프로토콜 연구
-- **대안**: 선택적 검증 (고신뢰 요구 시에만 zk-TLS)
-
-**Risk 3: 봇 탐지 기술 발전**
-
-- **현재**: [Cloudflare Turnstile](https://www.cloudflare.com/application-services/products/turnstile/) 우회 가능
-- **미래**: 행동 패턴 분석 강화 예상
-- **대응**: 실제 사용자 브라우저 활용 (근본적 차별화), 머신러닝 기반 인간 모방
-
-### 시장 리스크
-
-**Risk 4: 경쟁 심화**
-
-- **Browserbase**: [$40M 투자 유치](https://siliconangle.com/2025/06/17/browserbase-reels-40m-browser-automation-tools/) (2025년 6월)
-- **대응**: 탈중앙화 + zk-TLS 검증으로 차별화, 70% 저렴한 가격
-
-**Risk 5: AI 에이전트 시장 성장 둔화**
-
-- **현재 예측**: [46.3% CAGR](https://www.marketsandmarkets.com/Market-Reports/ai-agents-market-15761548.html)
-- **보수적 시나리오**: 30% CAGR로 하향 조정 시에도 2030년 $30B+ 시장
-- **대응**: 웹 스크래핑 시장 ($2.87B, 2034)도 병행 타겟
-
-**Risk 6: 토큰 가격 변동성**
-
-- **문제**: APY 계산 시 토큰 가격 가정 (현재 120-420%)
-- **현실**: [웹3 스테이킹은 실제 수익 기반이어야 지속 가능](https://speedrunethereum.com/guides/sustainable-tokenomics-staking-protocols)
-- **대응**:
-  - "Real Yield" 모델 채택 (토큰 발행보다 실제 수익 배분)
-  - 동적 APY (네트워크 사용량에 연동)
-  - 토큰 소각 메커니즘 (트랜잭션 수수료)
-
-### 규제 리스크
-
-**Risk 7: 웹 스크래핑 규제**
-
-- **현재**: 많은 웹사이트가 ToS에서 스크래핑 금지
-- **법적 불확실성**: LinkedIn vs. hiQ Labs 등 판례 엇갈림
-- **대응**:
-  - 명확한 가이드라인 제공 (합법적 사용만)
-  - 웹사이트 robots.txt 준수 옵션
-  - 법률 자문 및 보험
+1. **API usage fees**: $10M-50M annually
+2. **Enterprise subscriptions**: $20M-100M annually
+3. **Marketplace commission**: $5M-20M annually
+4. **Token utility**: Variable based on network activity
 
 ---
 
-## 핵심 원칙
+## Risk Management and Contingency Planning
 
-### 1. 단계별 검증
+### Technical Risks
 
-각 Phase는 이전 Phase의 성공을 전제로 하며, 달성 불가 시 다음 단계 지연 허용
+**Risk 1: VLM Accuracy Below Target**
 
-### 2. 커뮤니티 중심
+Current state-of-the-art vision language models achieve 72-74% accuracy on UI tasks. Specialized models like ScreenAI and enhanced approaches like OmniParser have demonstrated higher performance on specific benchmarks.
 
-노드 운영자, 개발자, 사용자 피드백을 분기별로 반영하여 로드맵 조정
+- **Mitigation**: Hybrid DOM + VLM approach maintains commercial viability at 80%+ accuracy
+- **Alternative**: Continuous improvement of open-source VLM implementations
 
-### 3. 투명성
+**Risk 2: zk-TLS Performance Issues**
 
-분기별 Progress Report 공개:
+Multi-party computation protocols exhibit latency sensitivity, which can affect consistency.
 
-- 노드 수, 지역 분산
-- API 호출량
-- Enterprise 고객 수 (익명화)
-- 기술 마일스톤 달성 현황
+- **Mitigation**: Geographic distribution of notary nodes, exploration of VOLE-based protocols
+- **Alternative**: Selective verification (zk-TLS only for high-trust requirements)
 
-### 4. 지속가능성
+**Risk 3: Bot Detection Technology Advancement**
 
-과도한 토큰 인플레이션 방지, Real Yield 기반 보상 설계
+Bot detection systems continue to evolve with behavioral pattern analysis and advanced fingerprinting.
+
+- **Response**: Real browser environments provide fundamental differentiation; machine learning-based human behavior modeling
+- **Monitoring**: Continuous tracking of bypass success rates and adaptive countermeasures
+
+### Market Risks
+
+**Risk 4: Competitive Intensification**
+
+Centralized browser automation providers continue to receive significant investment.
+
+- **Response**: Decentralization combined with zk-TLS verification provides unique positioning; substantial cost advantages through token-based incentive model
+
+**Risk 5: AI Agent Market Growth Deceleration**
+
+Current projections indicate 45.8% CAGR for the AI agents market through 2030.
+
+- **Conservative scenario**: Even at 30% CAGR, market reaches $30B+ by 2030
+- **Response**: Parallel targeting of web scraping market ($2.87B by 2034)
+
+**Risk 6: Token Price Volatility**
+
+Cryptocurrency price volatility affects staking reward calculations and network economics.
+
+- **Response**:
+  - Real yield model emphasizing actual revenue distribution over token emission
+  - Dynamic reward adjustment based on network utilization
+  - Token burn mechanisms tied to transaction fees
+
+### Regulatory Risks
+
+**Risk 7: Web Scraping Regulation**
+
+Many websites prohibit scraping in terms of service agreements. Legal precedents remain inconsistent.
+
+- **Response**:
+  - Clear guidelines restricting usage to lawful purposes
+  - Optional robots.txt compliance enforcement
+  - Legal counsel and appropriate insurance coverage
 
 ---
 
-## 마일스톤 요약
+## Core Principles
+
+### 1. Phased Validation
+
+Each development phase depends on successful completion of prior phases. Delays are acceptable to ensure proper validation before progression.
+
+### 2. Community-Centric Development
+
+Quarterly incorporation of feedback from node operators, developers, and users into roadmap adjustments.
+
+### 3. Transparent Operations
+
+Quarterly progress reports including:
+
+- Node count and geographic distribution
+- API call volume
+- Enterprise customer count (anonymized)
+- Technical milestone completion status
+
+### 4. Sustainable Economics
+
+Prevention of excessive token inflation through real yield-based reward design.
+
+---
+
+## Milestone Summary
 
 ```
 2024 Q4-2025 Q2 (Phase 1: Foundation)
     ↓
-  베타 네트워크 (1,000-3,000 노드)
-  Semantic Rendering Engine
-  AI Framework 통합 (LangChain, AutoGPT)
+  Beta network (1,000-3,000 nodes)
+  Semantic rendering engine
+  AI framework integration
     ↓
 2025 Q2-Q3 (Phase 2: Verification)
     ↓
-  zk-TLS 프로토콜 통합
+  zk-TLS protocol integration
   Session Cloud
-  Enterprise 고객 50+ 확보
+  50+ enterprise customers
     ↓
 2025 Q4-2026 Q4 (Phase 3: Marketplace)
     ↓
-  Agent App Marketplace
-  No-Code Builder
-  Sela VLM 연구 개발
+  Agent application marketplace
+  No-code builder
+  Specialized VLM development
     ↓
 2027-2030 (Phase 4: Global Standard)
     ↓
-  100,000+ 노드 네트워크
-  W3C/IEEE 표준화
-  글로벌 파트너십 (OpenAI, Google, Microsoft)
+  100,000+ node network
+  W3C/IEEE standardization
+  Global partnerships
 ```
 
 ---
 
-## 투자자를 위한 핵심 지표
+## Key Metrics for Stakeholders
 
-### TAM (Total Addressable Market)
+### Total Addressable Market
 
 **2024**:
-
-- AI 에이전트: [$5.4B](https://www.grandviewresearch.com/industry-analysis/ai-agents-market-report)
-- 웹 스크래핑: [$754M](https://market.us/report/web-scraping-market/)
-- 합계: ~$6.15B
+- AI Agents: $5.4B
+- Web Scraping: $754M
+- Combined: ~$6.15B
 
 **2030**:
+- AI Agents: $50.31B
+- Web Scraping: ~$2B
+- Combined: ~$52B
 
-- AI 에이전트: [$52.6B](https://www.marketsandmarkets.com/Market-Reports/ai-agents-market-15761548.html)
-- 웹 스크래핑: ~$2B
-- 합계: ~$54.6B
+**Sela TAM** (15-25% market share assumption):
+- Conservative: $8B
+- Optimistic: $13B
 
-**Sela TAM** (15-25% 시장 점유율 가정):
+### Competitive Advantages
 
-- 보수적: $8B
-- 낙관적: $13.7B
+1. Only decentralized solution with cryptographic verification
+2. Significant cost reduction compared to centralized alternatives
+3. DePIN token economics enabling network effects
+4. Open-source community preventing vendor lock-in
 
-### 경쟁 우위
-
-1. **유일한 탈중앙 + 검증 가능 솔루션**
-2. **70-87% 비용 절감** (Browserbase 대비)
-3. **DePIN 토큰 경제** (네트워크 효과)
-4. **오픈소스 커뮤니티** (개발자 락인 방지)
-
-### 예상 성장 곡선
+### Projected Growth Trajectory
 
 ```
-Year | Nodes | API Calls/월 | Revenue (ARR)
-2025 | 3K    | 10M          | $1-2M
-2026 | 20K   | 100M         | $10-20M
-2027 | 70K   | 500M         | $50-100M
-2028 | 100K+ | 1B+          | $100-200M
+Year | Nodes | API Calls/Month | Annual Revenue
+2025 | 3K    | 10M             | $1-2M
+2026 | 20K   | 100M            | $10-20M
+2027 | 70K   | 500M            | $50-100M
+2028 | 100K+ | 1B+             | $100-200M
 ```
 
-**주의**: 이 수치는 예측이며 실제 결과는 시장 상황, 경쟁, 기술 발전 등에 따라 크게 달라질 수 있습니다.
+These projections are forward-looking estimates subject to significant variation based on market conditions, competitive dynamics, and technological developments.
 
 ---
 
-## 개발자를 위한 핵심 정보
+## Developer Participation
 
-### 지금 시작하는 방법
+### Getting Started
 
-1. **노드 운영자 되기**:
+**1. Node Operation**:
+- Install Chrome extension (5 minutes)
+- Stake 100 SELA tokens
+- Earn 10-2,000 SELA monthly rewards
 
-   - Chrome Extension 설치 (5분)
-   - 100 SELA 스테이킹
-   - 월 10-2,000 SELA 보상 획득
+**2. Parser/Script Development**:
+- Download SDK (Python/JavaScript)
+- Publish to marketplace
+- Receive 70% sales revenue plus bonuses
 
-2. **파서/스크립트 개발**:
+**3. Enterprise Solution Development**:
+- API documentation
+- Framework integration
+- Customer resale opportunities
 
-   - SDK 다운로드 (Python/JS)
-   - 마켓플레이스에 게시
-   - 판매 수익 70% + 보너스
-
-3. **Enterprise 솔루션 구축**:
-   - API 문서 참고
-   - LangChain/AutoGPT 통합
-   - 고객에게 재판매
-
-### 기술 스택
+### Technology Stack
 
 **Frontend**: React, TypeScript
 **Backend**: Node.js, Python, Rust
@@ -943,51 +823,15 @@ Year | Nodes | API Calls/월 | Revenue (ARR)
 
 ---
 
-## 결론
+## Conclusion
 
-Sela Network는 **검증된 시장 데이터**, **현실적인 기술 목표**, **투명한 리스크 관리**를 바탕으로 한 실행 가능한 로드맵입니다.
+Sela Network represents a strategic approach to establishing decentralized infrastructure for AI-agent web interaction. This roadmap prioritizes validated market data, realistic technical objectives, and transparent risk management.
 
-우리는 다음을 약속합니다:
+The network commits to:
 
-- **분기별 투명한 Progress Report**
-- **커뮤니티 피드백 반영**
-- **과도한 약속 금지** (under-promise, over-deliver)
-- **지속 가능한 토큰 경제**
+- Quarterly transparent progress reporting
+- Community feedback integration
+- Conservative projections with delivery emphasis
+- Sustainable token economics
 
-**함께 만들어가는 AI 에이전트 경제의 미래, Sela Network에 동참하세요.**
-
----
-
-## Sources
-
-이 로드맵은 다음 검증된 출처를 기반으로 작성되었습니다:
-
-### Market Data
-
-- [AI Agents Market Size & Trends - Grand View Research](https://www.grandviewresearch.com/industry-analysis/ai-agents-market-report)
-- [AI Agents Market Forecast - Markets and Markets](https://www.marketsandmarkets.com/Market-Reports/ai-agents-market-15761548.html)
-- [Web Scraping Market Statistics - Market.us](https://market.us/report/web-scraping-market/)
-- [DePIN Statistics - Hacken](https://hacken.io/discover/decentralized-physical-infrastructure/)
-
-### Technology
-
-- [TLSNotary Protocol Review - arXiv](https://arxiv.org/html/2409.17670v1)
-- [zkTLS Technology - Medium](https://medium.com/zkpass/zktls-the-cornerstone-of-verifiable-internet-da8609a32754)
-- [Vision Language Models Benchmarks - Clarifai](https://www.clarifai.com/blog/best-vision-language-models-vlms-for-image-classification-performance-benchmarks)
-- [Playwright vs Puppeteer Performance - Skyvern](https://www.skyvern.com/blog/puppeteer-vs-playwright-complete-performance-comparison-2025/)
-
-### Competition
-
-- [Browserbase Pricing - Official Website](https://www.browserbase.com/pricing)
-- [Browserbase $40M Funding - SiliconANGLE](https://siliconangle.com/2025/06/17/browserbase-reels-40m-browser-automation-tools/)
-- [Web Scraping Tools Comparison - Apify](https://blog.apify.com/best-web-scraping-tools/)
-
-### Web3 Economics
-
-- [Sustainable Tokenomics - SpeedRunEthereum](https://speedrunethereum.com/guides/sustainable-tokenomics-staking-protocols)
-- [Real Yield in Web3 - ApeX](https://www.apex.exchange/blog/detail/real-yield-in-web3)
-- [Bittensor Network Statistics - CoinDesk](https://www.coindesk.com/business/2025/09/13/bittensor-ecosystem-surges-with-subnet-expansion-institutional-access)
-
-**프로젝트 시작**: 2024년  
-**Last Updated**: 2024-11-23  
-**Version**: 2.0 (Fact-Checked & Enriched)
+Sela Network invites developers, node operators, and enterprises to participate in building the foundational infrastructure for AI agent interaction with the web.

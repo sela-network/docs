@@ -1,707 +1,460 @@
 ---
 title: Node Operator Complete Guide
-description: Step-by-step guide to running a Sela Network browser node and earning rewards
+description: Comprehensive guide to operating Sela Network browser nodes and participating in decentralized web infrastructure
 ---
 
 ## Overview
 
-Sela Network operates as a [Decentralized Physical Infrastructure Network (DePIN)](https://www.iex.ec/academy/depin-sector-trends-market-cap), where individuals contribute browser compute resources in exchange for token rewards. Unlike mining operations that require specialized hardware, running a Sela node simply involves installing software on devices you already own.
+Node operators provide the distributed physical infrastructure that powers this network, contributing browser compute resources in exchange for token-based compensation. Unlike cryptocurrency mining that requires specialized hardware, operating a Sela node utilizes standard computing devices through installed software.
 
-This guide provides comprehensive instructions for setting up, operating, and optimizing a Sela browser node to maximize earnings while contributing to the AI agent infrastructure ecosystem.
+This guide provides comprehensive instructions for establishing, operating, and optimizing Sela browser nodes.
 
-## What Node Operators Provide
+---
 
-When you run a Sela node, you provide:
+## Node Operator Role
 
-**Browser Compute**: Your device executes browser automation tasks requested by AI agents, rendering web pages, filling forms, and extracting data.
+When operating a Sela node, you provide essential infrastructure components:
 
-**Geographic Diversity**: Your location enables AI agents to access region-locked content and appear as local users to websites.
+**Browser Compute Resources**: Your device executes browser automation tasks requested by AI agents, including page rendering, form interaction, data extraction, and multi-step web workflows.
 
-**Residential IP**: Your home/office internet connection provides authentic residential IP addresses that bypass bot detection more effectively than datacenter IPs.
+**Geographic Distribution**: Your physical location enables AI agents to access region-restricted content and present as local users to target websites.
 
-**Network Resilience**: Distributed nodes eliminate single points of failure, ensuring the network remains operational even if individual nodes go offline.
+**Residential Network Connectivity**: Home and office internet connections provide authentic residential IP addresses that bypass anti-bot detection systems more effectively than datacenter IP ranges.
+
+**Network Resilience**: Distributed nodes eliminate single points of failure, ensuring the network maintains operational continuity despite individual node unavailability.
+
+---
 
 ## Economic Model
 
-Node operators earn $SELA tokens through a [stake-based reward system](https://multicoin.capital/2018/02/13/new-models-utility-tokens/). Higher stake unlocks higher earning potential, while performance metrics determine actual rewards received.
+Node operators earn SELA tokens through a stake-based reward system. Higher stake amounts unlock greater earning potential, while performance metrics determine actual rewards received.
 
-### Tier Structure (Realistic APY: 15-35%)
+### Tier Structure
 
-| Tier | Stake Required | Est. Monthly Earnings | APY Range | Hardware Req |
-|------|----------------|----------------------|-----------|--------------|
-| **Bronze** | 100 SELA | 1.25-3 SELA | 15-36% | Standard laptop/desktop |
-| **Silver** | 500 SELA | 7-15 SELA | 17-36% | Reliable internet + CPU |
-| **Gold** | 2,000 SELA | 30-60 SELA | 18-36% | Dedicated PC, >10 Mbps |
-| **Platinum** | 10,000 SELA | 175-300 SELA | 21-36% | Server-grade, >50 Mbps |
-| **Diamond** | 50,000 SELA | 900-1,500 SELA | 22-36% | Datacenter environment |
+The network implements a tiered staking model that balances accessibility with incentive alignment:
 
-**Note**: APY figures assume $SELA price stability and represent *potential* earnings based on network utilization. Actual returns depend on uptime, geographic demand, and overall network activity. These rates align with [established DePIN projects](https://www.rapidinnovation.io/post/top-depin-cryptocurrencies-to-watch-in-2024) like Helium and Filecoin.
+| Tier         | Stake Required | Hardware Requirements                                |
+| ------------ | -------------- | ---------------------------------------------------- |
+| **Bronze**   | 100 SELA       | Standard laptop or desktop                           |
+| **Silver**   | 500 SELA       | Reliable internet connection and consumer-grade CPU  |
+| **Gold**     | 2,000 SELA     | Dedicated PC with stable broadband                   |
+| **Platinum** | 10,000 SELA    | Server-grade hardware with high-bandwidth connection |
+| **Diamond**  | 50,000 SELA    | Professional datacenter or colocation environment    |
 
 ### Earnings Calculation
 
+Node rewards derive from multiple factors that incentivize reliability and performance:
+
 ```
 Base Reward = Tier Multiplier × Tasks Completed × Task Value
-Performance Bonus = Base Reward × (Uptime% × 0.3 + Speed% × 0.2 + Success% × 0.5)
-Geographic Bonus = Base Reward × Regional Demand Factor (1.0-2.5x)
+
+Performance Bonus = Base Reward × (Uptime Percentage × 0.3 + Speed Percentile × 0.2 + Success Rate × 0.5)
+
+Geographic Bonus = Base Reward × Regional Demand Factor
 
 Total Earnings = Base Reward + Performance Bonus + Geographic Bonus
 ```
 
-**Example (Silver Node, High Performance)**:
-```
-Tasks/day: 500
-Avg task value: 0.02 SELA
-Base: 500 × 0.02 × 1.2 (Silver multiplier) = 12 SELA/day
+**Performance Factors**:
 
-Performance:
-- Uptime: 99.5% → +30% × 0.995 = +29.85%
-- Speed: <400ms → +20%
-- Success: 98% → +50% × 0.98 = +49%
-Performance Bonus: 12 × 0.9885 = +11.86 SELA
+**Uptime**: Measures node availability. Consistent operation maximizes task allocation.
 
-Geographic (High Demand Region): 12 × 1.5 = +6 SELA
+**Speed**: Task completion latency relative to network average. Faster nodes receive priority allocation.
 
-Total: 12 + 11.86 + 6 = 29.86 SELA/day (~900 SELA/month)
-Monthly APY: (900/500) × 12 = 21.6%
-```
+**Success Rate**: Percentage of tasks completed successfully without errors or timeouts.
+
+**Geographic Demand**: Regional multipliers based on current network demand for specific geographic locations.
+
+### Economic Sustainability
+
+The token economy aligns incentives across ecosystem participants through a self-reinforcing cycle:
+
+**Developer demand** for browser automation services generates transaction fees paid in SELA tokens.
+
+**Node operator supply** expands as token rewards compensate compute resource provision and operational overhead.
+
+**Staking requirements** create capital commitment that secures network quality and discourages malicious behavior.
+
+**Marketplace fees** from data templates and verification services support ongoing protocol development.
+
+Increased AI agent adoption drives developer demand, attracting node operators through higher yields, which expands network capacity and reliability, further accelerating adoption.
+
+---
 
 ## System Requirements
 
-### Minimum Requirements (Bronze/Silver)
+### Minimum Requirements
 
-**Hardware**:
-- CPU: Dual-core processor (Intel i3/Ryzen 3 or better)
-- RAM: 4GB (8GB recommended)
-- Storage: 20GB free space (SSD preferred)
-- GPU: Integrated graphics sufficient
+Entry-level node operation requires modest hardware specifications:
 
-**Network**:
-- Download: 5 Mbps minimum
-- Upload: 2 Mbps minimum
-- Latency: <200ms to major hubs
-- Data cap: Unlimited or >500GB/month
+**Processor**: Dual-core CPU or equivalent
 
-**Operating System**:
-- Windows 10/11
-- macOS 11+ (Big Sur or later)
-- Ubuntu 20.04+, Debian 11+, or other modern Linux distros
+**Memory**: 4GB RAM minimum, 8GB recommended
 
-### Recommended Requirements (Gold/Platinum)
+**Storage**: 20GB available space, SSD preferred for performance
 
-**Hardware**:
-- CPU: Quad-core or better (Intel i5/i7, Ryzen 5/7)
-- RAM: 16GB+
-- Storage: 50GB+ SSD
-- GPU: Dedicated GPU for faster rendering (optional but beneficial)
+**Graphics**: Integrated graphics sufficient
 
-**Network**:
-- Download: 25+ Mbps
-- Upload: 10+ Mbps
-- Latency: <100ms
-- Data cap: Unlimited
+**Network**: 5 Mbps download, 2 Mbps upload minimum
 
-**Environment**:
-- Stable power supply (UPS recommended)
-- Wired Ethernet connection (more reliable than Wi-Fi)
-- Dedicated device (not shared with heavy personal use)
+**Operating System**: Windows 10 or later, macOS 11 or later, modern Linux distribution
 
-### Enterprise Requirements (Diamond)
+**Internet Service**: Stable residential connection with latency under 200ms to major network hubs
 
-**Hardware**:
-- Server CPU: 8+ cores
-- RAM: 32GB+
-- Storage: 100GB+ NVMe SSD
-- GPU: Optional rendering acceleration
+### Recommended Configuration
 
-**Network**:
-- Business-grade internet: 100+ Mbps symmetric
-- Static IP preferred
-- Redundant connection optional
+Higher-tier operation benefits from improved hardware:
 
-**Environment**:
-- Datacenter or professional hosting
-- 99.9%+ power uptime
-- Climate-controlled
+**Processor**: Quad-core or better
 
-## Setup Guide
+**Memory**: 16GB RAM or greater
 
-### Step 1: Acquire SELA Tokens
+**Storage**: 50GB or more on SSD
 
-Before running a node, you must acquire the minimum stake for your desired tier.
+**Graphics**: Dedicated GPU for accelerated rendering
 
-**Option A: DEX Purchase (Decentralized)**
-```bash
-# Example: Uniswap via terminal
-# 1. Connect wallet (MetaMask, WalletConnect)
-# 2. Swap ETH/USDC for SELA
-# 3. Confirm transaction
-```
+**Network**: 25 Mbps download, 10 Mbps upload or higher
 
-**Option B: CEX Purchase (Centralized Exchange)**
-- Available on [list of supported exchanges TBD]
-- Lower fees for large purchases
-- Simpler for non-crypto-native users
+**Connection**: Wired Ethernet preferred over wireless for latency and stability
 
-**Option C: Private Sale / OTC**
-- For large stakes (>10,000 SELA)
-- Contact partnerships@sela.network
+**Environment**: Stable power supply with UPS backup, dedicated device not shared with intensive personal use
 
-### Step 2: Install Sela Node Software
+### Professional Operation
 
-**Method A: Browser Extension (Easiest - Bronze/Silver)**
+Datacenter-grade infrastructure for maximum performance:
 
-1. Download extension for your browser:
-   - [Chrome/Edge Extension](https://chrome.google.com/webstore/sela-network)
-   - [Firefox Add-on](https://addons.mozilla.org/firefox/sela-network)
+**Processor**: Server-class CPU with 8 or more cores
 
-2. Install and activate:
-   ```
-   Click "Add to Browser" → Grant permissions → Sign in with wallet
-   ```
+**Memory**: 32GB RAM minimum
 
-3. Connect wallet and stake:
-   ```
-   Extension → Settings → Connect Wallet (MetaMask/WalletConnect)
-   → Stake Tokens → Select Tier → Confirm Transaction
-   ```
+**Storage**: 100GB or more on NVMe SSD
 
-4. Start earning:
-   ```
-   Toggle "Active" → Node begins accepting tasks automatically
-   ```
+**Network**: Business-grade internet with 100 Mbps or greater symmetric bandwidth
 
-**Method B: Desktop Application (Recommended - Gold+)**
+**Infrastructure**: Professional hosting with redundant power, climate control, and high availability
 
-Download the Sela Node application:
+---
 
-```bash
-# macOS
-curl -O https://download.sela.network/sela-node-macos.dmg
-open sela-node-macos.dmg
-# Drag to Applications folder
+## Installation and Configuration
 
-# Windows
-# Download: https://download.sela.network/sela-node-windows.exe
-# Run installer, follow prompts
+### Acquiring Stake
 
-# Linux (Ubuntu/Debian)
-wget https://download.sela.network/sela-node-linux.deb
-sudo dpkg -i sela-node-linux.deb
-sudo systemctl start sela-node
-```
+Before operating a node, acquire the minimum SELA token stake for your target tier through decentralized exchanges, centralized exchange platforms, or direct purchase arrangements.
 
-**Method C: Docker (Advanced - Platinum/Diamond)**
+### Software Installation
 
-```bash
-# Pull Sela node image
-docker pull selanetwork/browser-node:latest
+**Browser Extension Method**:
 
-# Run with persistent storage
-docker run -d \
-  --name sela-node \
-  --restart unless-stopped \
-  -v sela-data:/data \
-  -e SELA_WALLET_ADDRESS=your_wallet_address \
-  -e SELA_TIER=platinum \
-  -p 9090:9090 \
-  selanetwork/browser-node:latest
+Suitable for Bronze and Silver tiers requiring minimal configuration.
 
-# Check logs
-docker logs -f sela-node
-```
+1. Install the Sela Network browser extension from your browser's extension marketplace
+2. Activate the extension and grant necessary permissions
+3. Connect your Web3 wallet through MetaMask or WalletConnect
+4. Stake tokens by selecting your tier and confirming the transaction
+5. Toggle node status to active to begin accepting tasks
 
-### Step 3: Configuration
+**Desktop Application Method**:
 
-**Basic Settings (All Tiers)**:
+Recommended for Gold tier and above for enhanced control and performance.
+
+Download and install the Sela Node application appropriate for your operating system. Launch the application, connect your wallet, stake the required tokens, and configure operational parameters through the application interface.
+
+**Container Deployment Method**:
+
+Advanced deployment for Platinum and Diamond tier operators managing multiple nodes or requiring infrastructure automation.
+
+Deploy Sela node containers using Docker or Kubernetes orchestration platforms. Configure environment variables for wallet address, tier selection, and resource allocation. Enable persistent storage volumes for configuration and state management.
+
+### Configuration Parameters
+
+**Essential Settings**:
 
 ```yaml
-# config.yaml (located in ~/.sela/ or installation directory)
 wallet_address: "0xYourWalletAddress"
-tier: "silver"  # bronze, silver, gold, platinum, diamond
-max_concurrent_tasks: 3  # Adjust based on hardware (1-10)
-geographic_preference: "auto"  # or specific: "US", "EU", "APAC"
-bandwidth_limit: "100mbps"  # Optional: cap usage
+tier: "silver"
+max_concurrent_tasks: 3
+geographic_preference: "auto"
+bandwidth_limit: "100mbps"
 ```
 
-**Advanced Settings (Gold+)**:
+**Performance Optimization**:
 
 ```yaml
-# Performance optimizations
-render_mode: "gpu"  # Use GPU acceleration
-cache_strategy: "aggressive"  # Pre-cache common sites
-proof_generation: true  # Enable zkTLS (extra rewards)
-
-# Network settings
-use_ipv6: true  # If available
-connection_pool: 10  # Max simultaneous connections
-
-# Security
-firewall_mode: "strict"  # Isolate task execution
-auto_update: true  # Automatic security patches
+render_mode: "gpu"
+cache_strategy: "aggressive"
+proof_generation: true
+connection_pool: 10
+firewall_mode: "strict"
+auto_update: true
 ```
 
-### Step 4: Verify Operation
+Configuration files typically reside in the user's home directory or application installation path. Modify parameters to match hardware capabilities and operational objectives.
 
-**Check node status**:
+### Verification
+
+Confirm operational status through command-line interface or web dashboard:
 
 ```bash
-# CLI
 sela-node status
-
-# Expected output:
-# Status: ACTIVE
-# Tier: Silver
-# Stake: 500 SELA
-# Uptime: 99.8%
-# Tasks completed (24h): 487
-# Estimated earnings (24h): 11.2 SELA
 ```
 
-**Dashboard access**:
-Navigate to [https://dashboard.sela.network](https://dashboard.sela.network)
-- Connect wallet
-- View real-time earnings
-- Monitor performance metrics
-- Check pending rewards
+Expected output displays active status, current tier, staked amount, uptime percentage, recent task completion count, and estimated earnings.
 
-## Maximizing Earnings
+Access the web dashboard to monitor real-time earnings, performance metrics, and pending rewards.
 
-### Strategy 1: Optimize Uptime
+---
 
-Earnings are directly proportional to availability. A node offline for 1 hour loses 4.2% of potential daily earnings.
+## Optimization Strategies
+
+### Maximizing Uptime
+
+Earnings correlate directly with node availability. A node offline for one hour loses approximately 4.2% of potential daily earnings.
 
 **Best Practices**:
-- Run node on a dedicated device (not your daily laptop)
-- Enable auto-restart on system boot
-- Set up monitoring with uptime alerts
-- Use UPS (uninterruptible power supply) for power stability
 
-**Monitoring Script**:
-```bash
-#!/bin/bash
-# check_sela_node.sh - Run via cron every 5 minutes
+- Operate nodes on dedicated hardware rather than devices used for other purposes
+- Enable automatic restart on system boot
+- Implement monitoring with alerting for downtime incidents
+- Deploy uninterruptible power supplies to handle electrical disruptions
+- Use automated health checks that restart failed processes
 
-if ! pgrep -x "sela-node" > /dev/null; then
-    echo "Node offline, restarting..."
-    systemctl restart sela-node
-    curl -X POST https://api.your-alert-service.com/alert \
-      -d "Sela node was offline, auto-restarted at $(date)"
-fi
-```
+**Monitoring Implementation**:
 
-Add to crontab:
-```bash
-*/5 * * * * /path/to/check_sela_node.sh
-```
+Create monitoring scripts that periodically verify node process status and automatically restart if necessary. Schedule these checks to run at frequent intervals through system task schedulers.
 
-### Strategy 2: Geographic Arbitrage
+### Geographic Positioning
 
-Certain regions have higher demand for browser nodes due to:
-- Region-locked content (streaming services, e-commerce)
-- Regulatory requirements (financial services needing local presence)
-- Language/culture-specific data collection
+Certain geographic regions experience higher demand for node services due to:
 
-**High-Value Regions (as of 2025)**:
-- North America: 1.8x multiplier (especially US East Coast)
-- Western Europe: 1.6x multiplier (UK, DE, FR)
-- East Asia: 2.2x multiplier (JP, KR, SG - highest demand)
-- South America: 1.4x multiplier (emerging markets)
-- Africa/Middle East: 1.3x (growing demand)
+- Region-restricted content access requirements
+- Regulatory compliance mandating local data collection
+- Language and cultural specificity needs
+- Market concentration in particular territories
 
-**Strategy**:
-If you have access to devices in multiple locations (e.g., home + office + relatives abroad), run nodes in high-demand regions for maximum earnings.
+Nodes located in high-demand regions receive geographic bonus multipliers that increase effective earnings. If you have access to infrastructure across multiple locations, distribute nodes to capitalize on regional demand variations.
 
-### Strategy 3: Hardware Optimization
+### Hardware Performance
 
-**Speed = Earnings**. Faster task completion means more tasks per day.
+Task completion speed directly impacts earnings volume. Faster nodes complete more tasks per unit time, generating higher daily rewards.
 
-**Optimizations**:
-```bash
-# Increase browser performance
-# 1. Use SSD for faster page loads
-# 2. Allocate more RAM to browser processes
-# 3. Enable GPU acceleration
-# 4. Use wired Ethernet (30-50ms faster than Wi-Fi)
+**Performance Enhancements**:
 
-# Example: Configure for maximum performance
-sela-node config set performance.priority high
-sela-node config set cache.size 2GB  # Pre-cache frequent sites
-sela-node config set gpu.enabled true  # GPU rendering
-```
+- Deploy solid-state storage for reduced page load latency
+- Allocate sufficient memory to prevent resource contention
+- Enable GPU acceleration for rendering operations
+- Use wired network connections to minimize latency variance
+- Configure aggressive caching for frequently accessed sites
 
-**Benchmark your setup**:
-```bash
-sela-node benchmark
+**Performance Benchmarking**:
 
-# Target scores:
-# Page load: <500ms (Good), <300ms (Excellent)
-# Element interaction: <50ms
-# Screenshot: <150ms
-# Overall score: >85/100 for competitive earnings
-```
+Test node performance using the built-in benchmark utility to identify optimization opportunities. Target metrics include page load time under 500ms, element interaction latency under 50ms, and screenshot generation under 150ms.
 
-### Strategy 4: Specialize in High-Value Tasks
+### Premium Task Specialization
 
-Certain task types pay premium rates:
+Certain task categories command premium reward rates:
 
-**High-Value Tasks**:
-- zkTLS proof generation (+50% reward)
-- Multi-step authenticated workflows (+30%)
-- Financial data extraction (+40%)
-- Real-time trading data (+35%)
+**zkTLS Proof Generation**: Cryptographic verification tasks that generate zero-knowledge proofs of data provenance offer significantly higher compensation.
 
-**Enable premium features**:
-```yaml
-# config.yaml
-premium_tasks:
-  zktls_proofs: true  # +50% earnings
-  auth_workflows: true  # +30% earnings
-  financial_data: true  # +40% earnings (requires KYC)
-```
+**Authenticated Workflows**: Multi-step processes requiring login and session management provide premium rewards.
 
-**KYC for Financial Tier**:
-Some high-value tasks require identity verification to comply with regulations. Complete KYC to unlock:
-```bash
-sela-node kyc start
-# Follow prompts for identity verification
-# Approval typically takes 24-48 hours
-```
+**Financial Data Extraction**: High-value financial information retrieval pays enhanced rates but may require identity verification for regulatory compliance.
 
-### Strategy 5: Multi-Node Operation
+**Real-Time Trading Data**: Time-sensitive market data collection commands premium compensation.
 
-[Similar to Helium hotspot networks](https://www.rapidinnovation.io/post/top-depin-cryptocurrencies-to-watch-in-2024), running multiple nodes compounds earnings:
+Enable premium task categories in configuration to receive allocation of higher-value work. Some categories require identity verification to satisfy regulatory requirements.
 
-**Example**:
-- 3× Silver nodes (different locations) = 3 × ~10 SELA/day = ~900 SELA/month
-- 1× Gold node = ~40 SELA/day = ~1,200 SELA/month
-- **Total**: ~2,100 SELA/month (vs ~1,200 for single Gold node)
+### Multi-Node Operation
 
-**Management**:
-```bash
-# Centralized dashboard for multi-node operators
-sela-node-manager add --name home-node-1 --ip 192.168.1.100
-sela-node-manager add --name office-node-2 --ip 192.168.1.101
-sela-node-manager add --name datacenter-node-3 --ip 10.0.50.25
+Operating multiple nodes compounds earnings potential through geographic diversification and capacity multiplication.
 
-# Monitor all nodes from single interface
-sela-node-manager status --all
-```
+Distribute nodes across different physical locations to capture geographic bonuses while expanding total processing capacity. Centralized management tools enable monitoring and control of multiple node instances through unified interfaces.
 
-## Security & Privacy
+Calculate optimal allocation between multiple lower-tier nodes versus single higher-tier nodes based on hardware availability, geographic access, and capital constraints.
 
-### Isolation
+---
 
-Sela nodes run browser tasks in isolated environments to protect your data:
+## Security and Privacy
+
+### Execution Isolation
+
+Sela nodes execute browser tasks in isolated environments to protect operator privacy and system security:
 
 **Technical Implementation**:
-- Separate browser profiles for each task
-- Automatic cookie clearing after task completion
-- No access to your personal browser data
-- Sandboxed execution prevents malicious code
 
-**Verification**:
-```bash
-# Check isolation status
-sela-node security status
+- Separate browser profiles for each task prevent state contamination
+- Automatic data clearing after task completion removes persistent artifacts
+- No access to operator's personal browser data or local files
+- Sandboxed execution through browser-native isolation mechanisms prevents malicious code execution
 
-# Expected output:
-# Isolation: ACTIVE
-# Profile separation: ENABLED
-# Auto-cleanup: ENABLED
-# Sandbox: Enabled (Chrome/Chromium)
-```
+Verify isolation status through the security diagnostic interface to confirm proper configuration.
 
 ### Data Privacy
 
-**What Sela CAN'T access**:
-- Your personal browsing history
-- Your saved passwords
-- Your bookmarks or extensions
-- Your files or documents
+**Operator Data Protection**:
 
-**What Sela CAN see**:
-- IP address (necessary for geolocation)
-- Browser type and version (for compatibility)
-- Task completion metrics (for rewards calculation)
+The node software cannot access personal browsing history, saved passwords, bookmarks, browser extensions, or local files. Isolation mechanisms ensure task execution remains completely separate from operator's personal computing activities.
 
-### Firewall Configuration
+**Network Visibility**:
 
-Allow Sela node traffic:
+The network observes IP address for geographic routing, browser type and version for compatibility management, and task completion metrics for reward calculation. No other operator data is collected or transmitted.
 
-```bash
-# Linux (ufw)
-sudo ufw allow 9090/tcp  # Node communication
-sudo ufw allow 443/tcp   # HTTPS traffic
-sudo ufw allow 80/tcp    # HTTP traffic
+### Network Security
 
-# macOS
-# System Preferences → Security & Privacy → Firewall → Firewall Options
-# Add "Sela Node" to allowed applications
+Configure firewall rules to allow necessary network traffic while maintaining security:
 
-# Windows Firewall
-# Allow "Sela Node" in Windows Defender Firewall settings
-```
+Allow inbound connections on the node communication port and outbound HTTPS/HTTP traffic for web access. Block all other unnecessary ports to minimize attack surface.
 
-## Monitoring & Troubleshooting
+Maintain system and application security updates to address vulnerabilities. Enable automatic updates in configuration for security patches.
 
-### Dashboard Metrics
+---
 
-Key Performance Indicators (KPIs) to monitor:
+## Monitoring and Maintenance
 
-**Uptime**: Target 99%+
-- Current uptime percentage
-- Downtime incidents (last 30 days)
-- Availability trend
+### Performance Metrics
 
-**Task Completion Rate**: Target 95%+
-- Successful vs failed tasks
-- Failure reasons (timeout, selector not found, etc.)
-- Retry rate
+Monitor key performance indicators through the dashboard interface:
 
-**Response Time**: Target <500ms
-- P50, P95, P99 latencies
-- Comparison to network average
-- Speed ranking
+**Uptime**: Current availability percentage and historical downtime incidents. Target 99% or higher for optimal earnings.
 
-**Earnings**:
-- Daily/weekly/monthly trends
-- Pending rewards
-- Claimed rewards
-- Estimated next payout
+**Task Completion Rate**: Ratio of successful to total tasks attempted. Target 95% or higher to avoid performance penalties.
 
-### Common Issues
+**Response Time**: Task execution latency including percentile distributions. Compare against network average to identify performance issues.
 
-**Issue**: Low task volume
-**Cause**: Low demand in your region or tier oversaturation
-**Solution**:
-- Upgrade tier for priority task assignment
-- Enable premium features (zkTLS, financial data)
-- Consider geographic arbitrage if possible
+**Earnings**: Daily, weekly, and monthly reward trends showing pending and claimed amounts.
 
-**Issue**: High failure rate
-**Cause**: Slow internet, outdated browser, insufficient resources
-**Solution**:
-```bash
-# Update browser engine
-sela-node update browser
+### Troubleshooting Common Issues
 
-# Increase resource allocation
-sela-node config set resources.cpu_cores 4
-sela-node config set resources.memory_mb 4096
+**Low Task Volume**:
 
-# Check network speed
-sela-node diagnostic network
-```
+Insufficient task allocation may result from low regional demand or tier oversaturation. Consider tier upgrades for priority allocation, enable premium task categories, or evaluate geographic repositioning.
 
-**Issue**: Rewards not appearing
-**Cause**: Minimum withdrawal threshold not met, or reward distribution delay
-**Solution**:
-- Check minimum withdrawal: Typically 10 SELA
-- Rewards distribute weekly on Sundays at 00:00 UTC
-- Verify wallet address is correct in config
+**High Failure Rate**:
 
-**Issue**: Node offline unexpectedly
-**Cause**: System crash, network disruption, software bug
-**Solution**:
-- Enable auto-restart: `sela-node config set auto_restart true`
-- Check logs: `sela-node logs --tail 100`
-- Report persistent issues: support@sela.network
+Excessive task failures typically indicate inadequate resources or connectivity issues. Verify internet speed meets requirements, update browser engine to latest version, increase resource allocation in configuration, and review diagnostic reports for specific error patterns.
+
+**Delayed Rewards**:
+
+Verify minimum withdrawal thresholds have been met. Confirm reward distribution schedule alignment. Validate wallet address accuracy in configuration.
+
+**Unexpected Downtime**:
+
+Enable automatic restart functionality in configuration. Review system logs to identify crash causes. Verify adequate system resources remain available. Report persistent issues through support channels.
 
 ### Diagnostic Tools
 
+The node software includes comprehensive diagnostic utilities:
+
 ```bash
-# Comprehensive diagnostic check
 sela-node diagnostic --full
-
-# Checks:
-# ✓ Internet connectivity
-# ✓ Browser engine status
-# ✓ Wallet connection
-# ✓ Firewall configuration
-# ✓ Resource availability
-# ✓ Performance benchmark
-
-# Network testing
-sela-node test --duration 60s
-# Simulates real tasks for 60 seconds, reports performance
 ```
 
-## Reward Distribution & Withdrawal
+Diagnostic checks verify internet connectivity, browser engine status, wallet connection, firewall configuration, resource availability, and performance benchmarks. Generate diagnostic reports for troubleshooting or support requests.
+
+---
+
+## Reward Distribution
 
 ### Distribution Schedule
 
-Rewards accumulate in real-time but distribute on a weekly basis:
+Rewards accumulate continuously based on task completion but distribute according to a fixed schedule:
 
-**Timeline**:
-- **Monday-Sunday**: Earn rewards for completed tasks
-- **Sunday 00:00 UTC**: Snapshot of earned rewards
-- **Sunday 02:00 UTC**: Distribution to wallets
-- **Available for withdrawal**: Immediately after distribution
+Tasks completed throughout the week generate earned rewards. Weekly distribution snapshots calculate final amounts and transfer tokens to operator wallets. Rewards become available for withdrawal immediately after distribution.
 
 ### Withdrawal Process
 
-```bash
-# Check pending rewards
-sela-node rewards pending
-# Output: 127.5 SELA pending
+Check pending reward balance through command-line interface or web dashboard. Initiate withdrawals once minimum threshold is met. Transaction fees are deducted from reward balance.
 
-# Withdraw to wallet (minimum: 10 SELA)
-sela-node rewards withdraw --amount 127.5
-# Confirmation: Transaction submitted, hash: 0xabc...def
+### Record Keeping
 
-# Or withdraw via dashboard
-# https://dashboard.sela.network → Rewards → Withdraw
-```
+Export earnings reports for tax and accounting purposes. Generated reports include task completion dates, token amounts earned, market value at time of distribution, and transaction identifiers.
 
-**Fees**:
-- Minimum withdrawal: 10 SELA
-- Network fee: Standard gas (paid from reward balance)
-- No platform withdrawal fee
+Consult qualified tax professionals regarding reporting requirements in your jurisdiction, as regulations vary significantly across countries and regions.
 
-### Tax Considerations
+---
 
-Node operation earnings may be taxable in your jurisdiction.
+## Tier Upgrades
 
-**Consult a tax professional**, but general guidance:
+### Increasing Stake
 
-**United States**:
-- Earned tokens are taxable as ordinary income (fair market value at receipt)
-- Token value changes are capital gains/losses when sold
-
-**European Union**:
-- Varies by country; often treated as self-employment income
-- VAT may apply in some jurisdictions
-
-**Record Keeping**:
-```bash
-# Export earnings report for tax purposes
-sela-node reports tax --year 2025 --format csv
-# Generates: sela_earnings_2025.csv
-# Columns: Date, Tasks, Earnings (SELA), USD Value, Tx Hash
-```
-
-## Upgrading Your Node
-
-### Increasing Stake (Tier Upgrade)
-
-To upgrade tiers, increase your staked SELA:
+Upgrade to higher tiers by increasing staked token amount:
 
 ```bash
-# Check current stake
-sela-node stake status
-# Output: Current stake: 500 SELA (Silver tier)
-
-# Upgrade to Gold (requires 2,000 SELA total)
-sela-node stake increase --amount 1500  # Add 1,500 to reach 2,000
-# Confirm transaction in wallet
-# New tier active immediately after blockchain confirmation
+sela-node stake increase --amount [additional_tokens]
 ```
 
-**Benefits of Upgrading**:
-- Higher task priority
-- Better multipliers
-- Access to premium tasks
-- Increased earnings potential
+Confirm the transaction through your wallet. New tier status activates immediately after blockchain confirmation. Higher tiers provide improved task priority, enhanced multipliers, access to premium task categories, and increased earnings potential.
 
-### Hardware Upgrades
+### Hardware Migration
 
-When upgrading hardware, transfer your node:
+When upgrading physical hardware, export node configuration from the original device and import on the new system. Stake, tier, and operational history transfer seamlessly without requiring new staking transactions.
 
-```bash
-# On old device: Export configuration
-sela-node export --output sela-config-backup.json
+---
 
-# On new device: Import configuration
-sela-node import --input sela-config-backup.json
-# Your stake, tier, and history transfer seamlessly
-```
+## Advanced Operations
 
-## Community & Support
+### Enterprise-Scale Deployment
 
-### Resources
+Organizations operating large node fleets benefit from infrastructure automation:
 
-**Documentation**: [https://docs.sela.network](https://docs.sela.network)
+Deploy containerized nodes through Kubernetes orchestration for centralized management and scaling. Implement monitoring infrastructure using observability platforms. Automate provisioning and configuration through infrastructure-as-code tools. Distribute nodes geographically through multi-region cloud or colocation deployments.
 
-**Node Operator Forum**: [https://forum.sela.network/node-operators](https://forum.sela.network/node-operators)
+### Penalty Mechanisms
 
-**Discord**: Join #node-operators channel for real-time help
+The network implements stake-based penalties for malicious or negligent behavior:
 
-**Telegram**: Node operator chat for quick questions
+**Slashable Violations**:
 
-**GitHub**: [https://github.com/sela-network/node-software](https://github.com/sela-network/node-software) (report bugs, suggest features)
+- Data tampering: Significant stake reduction
+- Fraudulent cryptographic proofs: Major to complete stake loss
+- Extended unavailability: Moderate stake penalty
+- Security breaches: Substantial stake reduction
 
-### Getting Help
+**Protection Mechanisms**:
 
-**Support Channels** (in order of response time):
-1. **Discord/Telegram**: 10-30 min average response (community-driven)
-2. **Forum**: 2-24 hours (detailed technical discussions)
-3. **Email** (support@sela.network): 24-48 hours (official support)
+Minor technical failures generate warnings without penalties. Unintentional errors exempt from slashing with available appeal processes. Governance mechanisms review disputed cases.
 
-**Before asking for help**:
-```bash
-# Generate diagnostic report
-sela-node diagnostic --export diagnostic-report.json
+**Prevention Best Practices**:
 
-# Include in support request:
-# - Node ID
-# - Tier
-# - Operating system
-# - Description of issue
-# - Diagnostic report
-```
+Maintain current software versions, monitor node health proactively, never manipulate task data, sustain adequate uptime, and implement robust security practices.
 
-## Advanced Topics
+---
 
-### Running Nodes at Scale (100+ Nodes)
+## Support Resources
 
-For operators managing large node fleets:
+### Documentation
 
-**Infrastructure**:
-- Kubernetes deployment for containerized nodes
-- Centralized monitoring (Prometheus + Grafana)
-- Automated provisioning with Terraform/Ansible
-- Load balancer for geographic distribution
+Comprehensive technical documentation covers all aspects of node operation, configuration, troubleshooting, and optimization.
 
-**Contact**: enterprise@sela.network for dedicated support and custom SLAs.
+### Community Channels
 
-### Slashing & Penalties
+Node operator communities provide peer support, knowledge sharing, and real-time assistance through forum discussions and chat platforms.
 
-[Following Ethereum's slashing model](https://figment.io/insights/staking-penalties/), Sela implements penalties for malicious behavior:
+### Technical Support
 
-**Slashable Offenses**:
-- Data tampering: 30-50% stake slashed
-- Fake zkTLS proofs: 50-100% stake slashed
-- Prolonged downtime: 5-15% stake slashed
-- Security violations: 20-40% stake slashed
+Official support channels address complex technical issues, account problems, and escalated concerns requiring development team involvement.
 
-**Protection**:
-- Minor issues (1-2 failures): Warning only
-- Technical errors: Exempt from slashing (appeal process available)
-- DAO governance review for disputes
+**Support Request Preparation**:
 
-**Best practices to avoid slashing**:
-- Keep software updated
-- Monitor node health
-- Don't tamper with task data
-- Maintain adequate uptime
+Generate diagnostic reports before contacting support. Include node identifier, tier level, operating system details, issue description, and diagnostic output in support requests for faster resolution.
+
+---
 
 ## Conclusion
 
-Operating a Sela Network node provides an opportunity to participate in the AI agent infrastructure revolution while earning passive income. With realistic APYs of 15-35%, minimal hardware requirements for entry-level tiers, and a growing market ([$30B DePIN sector in 2025](https://www.iex.ec/academy/depin-sector-trends-market-cap)), node operation represents a sustainable income stream aligned with long-term technological trends.
+Operating a Sela Network node enables participation in decentralized infrastructure supporting the AI agent ecosystem while generating token-based compensation. The network's design provides accessible entry points through Bronze and Silver tiers while offering scaling opportunities for professional operators through Platinum and Diamond tiers.
 
-Success as a node operator depends on:
-- Consistent uptime (99%+ target)
-- Strategic tier selection matching your resources
-- Geographic positioning in high-demand regions
-- Performance optimization (faster = more tasks = higher earnings)
-- Multi-node diversification for advanced operators
+Success as a node operator requires:
 
-As the [AI agent market grows to $105.6B by 2034](https://www.gminsights.com/industry-analysis/ai-agents-market), demand for browser automation infrastructure will expand proportionally, creating sustained earning opportunities for node operators who build reliable, high-performance infrastructure.
+**Operational reliability** through consistent uptime and system maintenance
 
-## Sources
+**Strategic tier selection** matching available resources and capital
 
-- [DePIN Sector Trends & Market Cap 2025](https://www.iex.ec/academy/depin-sector-trends-market-cap) - Market overview
-- [Top 5 DePIN Cryptocurrencies for 2024](https://www.rapidinnovation.io/post/top-depin-cryptocurrencies-to-watch-in-2024) - Helium, Filecoin case studies
-- [New Models for Utility Tokens](https://multicoin.capital/2018/02/13/new-models-utility-tokens/) - Work token model economics
-- [Staking Penalties - Figment](https://figment.io/insights/staking-penalties/) - Ethereum slashing mechanisms
-- [AI Agents Market Growth 2025-2034](https://www.gminsights.com/industry-analysis/ai-agents-market) - Demand projections
+**Performance optimization** to maximize task throughput and earnings efficiency
+
+**Geographic awareness** of regional demand variations and positioning opportunities
+
+**Security diligence** to protect operator privacy and maintain network integrity
+
+As AI agent adoption expands, demand for decentralized web interaction infrastructure grows proportionally. Node operators providing reliable, high-performance infrastructure capture value from this fundamental technology transition enabling autonomous systems to interact with the web at scale.
+
+The system's economic model creates sustainable incentives through developer demand for services, node operator supply of infrastructure, staking-based security mechanisms, and marketplace-driven value capture. This self-reinforcing cycle positions node operators to benefit from long-term growth in AI agent utilization across industries and applications.
