@@ -1,0 +1,832 @@
+/* Sela Network Custom Theme - Supabase Inspired Dark Theme */
+
+:root {
+  /* Primary Colors - Dark Theme - Sela Yellow */
+  --sl-color-accent: #aa8500;
+  --sl-color-accent-low: #9a7200;
+  --sl-color-accent-high: #b89300;
+
+  /* Background - Dark Black/Gray */
+  --sl-color-bg: #0a0a0a;
+  --sl-color-bg-nav: #121212;
+  --sl-color-bg-sidebar: #0a0a0a;
+
+  /* Text - Toned down White/Gray for dark background */
+  --sl-color-text: #d4d4d4;
+  --sl-color-text-accent: #d8d8d8;
+
+  /* Grays - Dark theme palette */
+  --sl-color-gray-1: #0a0a0a;
+  --sl-color-gray-2: #121212;
+  --sl-color-gray-3: #1a1a1a;
+  --sl-color-gray-4: #525252;
+  --sl-color-gray-5: #a3a3a3;
+  --sl-color-gray-6: #d4d4d4;
+
+  /* Highlights */
+  --sl-color-hairline: #1a1a1a;
+  --sl-color-hairline-light: #262626;
+
+  /* White text - toned down */
+  --sl-color-white: #d8d8d8;
+}
+
+/* Dark mode adjustments */
+:root[data-theme="dark"] {
+  --sl-color-bg: #0f172a;
+  --sl-color-bg-nav: #1e293b;
+  --sl-color-bg-sidebar: #1e293b;
+  --sl-color-text: #f1f5f9;
+  --sl-color-text-accent: #e2e8f0;
+  --sl-color-accent: #3b82f6;
+  --sl-color-accent-high: #60a5fa;
+  --sl-color-hairline: #334155;
+}
+
+/* Typography - Better readability */
+body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #d4d4d4;
+  background: #0a0a0a;
+}
+
+.content-panel,
+.sl-container,
+main .content-panel,
+article,
+.sl-markdown-content {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 2rem !important;
+}
+
+/* Add spacing for first H2 heading in content */
+.content > h2:first-child,
+.sl-markdown-content > h2:first-child,
+main h2:first-of-type,
+article h2:first-of-type {
+  margin-top: 3rem !important;
+}
+
+/* Hero Section */
+.hero {
+  background: #0a0a0a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 3rem 0;
+}
+
+.hero h1,
+hero h1,
+[class*="hero"] h1 {
+  color: #d8d8d8 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  font-size: 3rem !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+}
+
+.hero .tagline {
+  color: #a3a3a3;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  border-left: 4px solid #aa8500;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Code blocks - Better contrast */
+pre {
+  background: #0a0a0a !important;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 1.5rem !important;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+pre code {
+  background: transparent !important;
+  color: #d8d8d8 !important;
+  padding: 0;
+}
+
+code,
+.content code,
+.sl-markdown-content code,
+main code,
+article code {
+  background: #1a1a1a !important;
+  color: #aa8500 !important;
+  padding: 0.2em 0.5em !important;
+  border-radius: 4px !important;
+  font-family: "Monaco", "Courier New", monospace !important;
+  font-size: 0.9em !important;
+  font-weight: 600 !important;
+  border: 1px solid #262626 !important;
+}
+
+/* Tables - Clean and readable */
+table,
+.content table,
+.sl-markdown-content table,
+main table,
+article table {
+  border: 1px solid #1a1a1a !important;
+  background: #121212 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: auto !important;
+  margin: 1.5rem 0 !important;
+  font-size: 0.95rem !important;
+  display: table !important;
+}
+
+table thead,
+.content table thead,
+.sl-markdown-content table thead,
+main table thead,
+article table thead {
+  background: #1a1a1a !important;
+  border-bottom: 1px solid #262626 !important;
+}
+
+table thead th,
+.content table thead th,
+.sl-markdown-content table thead th,
+main table thead th,
+article table thead th {
+  padding: 1rem 1.25rem !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+  color: #d8d8d8 !important;
+  font-size: 0.9rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  width: auto !important;
+}
+
+table tbody tr,
+.content table tbody tr,
+.sl-markdown-content table tbody tr,
+main table tbody tr,
+article table tbody tr {
+  border-bottom: 1px solid #1a1a1a !important;
+  transition: background-color 0.15s ease !important;
+}
+
+table tbody tr:hover,
+.content table tbody tr:hover,
+.sl-markdown-content table tbody tr:hover,
+main table tbody tr:hover,
+article table tbody tr:hover {
+  background: #1a1a1a !important;
+}
+
+table tbody tr:last-child,
+.content table tbody tr:last-child,
+.sl-markdown-content table tbody tr:last-child,
+main table tbody tr:last-child,
+article table tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+table tbody td,
+.content table tbody td,
+.sl-markdown-content table tbody td,
+main table tbody td,
+article table tbody td {
+  padding: 1rem 1.25rem !important;
+  color: #d4d4d4 !important;
+  line-height: 1.6 !important;
+  width: auto !important;
+}
+
+/* Workflow arrows and diagrams - Yellow underline for all h2 */
+h2::after,
+.content-panel h2::after,
+.sl-markdown-content h2::after,
+main h2::after,
+article h2::after,
+section h2::after {
+  content: "" !important;
+  display: block !important;
+  width: 60px !important;
+  height: 3px !important;
+  background: #aa8500 !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Buttons and CTAs */
+.sl-link-button,
+button,
+[class*="button"],
+.btn {
+  background: #aa8500 !important;
+  color: #0a0a0a !important;
+  border: 2px solid #aa8500 !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+
+.sl-link-button:hover,
+button:hover,
+[class*="button"]:hover,
+.btn:hover {
+  background: #9a7200 !important;
+  border-color: #9a7200 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3) !important;
+}
+
+/* Cards and content blocks */
+.card,
+.content-panel,
+[class*="card"],
+section.card,
+div.card {
+  background: #121212 !important;
+  border: 1px solid #1a1a1a !important;
+  border-radius: 8px !important;
+  padding: 1.5rem !important;
+  margin: 1rem 0 !important;
+  position: relative !important;
+}
+
+.card::before,
+[class*="card"]::before,
+section.card::before,
+div.card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 4px !important;
+  height: 100% !important;
+  background: #aa8500 !important;
+}
+
+/* Sidebar - Better contrast */
+nav.sidebar {
+  background: #0a0a0a;
+  border-right: 1px solid #1a1a1a;
+}
+
+.sidebar a {
+  color: #a3a3a3;
+  transition: all 0.15s ease;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: block;
+}
+
+.sidebar a:hover {
+  background: #1a1a1a;
+  color: #d8d8d8;
+}
+
+.sidebar a[aria-current="page"] {
+  background: #1a1a1a;
+  color: #aa8500;
+  font-weight: 700;
+  border-left: 3px solid #aa8500;
+  padding-left: calc(1rem - 3px);
+}
+
+/* Headers - Clear hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4,
+.sl-markdown-content h5,
+.sl-markdown-content h6,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6 {
+  color: #d8d8d8 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.3 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+h1,
+.content h1,
+.sl-markdown-content h1,
+main h1,
+article h1,
+section h1 {
+  font-size: 2.5rem !important;
+  border-bottom: 1px solid #1a1a1a !important;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 2rem !important;
+}
+
+h2,
+.content h2,
+.sl-markdown-content h2,
+main h2,
+article h2,
+section h2 {
+  font-size: 2rem !important;
+  color: #d8d8d8 !important;
+  margin-top: 3rem !important;
+  border-bottom: 1px solid #1a1a1a !important;
+  padding-bottom: 0.5rem !important;
+}
+
+h3,
+.content h3,
+.sl-markdown-content h3,
+main h3,
+article h3,
+section h3 {
+  font-size: 1.5rem !important;
+  color: #d4d4d4 !important;
+  margin-top: 2rem !important;
+}
+
+h4,
+.content h4,
+.sl-markdown-content h4,
+main h4,
+article h4,
+section h4 {
+  font-size: 1.25rem !important;
+  color: #d4d4d4 !important;
+}
+
+/* Better paragraph spacing */
+p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  color: #a3a3a3;
+}
+
+/* Blockquotes - highlighted sections */
+blockquote,
+.content blockquote,
+.sl-markdown-content blockquote,
+main blockquote,
+article blockquote {
+  background: #121212 !important;
+  border-left: 4px solid #aa8500 !important;
+  padding: 1.5rem 2rem !important;
+  margin: 2rem 0 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+  color: #d4d4d4 !important;
+  border-radius: 0 8px 8px 0 !important;
+  border: 1px solid #1a1a1a !important;
+  border-left: 4px solid #aa8500 !important;
+}
+
+blockquote p {
+  margin: 0;
+  font-weight: 500;
+}
+
+blockquote strong {
+  color: #d8d8d8;
+  font-weight: 700;
+}
+
+/* Lists - Better spacing and readability */
+ul,
+ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  color: #a3a3a3;
+}
+
+ul li::marker,
+.content ul li::marker,
+.sl-markdown-content ul li::marker,
+main ul li::marker,
+article ul li::marker {
+  color: #aa8500 !important;
+  font-weight: bold !important;
+}
+
+/* Nested lists */
+li > ul,
+li > ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Horizontal rules */
+hr {
+  border: none;
+  border-top: 1px solid #1a1a1a;
+  margin: 2rem 0;
+  position: relative;
+}
+
+hr::after {
+  content: "";
+  display: none;
+}
+
+/* Badges and labels */
+.badge,
+[class*="badge"],
+.label,
+[class*="label"] {
+  background: #1a1a1a !important;
+  color: #aa8500 !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 4px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+  border: 1px solid #262626 !important;
+}
+
+/* Stats boxes */
+.stats-container {
+  background: #121212;
+  color: #d8d8d8;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  border: 1px solid #1a1a1a;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-number,
+[class*="stat"] .number,
+[class*="stat-number"] {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #aa8500 !important;
+  display: block !important;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #a3a3a3;
+  margin-top: 0.5rem;
+}
+
+/* Hatched pattern backgrounds for emphasis */
+.emphasis-block,
+[class*="emphasis"] {
+  background: #121212 !important;
+  padding: 1.5rem !important;
+  border: 1px solid #1a1a1a !important;
+  border-radius: 8px !important;
+  margin: 1rem 0 !important;
+  border-left: 4px solid #aa8500 !important;
+}
+
+/* Navigation breadcrumbs */
+.breadcrumbs {
+  color: #a3a3a3;
+  font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+  color: #d4d4d4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumbs a:hover,
+[class*="breadcrumb"] a:hover {
+  color: #aa8500 !important;
+  text-decoration: underline !important;
+}
+
+/* Footer */
+footer {
+  background: #0a0a0a;
+  color: #a3a3a3;
+  border-top: 1px solid #1a1a1a;
+}
+
+footer a {
+  color: #d4d4d4;
+  opacity: 0.9;
+}
+
+footer a:hover,
+[role="contentinfo"] a:hover {
+  color: #aa8500 !important;
+  opacity: 1 !important;
+  text-decoration: underline !important;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Link styles - Better visibility */
+a,
+.content a,
+.sl-markdown-content a,
+main a,
+article a {
+  color: #aa8500 !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+
+a:hover,
+.content a:hover,
+.sl-markdown-content a:hover,
+main a:hover,
+article a:hover {
+  color: #b89300 !important;
+  text-decoration: underline !important;
+}
+
+.content a,
+.sl-markdown-content a,
+main a,
+article a {
+  border-bottom: 1px solid #9a7200 !important;
+}
+
+.content a:hover,
+.sl-markdown-content a:hover,
+main a:hover,
+article a:hover {
+  border-bottom-color: #aa8500 !important;
+}
+
+/* Selection highlight */
+::selection,
+::-moz-selection {
+  background: #aa8500 !important;
+  color: #0a0a0a !important;
+}
+
+/* Strong emphasis */
+strong {
+  color: #d8d8d8;
+  font-weight: 700;
+}
+
+/* Better spacing for content */
+.content > * + * {
+  margin-top: 1.5rem;
+}
+
+.content > h2 + *,
+.content > h3 + * {
+  margin-top: 1rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 6px;
+  border: 2px solid #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #262626;
+}
+
+/* ============================================ */
+/* STARLIGHT SPECIFIC OVERRIDES - DARK THEME */
+/* ============================================ */
+
+/* Header - Top navigation bar */
+header {
+  background: #0a0a0a !important;
+  border-bottom: 1px solid #1a1a1a !important;
+}
+
+.site-title,
+.site-title a {
+  color: #d8d8d8 !important;
+  font-weight: 700 !important;
+}
+
+/* Search button - HIDDEN */
+.search-input,
+button[aria-label*="Search"],
+[data-search-modal-trigger],
+.site-search,
+[class*="search"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Theme toggle - HIDDEN */
+.theme-toggle,
+.theme-select-wrapper,
+.theme-select,
+starlight-theme-select,
+[data-theme-toggle],
+[class*="theme-select"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Social icons in header */
+.social-icons a {
+  color: #d4d4d4 !important;
+}
+
+.social-icons a:hover {
+  color: #aa8500 !important;
+}
+
+/* Right sidebar - "On this page" */
+.right-sidebar,
+.right-sidebar-panel,
+aside.right-sidebar {
+  background: #0a0a0a !important;
+  border-left: 1px solid #1a1a1a !important;
+}
+
+.right-sidebar h2,
+.right-sidebar-panel h2 {
+  color: #d8d8d8 !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.right-sidebar a,
+.right-sidebar-panel a {
+  color: #a3a3a3 !important;
+  font-weight: 500 !important;
+}
+
+.right-sidebar a:hover,
+.right-sidebar-panel a:hover {
+  color: #aa8500 !important;
+}
+
+.right-sidebar a[aria-current="true"],
+.right-sidebar-panel a[aria-current="true"] {
+  color: #aa8500 !important;
+  font-weight: 700 !important;
+}
+
+/* Main content area */
+main {
+  background: #0a0a0a !important;
+}
+
+.content-panel,
+.sl-markdown-content {
+  background: #0a0a0a !important;
+}
+
+/* Navigation (left sidebar) */
+nav {
+  background: #0a0a0a !important;
+}
+
+.sidebar-content {
+  background: #0a0a0a !important;
+}
+
+/* Sidebar group labels */
+.sidebar details summary {
+  color: #d8d8d8 !important;
+  font-weight: 600 !important;
+}
+
+/* Sidebar links */
+.sidebar ul {
+  list-style: none !important;
+}
+
+.sidebar li a {
+  color: #a3a3a3 !important;
+}
+
+.sidebar li a:hover {
+  color: #d8d8d8 !important;
+  background: #1a1a1a !important;
+}
+
+.sidebar li a[aria-current="page"] {
+  color: #aa8500 !important;
+  background: #1a1a1a !important;
+  font-weight: 700 !important;
+}
+
+/* Page title - Override with more spacing */
+.content h1:first-of-type,
+.sl-markdown-content h1:first-of-type,
+main h1:first-of-type,
+article h1:first-of-type,
+section h1:first-of-type {
+  color: #d8d8d8 !important;
+  border-bottom: 1px solid #1a1a1a !important;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+/* Mobile menu */
+.mobile-menu,
+.mobile-menu-toggle {
+  background: #0a0a0a !important;
+  color: #d8d8d8 !important;
+  border: 1px solid #1a1a1a !important;
+}
+
+/* Pagination */
+.pagination-links a {
+  background: #121212 !important;
+  color: #d4d4d4 !important;
+  border: 1px solid #1a1a1a !important;
+}
+
+.pagination-links a:hover {
+  background: #1a1a1a !important;
+  border-color: #aa8500 !important;
+  color: #aa8500 !important;
+}
+
+/* ============================================ */
+/* TABLE CONTAINER - ENSURE FULL WIDTH */
+/* ============================================ */
+
+/* Ensure table containers don't restrict width */
+.content > *:has(table),
+.sl-markdown-content > *:has(table),
+main > *:has(table),
+article > *:has(table),
+div:has(> table) {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
+
+/* Ensure table wrapper divs are full width */
+.table-container,
+.table-wrapper,
+div[class*="table"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+}
