@@ -3,6 +3,51 @@ title: 비전
 description: Sela Network의 장기 비전 및 미래 전망
 ---
 
+## 시장 기회
+
+### AI 에이전트 시장의 폭발적 성장
+
+[Agentic AI 시장은 2025년 USD 7.06 billion에서 2032년 USD 93.20 billion으로 성장할 것으로 예상](https://www.marketsandmarkets.com/PressReleases/agentic-ai.asp)되며, 연평균 성장률(CAGR) **44.6%**를 기록할 전망입니다.
+
+**주요 시장 전망:**
+- [AI 에이전트 시장](https://www.grandviewresearch.com/industry-analysis/ai-agents-market-report): $5.40B (2024) → $50.31B (2030), CAGR 45.8%
+- [글로벌 AI 에이전트](https://www.precedenceresearch.com/ai-agents-market): $7.92B (2025) → $236.03B (2034), CAGR 45.82%
+- [기업 도입률](https://www.index.dev/blog/ai-agents-statistics): **85%의 기업이 2025년 말까지 AI 에이전트를 구현**할 것으로 예상
+
+**투자 트렌드:**
+[AI 에이전트 스타트업은 2024년에 $3.8B를 조달](https://www.warmly.ai/p/blog/ai-agents-statistics)하여 2023년 대비 **거의 3배** 증가했으며, 모든 빅테크 기업이 이미 AI 에이전트를 개발하거나 도구를 제공하고 있습니다.
+
+### DePIN 시장의 급성장
+
+[2025년 2월 기준, 전 세계 1,561개의 DePIN 프로젝트가 존재하며 총 시가총액은 $30 billion](https://mapmetrics.org/blog/depin-in-2025-the-future-of-decentralized-infrastructure-networks/)에 달합니다.
+
+**DePIN 시장 전망:**
+- 현재(2025): [$30-50 billion 시가총액](https://www.iex.ec/academy/depin-sector-trends-market-cap)
+- 2028년 예상: [$3.5 trillion까지 성장](https://www.gate.io/learn/articles/2025-de-pin-market-outlook-and-trends/6556)
+- 성장률: [2024년 $5.2B에서 2025년 9월 $19.2B로 약 270% 연간 증가](https://onchain.org/magazine/understanding-the-future-of-depin-in-2025/)
+
+**시장 잠재력:**
+현재 DePIN은 [$1 trillion 규모의 글로벌 인프라 시장의 0.1% 미만](https://www.gate.io/learn/articles/2025-de-pin-market-outlook-and-trends/6556)을 차지하여 **막대한 성장 잠재력**을 보여줍니다.
+
+### Sela Network의 포지셔닝
+
+Sela Network는 **AI 에이전트**와 **DePIN** 두 개의 고성장 시장이 교차하는 지점에 위치합니다:
+
+```
+AI 에이전트 시장 ($93.20B by 2032)
+         ×
+DePIN 시장 ($3.5T by 2028)
+         =
+Sela Network의 TAM (Total Addressable Market)
+```
+
+**경쟁 우위:**
+- 중앙화 웹 스크래핑 솔루션 대비 **70-87% 비용 절감**
+- 유일한 **암호학적 검증 가능(zk-TLS)** 탈중앙 솔루션
+- AI 에이전트 경제의 **Layer 0 인프라** 역할
+
+---
+
 ## 웹의 진화
 
 ### 과거의 웹
@@ -377,3 +422,17 @@ Sela Network가 이를 가능하게 한다.**
 > — Alan Kay
 
 **Sela Network는 AI 에이전트 시대의 미래를 만들고 있습니다.**
+
+---
+
+## Sources
+
+- [Agentic AI Market worth $93.20 billion by 2032 - MarketsandMarkets](https://www.marketsandmarkets.com/PressReleases/agentic-ai.asp)
+- [AI Agents Market Size to Hit USD 50.31 Billion by 2030 - Grand View Research](https://www.grandviewresearch.com/industry-analysis/ai-agents-market-report)
+- [AI Agents Market Size to Hit USD 236.03 Billion by 2034 - Precedence Research](https://www.precedenceresearch.com/ai-agents-market)
+- [50+ Key AI Agent Statistics and Adoption Trends in 2025 - Index.dev](https://www.index.dev/blog/ai-agents-statistics)
+- [35+ Powerful AI Agents Statistics - Warmly](https://www.warmly.ai/p/blog/ai-agents-statistics)
+- [DePIN in 2025: The Future of Decentralized Infrastructure Networks - MapMetrics](https://mapmetrics.org/blog/depin-in-2025-the-future-of-decentralized-infrastructure-networks/)
+- [State of DePIN Sector in 2025: Key Insights, Growth Trends & Market Cap - iEx.ec](https://www.iex.ec/academy/depin-sector-trends-market-cap)
+- [2025 DePIN Market Outlook and Trends - Gate.io](https://www.gate.io/learn/articles/2025-de-pin-market-outlook-and-trends/6556)
+- [Understanding The Future of DePIN - Onchain Magazine](https://onchain.org/magazine/understanding-the-future-of-depin-in-2025/)

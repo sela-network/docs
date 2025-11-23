@@ -274,7 +274,7 @@ div.card::before {
   background: #aa8500 !important;
 }
 
-/* Sidebar - Better contrast */
+/* Sidebar - Better contrast with reduced padding */
 nav.sidebar {
   background: #0a0a0a;
   border-right: 1px solid #1a1a1a;
@@ -284,9 +284,10 @@ nav.sidebar {
   color: #a3a3a3;
   transition: all 0.15s ease;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
   display: block;
+  font-size: 0.9rem;
 }
 
 .sidebar a:hover {
@@ -298,8 +299,8 @@ nav.sidebar {
   background: #1a1a1a;
   color: #aa8500;
   font-weight: 700;
-  border-left: 3px solid #aa8500;
-  padding-left: calc(1rem - 3px);
+  border-left: 2px solid #aa8500;
+  padding-left: calc(0.75rem - 2px);
 }
 
 /* Headers - Clear hierarchy */
@@ -483,6 +484,14 @@ hr::after {
   font-weight: 600 !important;
   display: inline-block !important;
   border: 1px solid #262626 !important;
+}
+
+summary.badge,
+[class*="badge"],
+summary.label,
+[class*="label"] {
+  background: none !important;
+  border: 0 !important;
 }
 
 /* Stats boxes */
@@ -748,19 +757,31 @@ nav {
   background: #0a0a0a !important;
 }
 
-/* Sidebar group labels */
+/* Sidebar group labels - reduced emphasis */
 .sidebar details summary {
-  color: #d8d8d8 !important;
-  font-weight: 600 !important;
+  color: #b4b4b4 !important;
+  font-weight: 500 !important;
+  font-size: 0.85rem !important;
+  padding: 0.3rem 0.5rem !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
 }
 
-/* Sidebar links */
+/* Sidebar links - compact spacing */
 .sidebar ul {
   list-style: none !important;
+  padding-left: 0.5rem !important;
+  margin: 0.25rem 0 !important;
+}
+
+.sidebar li {
+  margin: 0.15rem 0 !important;
 }
 
 .sidebar li a {
   color: #a3a3a3 !important;
+  padding: 0.35rem 0.6rem !important;
+  font-size: 0.88rem !important;
 }
 
 .sidebar li a:hover {
@@ -772,6 +793,34 @@ nav {
   color: #aa8500 !important;
   background: #1a1a1a !important;
   font-weight: 700 !important;
+}
+
+/* Nested sidebar items - subtle indentation */
+.sidebar ul ul {
+  padding-left: 0.75rem !important;
+  border-left: 1px solid #262626 !important;
+  margin-left: 0.5rem !important;
+}
+
+.sidebar ul ul a {
+  font-size: 0.85rem !important;
+  color: #8a8a8a !important;
+  padding: 0.3rem 0.5rem !important;
+}
+
+.sidebar ul ul a:hover {
+  color: #d4d4d4 !important;
+}
+
+/* Collapsed state - less prominent */
+.sidebar details[open] > summary {
+  color: #d4d4d4 !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.sidebar details:not([open]) > summary {
+  color: #909090 !important;
+  margin-bottom: 0.15rem !important;
 }
 
 /* Page title - Override with more spacing */

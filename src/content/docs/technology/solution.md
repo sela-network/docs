@@ -204,26 +204,75 @@ Sela는 [JSON-LD(JSON for Linked Data)](https://www.npgroup.net/blog/role-of-sch
 
 #### Sela의 해결책: zk-TLS (Zero-Knowledge TLS)
 
-Sela는 [TLSNotary 프로토콜](https://arxiv.org/html/2409.17670v1)을 기반으로 한 zk-TLS를 구현합니다.
+Sela는 [TLSNotary 프로토콜](https://arxiv.org/html/2409.17670v1)을 기반으로 한 zkTLS를 구현합니다. zkTLS는 Transport Layer Security (TLS)와 Zero-Knowledge Proofs (ZKP)를 결합하여, **웹 데이터의 출처와 무결성을 암호학적으로 증명**하면서도 데이터 프라이버시를 보장하는 혁신적인 프로토콜입니다.
 
-**작동 원리:**
+**zkTLS가 해결하는 근본 문제: Oracle Problem**
 
-1. **TLS 세션 캡처**
-   - 브라우저와 웹 서버 간의 TLS(HTTPS) 통신을 가로챕니다.
-   - TLS는 데이터가 중간에 변조되지 않았음을 보장하는 암호화 프로토콜입니다.
+전통적인 블록체인 오라클은 주로 가격 데이터와 같은 공개 정보를 처리하며, [개인 식별 정보(PII)나 민감한 데이터를 확장성 있게 처리하지 못합니다](https://www.shoal.gg/p/zktls-verifiable-data-composability). zkTLS는 이와 다른 문제를 해결합니다: **Prover(증명자), Server(서버), Verifier(검증자) 모두로부터 개인 데이터가 위조 불가능함을 보장**하는 것입니다.
 
-2. **Multi-Party Computation (MPC)**
-   - 클라이언트(Prover)와 Notary(Verifier)가 협력하여 TLS 세션을 생성합니다.
-   - [Garbled Circuits와 Oblivious Transfer](https://medium.com/zkpass/zktls-the-cornerstone-of-verifiable-internet-da8609a32754) 기술을 사용합니다.
-   - 클라이언트는 실제 데이터를 Notary에게 공개하지 않으면서도 증명을 생성할 수 있습니다.
+[TLS 오라클](https://bwetzel.medium.com/tls-oracles-liberating-private-web-data-with-cryptography-e66e5fad7c34)은 암호학적으로 디지털 콘텐츠의 출처를 확인하여, 중앙화 서버에 갇혀 있던 개인 데이터를 해방시키고 Web3 스마트 컨트랙트와의 통합을 가능하게 합니다.
 
-3. **Zero-Knowledge Proof 생성**
-   - 데이터의 특정 부분만 공개하고 나머지는 비공개로 유지합니다.
-   - 예: "이 사용자의 은행 잔고가 $50,000 이상이다"를 증명하되, 정확한 금액은 공개하지 않습니다.
+**작동 원리: 3단계 프로토콜**
 
-4. **On-Chain 검증 (선택사항)**
-   - 생성된 증명을 Ethereum, Polygon 등 블록체인에 기록합니다.
-   - 누구나 증명의 유효성을 검증할 수 있습니다.
+Sela의 zkTLS는 [3P-TLS (Three-Party TLS) 프로토콜](https://medium.com/zkpass/a-technical-overview-of-zkpass-protocol-e28303e472e9)을 기반으로 하며, 세 가지 핵심 참여자가 있습니다:
+
+- **S (Server)**: 신뢰할 수 있는 데이터 소스 (예: 은행 웹사이트, 정부 포털)
+- **P (Prover)**: 증명을 생성하는 사용자/클라이언트
+- **V (Verifier)**: Sela Network의 검증 노드
+
+**1단계: TLS 핸드셰이크 (Multi-Party Computation)**
+
+표준 TLS 프로토콜을 수정하여, P와 V가 협력적으로 "클라이언트" 역할을 수행합니다:
+
+- [Elliptic Curve Diffie-Hellman (ECDH) 프로토콜](https://www.blocmates.com/articles/what-is-zktls-a-complete-guide)을 기반으로 합니다
+- **MPC (Multi-Party Computation)**와 **Oblivious Transfer (OT)**를 결합하여 부정행위를 방지합니다
+- P와 V가 **공유된 세션 키**를 생성하되, 어느 한쪽도 전체 키를 알 수 없습니다
+- S(Server)는 일반적인 TLS 핸드셰이크를 수행하며, P와 V가 협력하고 있다는 사실을 알지 못합니다
+
+**기술적 구현:**
+```
+P (Prover) + V (Verifier) ↔ S (Server)
+         ↓
+    ECDH Key Exchange
+    - Pre-Master Secret을 MPC로 생성
+    - P와 V가 각각 Secret Share 보유
+         ↓
+    Session Key 도출
+    - AES-128 암호화 키 생성
+    - Garbled Circuits로 암호화 연산 수행
+         ↓
+    TLS 1.2/1.3 세션 확립
+    - TLSNotary는 TLS 1.3 지원 (2024년 추가)
+```
+
+**2단계: 데이터 전송 및 커밋먼트**
+
+- P가 S에게 HTTPS 요청을 전송합니다 (예: 은행 잔고 조회)
+- S의 응답이 암호화된 상태로 P에게 전달됩니다
+- V는 **평문 데이터를 보지 않고도** 암호화된 통신의 무결성을 검증합니다
+- P가 데이터의 [커밋먼트(Commitment)](https://brave.com/blog/distefano/)를 생성합니다
+
+[Garbled Circuits와 Oblivious Transfer](https://medium.com/zkpass/zktls-the-cornerstone-of-verifiable-internet-da8609a32754) 기술을 통해, V는 P의 요청 내용이나 S의 응답 데이터를 알 수 없으면서도 통신의 진정성을 보장할 수 있습니다.
+
+**3단계: Zero-Knowledge Proof 생성**
+
+P는 받은 데이터에 대해 선택적으로 정보를 공개하는 ZK Proof를 생성합니다:
+
+- **선택적 공개**: 민감한 부분은 숨기고, 필요한 사실만 증명합니다
+  - 예: "잔고가 $50,000 이상" (정확한 금액은 비공개)
+  - 예: "21세 이상" (정확한 생년월일은 비공개)
+  - 예: "한국 거주자" (정확한 주소는 비공개)
+
+- **Verifier 서명**: V(Notary)가 데이터의 출처를 서명하여 공증합니다
+
+- **변조 불가능**: 암호학적 해시를 통해 데이터 무결성을 보장합니다
+
+**4단계: On-Chain 검증 (선택사항)**
+
+- 생성된 ZK Proof를 Ethereum, Polygon, Solana 등 블록체인에 기록합니다
+- Smart Contract가 증명의 유효성을 자동으로 검증합니다
+- 누구나 공개적으로 증명을 감사(Audit)할 수 있습니다
+- [영구적이고 불변의 증거](https://oasis.net/blog/zktls-blockchain-security)로 법적 효력을 가질 수 있습니다
 
 **기술적 아키텍처:**
 
