@@ -4,6 +4,9 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    '/': '/overview/executive-summary',
+  },
   integrations: [
     starlight({
       title: "Sela Network",
