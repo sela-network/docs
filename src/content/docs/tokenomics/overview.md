@@ -128,14 +128,15 @@ Sela: SELA 가격 $1 가정 시 $31/월
 
 이는 [Work Token 모델](https://multicoin.capital/2018/02/13/new-models-utility-tokens/)로 알려져 있으며, 서비스 제공자가 네트워크의 네이티브 토큰을 스테이킹하여 네트워크를 위한 작업을 수행할 권리를 얻는 방식입니다. 이 모델은 단순 결제 화폐 모델 대비 **약 100배 더 많은 가치를 포착**합니다.
 
-#### 노드 티어 시스템
+#### 노드 티어 시스템 (Realistic APY: 15-35%)
 
 | 티어         | 스테이킹    | 월 예상 수익     | APR      | 요구사항      |
 | ------------ | ----------- | ---------------- | -------- | ------------- |
-| **Bronze**   | 100 SELA    | 10-20 SELA       | 120-240% | 기본 브라우저 |
-| **Silver**   | 500 SELA    | 60-100 SELA      | 144-240% | 안정적 연결   |
-| **Gold**     | 2,000 SELA  | 300-500 SELA     | 180-300% | 고성능 PC     |
-| **Platinum** | 10,000 SELA | 2,000-3,500 SELA | 240-420% | 전용 서버     |
+| **Bronze**   | 100 SELA    | 1.25-3 SELA       | 15-36% | 기본 브라우저 |
+| **Silver**   | 500 SELA    | 7-15 SELA      | 17-36% | 안정적 연결   |
+| **Gold**     | 2,000 SELA  | 30-60 SELA     | 18-36% | 고성능 PC     |
+| **Platinum** | 10,000 SELA | 175-300 SELA | 21-36% | 전용 서버     |
+| **Diamond**  | 50,000 SELA | 900-1,500 SELA | 22-36% | 데이터센터 |
 
 **성능 가산점:**
 
@@ -149,21 +150,23 @@ Sela: SELA 가격 $1 가정 시 $31/월
 
 ```
 초기 투자: 100 SELA ($100 가정)
-월 보상: 15 SELA 평균
-ROI: 15% / 월
-회수 기간: 6.67개월
-연 수익률: 180%
+월 보상: 2 SELA 평균
+ROI: 2% / 월
+회수 기간: 50개월
+연 수익률: 24% (aligned with DePIN industry standards)
 ```
 
 **Platinum 노드 예시:**
 
 ```
 초기 투자: 10,000 SELA ($10,000 가정)
-월 보상: 2,750 SELA 평균
-ROI: 27.5% / 월
-회수 기간: 3.64개월
-연 수익률: 330%
+월 보상: 240 SELA 평균
+ROI: 2.4% / 월
+회수 기간: 42개월
+연 수익률: 29% (competitive with Filecoin, Helium)
 ```
+
+**Note**: These APY figures (15-36%) align with [established DePIN projects like Filecoin and Helium](https://www.rapidinnovation.io/post/top-depin-cryptocurrencies-to-watch-in-2024) and represent sustainable, long-term yields rather than unsustainable high-APY ponzi-nomics. Actual returns depend on network utilization, geographic demand, and node performance.
 
 #### 슬래싱 (Slashing)
 
@@ -300,17 +303,13 @@ LinkedIn 채용 공고 파서: 25 SELA
 | **마케팅 & 성장**   | 3%   | 300,000,000   | 3년간 사용                 |
 | **리저브**          | 2%   | 200,000,000   | 비상 자금                  |
 
-#### 노드 보상 일정 (8년)
+#### 노드 보상 일정 (4년)
 
 ```
-Year 1: 800M SELA (20% of node rewards)
-Year 2: 720M SELA (18%)
-Year 3: 640M SELA (16%)
-Year 4: 560M SELA (14%)
-Year 5: 480M SELA (12%)
-Year 6: 400M SELA (10%)
-Year 7: 320M SELA (8%)
-Year 8: 80M SELA (2%)
+Year 1: 1,600M SELA (40% of node rewards)
+Year 2: 1,200M SELA (30%)
+Year 3: 800M SELA (20%)
+Year 4: 400M SELA (10%)
 ```
 
 **디플레이션 모델:**

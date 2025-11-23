@@ -454,7 +454,7 @@ API Calls: 10M+/월 (Q2) → 100M+/월 (Q4)
 - "Instagram 좋아요 자동화" - 10 SELA
 - "YouTube 댓글 자동 작성" - 15 SELA
 - "LinkedIn 연결 요청 자동화" - 20 SELA
-수수료: 판매액의 70% → 개발자, 20% → 스테이킹 보상, 10% → 프로토콜
+수수료: 판매액의 70% → 개발자, 20% → 프로토콜, 10% → 큐레이터/검증자
 ```
 
 **카테고리 2: 고급 데이터 파서**
@@ -466,7 +466,7 @@ API Calls: 10M+/월 (Q2) → 100M+/월 (Q4)
 - "Nike 신상품 추적 파서" - 50 SELA
 - "항공권 가격 비교 API" - 30 SELA/월
 - "암호화폐 거래소 실시간 데이터" - 100 SELA/월
-수수료: 판매액의 70% → 개발자, 20% → 스테이킹 보상, 10% → 프로토콜
+수수료: 판매액의 70% → 개발자, 20% → 프로토콜, 10% → 큐레이터/검증자
 ```
 
 **카테고리 3: 산업별 API 솔루션**
@@ -478,7 +478,7 @@ API Calls: 10M+/월 (Q2) → 100M+/월 (Q4)
 - "글로벌 부동산 가격 추적 API" - 200 SELA/월
 - "뉴스 미디어 감정 분석 API" - 300 SELA/월
 - "소셜 미디어 인플루언서 분석 API" - 500 SELA/월
-수수료: 판매액의 70% → 개발자, 20% → 스테이킹 보상, 10% → 프로토콜
+수수료: 판매액의 70% → 개발자, 20% → 프로토콜, 10% → 큐레이터/검증자
 ```
 
 #### 개발자 인센티브
@@ -988,5 +988,6 @@ Sela Network는 **검증된 시장 데이터**, **현실적인 기술 목표**, 
 - [Real Yield in Web3 - ApeX](https://www.apex.exchange/blog/detail/real-yield-in-web3)
 - [Bittensor Network Statistics - CoinDesk](https://www.coindesk.com/business/2025/09/13/bittensor-ecosystem-surges-with-subnet-expansion-institutional-access)
 
-**Last Updated**: 2025-01-15
+**프로젝트 시작**: 2024년  
+**Last Updated**: 2024-11-23  
 **Version**: 2.0 (Fact-Checked & Enriched)

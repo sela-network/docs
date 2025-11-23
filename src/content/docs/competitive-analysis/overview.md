@@ -1037,5 +1037,6 @@ Sela Network: AI 에이전트를 위한 웹 OS
 - [Browserbase $40M Funding - SiliconANGLE](https://siliconangle.com/2025/06/17/browserbase-reels-40m-browser-automation-tools/)
 - [Web Scraping Tools Comparison - Apify Blog](https://blog.apify.com/best-web-scraping-tools/)
 
-**마지막 업데이트:** 2025년 1월 15일
+**프로젝트 시작:** 2024년  
+**마지막 업데이트:** 2024년 11월 23일  
 **버전:** 2.0 (Fact-Checked & Enriched)

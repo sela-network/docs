@@ -10,6 +10,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Sela Network",
+      pagefind: false,
       customCss: ["./src/styles/custom.css"],
       social: [
         {
@@ -20,43 +21,79 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: "INTRODUCTION",
+          label: "Introduction",
           items: [{ label: "Welcome", slug: "introduction/welcome" }],
         },
         {
-          label: "OVERVIEW",
+          label: "Overview",
           items: [
             { label: "Executive Summary", slug: "overview/executive-summary" },
             { label: "Problem Statement", slug: "overview/problem" },
           ],
         },
         {
-          label: "WHITEPAPER",
+          label: "Whitepaper",
           items: [{ label: "Introduction", slug: "whitepaper/introduction" }],
         },
         {
-          label: "TECHNOLOGY",
+          label: "Technology",
           items: [
             { label: "Solution", slug: "technology/solution" },
             { label: "Architecture", slug: "technology/architecture" },
-            { label: "Core Technologies", slug: "technology/core-technologies" },
+            {
+              label: "Core Technologies",
+              slug: "technology/core-technologies",
+            },
             { label: "Workflow", slug: "technology/workflow" },
+            {
+              label: "Browser Automation",
+              slug: "technology/browser-automation",
+            },
+            {
+              label: "Vision Language Models",
+              slug: "technology/vision-language-models",
+            },
+            {
+              label: "zkTLS Verification",
+              slug: "technology/zktls-verification",
+            },
           ],
         },
         {
-          label: "USE CASES",
+          label: "Use Cases",
           items: [
             { label: "Overview", slug: "use-cases/overview" },
-            { label: "E-commerce & Retail", slug: "use-cases/ecommerce-retail" },
             { label: "Finance & Trading", slug: "use-cases/finance-trading" },
+            {
+              label: "Enterprise Automation",
+              slug: "use-cases/enterprise-automation",
+            },
+            {
+              label: "Research & Intelligence",
+              slug: "use-cases/research-intelligence",
+            },
+            {
+              label: "E-commerce & Retail",
+              slug: "use-cases/ecommerce-retail",
+            },
           ],
         },
         {
-          label: "TOKENOMICS",
+          label: "AI Agent Integration",
+          items: [{ label: "LangChain", slug: "integrations/langchain" }],
+        },
+        {
+          label: "Node Operators",
+          items: [
+            { label: "Complete Guide", slug: "node-operators/complete-guide" },
+          ],
+        },
+        {
+          label: "Tokenomics",
           items: [{ label: "Overview", slug: "tokenomics/overview" }],
         },
         {
-          label: "REWARDS",
+          label: "Rewards",
           items: [
             { label: "Rewards System", slug: "rewards/rewards-system" },
             { label: "Node Rewards", slug: "rewards/node-rewards" },
@@ -66,14 +103,14 @@ export default defineConfig({
           ],
         },
         {
-          label: "ROADMAP",
+          label: "Roadmap",
           items: [
             { label: "Vision", slug: "roadmap/vision" },
             { label: "Development Phases", slug: "roadmap/phases" },
           ],
         },
         {
-          label: "SECURITY",
+          label: "Security",
           items: [
             { label: "Architecture", slug: "security/architecture" },
             { label: "Threat Model", slug: "security/threat-model" },
@@ -81,21 +118,24 @@ export default defineConfig({
           ],
         },
         {
-          label: "PERFORMANCE",
-          items: [{ label: "Benchmarks", slug: "benchmarks/performance" }],
+          label: "Performance",
+          items: [{ label: "Benchmarks", slug: "performance/performance" }],
         },
         {
-          label: "COMPETITIVE ANALYSIS",
+          label: "Competitive Analysis",
           items: [
             { label: "Market Overview", slug: "competitive-analysis/overview" },
           ],
         },
         {
-          label: "REFERENCE",
+          label: "Reference",
           items: [
-            { label: "API", slug: "api/overview" },
-            { label: "System Requirements", slug: "technical-specs/system-requirements" },
-            { label: "Installation", slug: "setup/installation-guide" },
+            { label: "API", slug: "reference/overview" },
+            {
+              label: "System Requirements",
+              slug: "reference/system-requirements",
+            },
+            { label: "Installation", slug: "reference/installation-guide" },
           ],
         },
       ],

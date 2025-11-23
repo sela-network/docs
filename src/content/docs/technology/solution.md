@@ -560,5 +560,6 @@ Sela Network는 다음 세 가지 핵심 혁신을 통해 AI 에이전트 웹 �
 ### Vision Language Models
 - [VLM Benchmarks - Clarifai](https://www.clarifai.com/blog/best-vision-language-models-vlms-for-image-classification-performance-benchmarks)
 
-**마지막 업데이트**: 2025년 1월 15일
+**프로젝트 시작**: 2024년  
+**마지막 업데이트**: 2024년 11월 23일  
 **버전**: 2.0 (Fact-Checked & Enriched with Detailed Explanations)

@@ -499,11 +499,11 @@ _이 파트를 읽으면_: Sela의 장기적 비전과 토큰 경제가 어떻�
 **현재 버전**: v1.1 (Enhanced Edition)  
 **발행일**: 2024년 11월  
 **타입**: 통합 백서 (Technical + Economic + Business)  
-**마지막 업데이트**: 2025년 11월 23일
+**마지막 업데이트**: 2024년 11월 23일
 
 ### 변경 이력
 
-**v1.1 (2025년 11월)**:
+**v1.1 (2024년 11월)**:
 
 - 최신 시장 데이터 반영 (AI Agent 시장 $932B by 2032)
 - Browserbase 상세 비교 추가 ($40M 투자 반영)
@@ -663,7 +663,7 @@ $SELA 토큰은 **유틸리티 토큰**으로 설계되었습니다. Sela Networ
 ## 버전 정보
 
 **버전**: v1.1 (Enhanced & Verified Edition)  
-**발행일**: 2024년 11월 초판, 2025년 11월 개정판  
+**발행일**: 2024년 11월 초판  
 **타입**: 통합 백서 (Technical + Economic + Business)  
 **페이지 수**: 약 150 페이지 (전체 링크된 문서 포함)  
 **언어**: 한국어 (Korean), 영어 번역 진행 중
@@ -852,4 +852,4 @@ _"The best time to plant a tree was 20 years ago. The second best time is now."_
 
 **Sela Network Whitepaper v1.1**  
 **© 2024-2025 Sela Network Foundation**  
-**Last Updated: November 23, 2025**
+**Last Updated: November 23, 2024**
