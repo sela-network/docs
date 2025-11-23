@@ -1,343 +1,157 @@
 ---
-title: 핵심 요약
-description: Sela Network 핵심 개요
+title: Executive Summary
+description: Sela Network core overview
 ---
 
-## 패러다임의 전환
+## The Infrastructure Gap in AI Agent Economy
 
-AI는 이제 "텍스트를 생성하는 도구"에서 "실제 세상과 인터랙션하는 에이전트"로 진화하고 있습니다.
+Artificial intelligence has evolved from text generation tools into autonomous systems capable of real-world action. Large language models demonstrate human-level reasoning across domains, yet a fundamental infrastructure barrier prevents their practical deployment: AI agents cannot reliably interact with the web.
 
-2024년, GPT-4, Claude, Gemini는 인간 수준의 추론 능력을 보여줬습니다.
-하지만 이 모든 지능은 **웹과의 단절**이라는 근본적 한계에 갇혀 있습니다.
+Contemporary web architecture was designed for human visual consumption through HTML, CSS, and JavaScript. AI agents require structured data, verifiable provenance, and automated execution capabilities that existing web infrastructure does not provide. This disconnect represents the primary bottleneck preventing the emergence of an autonomous agent economy.
 
-**현재 AI가 할 수 없는 것들:**
+## The Problem
 
-- 웹사이트에 로그인해서 주문하기
-- 실시간 정보를 수집해 거래 결정 내리기
-- 여러 웹사이트를 비교해 최적 선택하기
-- 받은 데이터가 진짜인지 증명하기
+### Structural Incompatibility
 
-이것은 단순한 기술적 불편함이 아닙니다.
-**수조 달러 규모 AI 에이전트 경제의 실현을 가로막는 근본적 장벽**입니다.
+The web presents information through visual interfaces optimized for human perception. AI agents operate on structured data formats. Current approaches to bridging this gap suffer from fundamental limitations:
 
----
+**LLM-based HTML parsing** produces inconsistent output schemas. Research demonstrates that even state-of-the-art models exhibit schema compliance rates varying from 0% to 100% depending on task complexity. Production deployments require predictable data structures.
 
-## 웹의 역설
+**Traditional web scraping** tools face detection and blocking by modern anti-bot systems. Browser fingerprinting, behavioral analysis, and IP reputation systems identify and restrict automated access. Centralized headless browser services provide limited mitigation at substantial cost.
 
-### 인간을 위한 웹, AI에겐 미로
+**API-based access** covers less than 1% of web content. The majority of websites do not provide programmatic interfaces. Where APIs exist, they impose rate limits, usage fees, and functional restrictions that constrain agent capabilities.
 
-기존 웹은 1990년대부터 **인간의 눈과 손**을 위해 최적화되어 왔습니다:
+### Verification Impossibility
 
-- **시각적 디자인**: 아름다운 그라데이션, 애니메이션, 이미지
-- **직관적 UI**: 클릭 가능한 버튼, 드래그 앤 드롭
-- **인간 중심 구조**: HTML은 문서 구조, AI가 필요한 건 데이터 구조
+No existing system provides cryptographic proof of web data provenance. Applications requiring verified data sources—financial compliance, legal documentation, regulated industries—cannot utilize web data retrieved through current methods. The inability to prove that data originated from a specific server at a specific time eliminates entire use cases for autonomous agents.
 
-하지만 AI에게는:
+### Centralized Infrastructure Risks
 
-- 버튼의 "색상"은 의미 없음 → **위치와 기능**이 필요
-- HTML의 "div 중첩"은 혼란 → **JSON 스키마**가 필요
-- 시각적 "레이아웃"은 불필요 → **의미론적 구조**가 필요
+The web automation market exhibits concentration among a small number of providers. This centralization creates:
 
-### 실제 장벽들
+- **Single points of failure**: Infrastructure outages eliminate service availability
+- **Cost inefficiency**: Limited competition enables premium pricing without performance differentiation
+- **Censorship vulnerability**: Policy changes by providers can terminate service access
+- **Scalability constraints**: Processing capacity limited by centralized infrastructure investment
 
-LLM 기반 에이전트가 웹을 탐색하려면 넘어야 할 현실적 장벽:
+## The Solution
 
-#### 1. 기술적 장벽
+Sela Network is a decentralized web-interaction layer that enables AI agents to see, understand, and act on the web through three integrated technical components:
 
-- **봇 탐지 시스템**: Cloudflare Turnstile, Akamai Bot Manager, DataDome
-- **동적 UI**: React, Vue로 구현된 복잡한 SPA(Single Page Application)
-- **인증 플로우**: OAuth, 2FA, CAPTCHA, 생체 인증
-- **무한 스크롤**: 수천 개 상품을 로딩하는 동적 페이지
+### Distributed Browser Network
 
-#### 2. 구조적 장벽
+A global network of distributed browser nodes executes actual web sessions. Unlike centralized browser automation services relying on cloud-hosted instances, Sela leverages real user browsers distributed across 150+ countries.
 
-- **일관성 없는 HTML**: 같은 쇼핑몰도 페이지마다 다른 구조
-- **LLM 환각**: HTML을 JSON으로 변환 시 매번 다른 스키마 생성
-- **높은 비용**: GPT-4로 페이지 하나 파싱에 $0.05 소요
-- **느린 속도**: 평균 5-10초의 처리 시간
+This decentralized physical infrastructure (DePIN) approach provides:
 
-#### 3. 경제적 장벽
+- **Bot detection resistance**: Real user browsing patterns bypass modern anti-bot systems. Residential IP addresses, authentic browser fingerprints, and natural interaction patterns eliminate detection signals.
+- **Geographic distribution**: Local nodes access region-restricted content and minimize latency through proximity routing.
+- **Horizontal scalability**: Network capacity grows linearly with node participation without centralized bottlenecks.
+- **Resilience**: No single point of failure. Service continues despite individual node outages or regional restrictions.
 
-- **중앙화된 헤드리스 브라우저 시장**: Browserbase, Browserless 등 소수 Provider가 시장 독점
-- **폭증하는 비용**: Browserbase 기준 $0.10/브라우저 시간, 프록시 $10/GB - 대규모 운영 시 월 수천 달러
-- **동시성 제한**: Browserbase Startup 플랜 50 동시 브라우저 제한, 초과 시 429 에러
-- **검열 위험**: Provider 정책 변경으로 갑작스런 차단
-- **SPOF**: 중앙 서버 다운 시 전체 비즈니스 마비
+Each node operates through a Chrome extension or standalone application, processing requests while maintaining session isolation through browser-native sandboxing mechanisms.
 
----
+### Semantic Interpretation Engine
 
-## Sela Network: 해법
+The web was designed for human visual consumption. AI agents require structured data formats. Sela's Semantic Interpretation Engine combines Large Language Models (LLMs) with DOM parsing to transform visual web content into structured JSON.
 
-**Sela Network**는 이 모든 문제를 근본적으로 해결하는 **최초의 탈중앙 웹 인터랙션 레이어**입니다.
+**Hybrid parsing architecture** analyzes both visual presentation and underlying document structure. LLMs identify buttons, forms, and interactive elements by appearance. DOM parsing extracts attributes, relationships, and semantic metadata. This combination provides parsing accuracy while maintaining resilience against layout changes.
 
-### 아키텍처 혁신
+**Schema normalization** enforces consistent output conforming to Schema.org standards. Unlike LLM-based parsing that generates variable schemas for identical pages, Sela produces deterministic, predictable data structures. This enables stable agent development without constant schema adaptation.
 
-Sela는 3개의 혁신적 레이어로 구성됩니다:
+**Self-healing selectors** automatically adapt to UI changes without service interruption. When website layouts change, the system detects modifications, identifies equivalent elements through visual and structural matching, and updates selectors automatically. This eliminates the brittleness that characterizes traditional web scraping implementations.
 
-#### Layer 1: 분산 브라우저 네트워크
+### Cryptographic Verification Layer
 
-```
-전 세계 100,000+ 실제 브라우저 노드
-→ 인간 브라우징 패턴 완벽 모방
-→ 모든 봇 탐지 시스템 우회
-→ 지역별 최적 노드 자동 선택
-```
+The fundamental challenge of web data is trust. Sela implements zk-TLS (zero-knowledge Transport Layer Security), a cryptographic protocol that proves data provenance and integrity without exposing sensitive information.
 
-**차별점:**
+The zk-TLS protocol operates through multi-party computation:
 
-- **Browserbase Stealth Mode 대비**: Browserbase는 중앙화된 Chromium 브라우저와 자체 핑거프린트 생성 사용
+1. A TLS session is established between the browser node and target server
+2. Session keys are split between the prover (node) and verifier (notary service)
+3. Both parties collaboratively decrypt responses without either having full access
+4. The notary generates cryptographic proof of the data's origin and timestamp
+5. Zero-knowledge proofs enable verification without revealing underlying data
 
-  - Sela는 실제 사용자 브라우저 활용으로 더 자연스러운 패턴
-  - Browserbase Advanced Stealth는 Scale 플랜 고객만 사용 가능 (고가)
-  - Sela는 모든 노드가 기본적으로 실제 브라우저 환경 제공
+This enables applications in finance, legal compliance, and regulated industries where data authenticity is essential. Every web interaction can generate an audit trail with cryptographic attestation, providing compliance with regulatory requirements and legal admissibility.
 
-- **탈중앙화 vs 중앙화**:
+## Technical Architecture
 
-  - Browserbase: 중앙 서버 의존 → SPOF 리스크
-  - Sela: 분산 노드 → 단일 노드 장애 시에도 작동
+Sela Network operates as a three-layer stack:
 
-- **비용 효율성**:
-  - Browserbase: $0.10/시간 + 프록시 $10/GB
-  - Sela: 노드 운영자 보상 기반 토큰 이코노미로 장기적 비용 절감
+**Layer 1: Web Transport Layer** provides the physical infrastructure for web access through distributed browser nodes, residential proxy networks, and session management systems. This layer handles bot detection avoidance, dynamic JavaScript rendering, and complex authentication flows.
 
-#### Layer 2: 시맨틱 렌더링 엔진 (SRE)
+**Layer 2: Semantic Interpretation Layer** transforms visual web content into structured data through LLM-based UI recognition, DOM-to-JSON conversion, and automated schema normalization. Self-healing mechanisms maintain functionality despite website changes.
 
-```
-VLM (Vision Language Model)
-    ↓
-시각적 UI 요소 인식 (버튼, 필드, 메뉴)
-    ↓
-DOM Parser와 결합
-    ↓
-의미론적 JSON 스키마 생성
-    ↓
-Self-Healing: UI 변경 시 자동 복구
-```
-
-**기술 혁신:**
-
-- **하이브리드 파싱**: Vision + DOM을 결합한 업계 최초 시도
-- **스키마 정규화**: 같은 URL은 항상 동일한 JSON 구조 보장
-- **자가 복구**: 쿠팡 UI가 바뀌어도 서비스 중단 없음
-- **비용 효율**: GPT-4 대비 90% 비용 절감
-
-#### Layer 3: 영지식 증명 검증 (zk-TLS)
-
-```
-TLS Handshake 캡처
-    ↓
-Zero-Knowledge Proof 생성
-    ↓
-데이터 출처 암호학적 증명
-    ↓
-민감 정보는 ZK로 보호
-```
-
-**세계 최초:**
-
-- 웹 데이터의 출처를 증명할 수 있는 유일한 프로토콜
-- 금융 감사, 법적 증거, 컴플라이언스에 활용 가능
-- 프라이버시와 검증가능성을 동시에 달성
-
----
-
-## 핵심 가치 제안
-
-### 1. 안전한 웹 브라우저 인프라
-
-**노드 운영자에게:**
-
-- 크롬 확장 프로그램만 설치 (5분 소요)
-- 자신의 브라우저가 글로벌 AI 인프라의 일부로 작동
-- 대역폭, 컴퓨팅 기여에 대한 $SELA 보상
-- 티어별 차등 보상 (Bronze → Platinum)
-- 성능 기반 추가 인센티브
-
-**예상 수익:**
-
-```
-Bronze 노드 (100 SELA 스테이킹)
-→ 월 10-20 SELA 보상
-→ 초기 투자 회수: 5-10개월
-
-Platinum 노드 (10,000 SELA 스테이킹)
-→ 월 2,000-3,500 SELA 보상
-→ ROI: 월 20-35%
-```
-
-### 2. 표준화된 JSON 스키마
-
-**개발자에게:**
-
-- 복잡한 HTML 파싱 불필요
-- 일관된 데이터 구조로 안정적 개발
-- LangChain, AutoGPT와 바로 통합
-- Self-Healing으로 유지보수 부담 최소화
-
-**예시:**
-
-```json
-// Sela가 제공하는 표준화된 출력
-{
-  "type": "product",
-  "name": "Apple AirPods Pro (2nd Gen)",
-  "price": {
-    "amount": 249.99,
-    "currency": "USD",
-    "original": 299.99,
-    "discount": 16.67
-  },
-  "availability": "in_stock",
-  "seller": {
-    "name": "Amazon",
-    "verified": true,
-    "rating": 4.8
-  },
-  "shipping": {
-    "free": true,
-    "prime": true,
-    "estimated_days": 2
-  }
-}
-```
-
-### 3. 검증 가능한 증명
-
-**기업에게:**
-
-- 모든 데이터의 출처를 암호학적으로 증명
-- 법적 효력을 가진 감사 추적
-- 컴플라이언스 자동 보고
-- 데이터 조작 불가능
-
-**활용 사례:**
-
-```
-금융: "이 환율 정보는 실제 은행 서버에서 왔음을 증명"
-법률: "이 정부 문서는 조작되지 않았음을 증명"
-의료: "이 임상 데이터는 실제 병원 시스템에서 왔음을 증명"
-```
+**Layer 3: Verifiability Layer** generates cryptographic proofs of data provenance through zk-TLS implementation, notary services, and proof aggregation systems. This layer enables verifiable web actions with legal and compliance validity.
 
-### 4. 탈중앙 인프라
+## Market Opportunity
 
-**투자자에게:**
+AI agent market growth projections indicate expansion from $5.4 billion in 2024 to $50-93 billion by 2030-2032, representing a compound annual growth rate exceeding 45%. This growth is driven by enterprise adoption, with 85% of companies expected to implement AI agents by end of 2025.
 
-- 단일 장애점 없는 탄력적 시스템
-- 검열 저항성 (특정 국가 규제에도 작동)
-- 네트워크 효과 (노드 ↑ → 성능 ↑ → 사용자 ↑)
-- 토큰 경제로 지속 가능한 성장
+DePIN (Decentralized Physical Infrastructure Networks) markets demonstrate similar trajectory, growing from $30-50 billion current valuation to projected $3.5 trillion by 2028. This represents expansion from less than 0.1% of the global infrastructure market to meaningful penetration.
 
----
+Sela Network operates at the intersection of these convergent trends. AI agents require web interaction infrastructure. DePIN provides the decentralized coordination mechanism. The combination addresses a fundamental infrastructure gap in an expanding market.
 
-## 시장 기회
+## Strategic Differentiation
 
-### AI 에이전트 경제의 필수 인프라
+**Cryptographic verification**: Sela is the only web interaction platform providing cryptographic proof of data provenance through zk-TLS implementation. This enables use cases in regulated industries and compliance contexts that cannot utilize unverified data sources.
 
-**시장 규모:**
+**Hybrid parsing architecture**: The combination of vision-based UI understanding with structural DOM analysis provides resilience against layout changes while maintaining parsing accuracy. Self-healing mechanisms eliminate maintenance overhead.
 
-```
-2024: AI Agent 시장 $5B
-2025: 예상 $8B (60% YoY 성장)
-2027: 예상 $25B
-2030: 예상 $100B+
+**True decentralization**: Unlike proxied access to centralized browser farms, Sela operates as a peer-to-peer network without dependency on single providers. Geographic distribution and node redundancy ensure service continuity.
 
-Sela의 TAM (Total Addressable Market)
-= AI Agent 시장의 15-25%
-= 2030년 $15-25B
-```
+**Economic sustainability**: Token-based incentive alignment creates a self-reinforcing cycle where increased agent usage drives node growth, which improves network capacity and reliability. This contrasts with centralized models requiring continuous infrastructure investment.
 
-**성장 촉진제:**
+## Use Cases
 
-- OpenAI의 GPT Store (100만+ GPTs)
-- Google의 Gemini Agent
-- Anthropic의 Claude Agent
-- 모두 웹 인터랙션 필요 → Sela 필수
+### Autonomous Trading Systems
 
-### 경쟁 우위
+AI agents analyze real-time market data from exchanges, news sources, and social platforms, then execute trades through web interfaces. Cryptographic proofs provide auditable records of data sources and execution times for compliance verification.
 
-#### 기존 중앙화 솔루션 비교
+### Cross-Platform Commerce
 
-| 요소             | Browserbase (중앙화)                           | Sela Network (탈중앙)                           |
-| ---------------- | ---------------------------------------------- | ----------------------------------------------- |
-| **아키텍처**     | 중앙 서버 클러스터                             | 분산 노드 네트워크 (100,000+ 목표)              |
-| **Stealth 모드** | Custom Chromium 빌드 (Advanced는 Scale 플랜만) | 실제 사용자 브라우저 (모든 노드 기본 제공)      |
-| **CAPTCHA 해결** | 자동 (최대 30초 소요)                          | 분산 노드 + 실제 브라우징 패턴으로 CAPTCHA 회피 |
-| **동시성 제한**  | Startup: 50, Scale: 100+                       | 네트워크 규모에 따라 무제한 확장                |
-| **세션 비용**    | $0.10/브라우저 시간 + $10/GB 프록시            | 토큰 이코노미 기반 - 장기적 비용 절감           |
-| **데이터 검증**  | 세션 리플레이/로그만 제공                      | **zk-TLS 기반 암호학적 증명**                   |
-| **SPOF**         | 중앙 서버 다운 시 전체 중단                    | 노드 분산으로 단일 장애점 없음                  |
-| **프록시**       | 주거용 프록시 추가 비용                        | 노드 운영자의 실제 IP 자동 활용                 |
+Agents compare prices, inventory, and shipping options across multiple e-commerce platforms, then execute purchases through the optimal channel. Decentralized nodes bypass geographic restrictions and bot detection systems that limit centralized approaches.
 
-**Browserbase 한계:**
+### Regulatory Compliance Monitoring
 
-- 최소 1분 과금 (짧은 태스크도 1분 요금)
-- 세션 생성 제한: 50/분 (Startup 플랜)
-- 429 에러 빈번 (동시성/요율 제한 초과 시)
-- 데이터 보관: 7일~90일 (플랜별)
+Systems continuously monitor government websites for regulatory updates, extract structured information from legal documents, and generate cryptographically-verified records of publication timestamps and content. This enables automated compliance reporting with verifiable audit trails.
 
-**Sela 차별점:**
+### Research and Intelligence
 
-- 실제 사용자 브라우저 활용 → 봇 탐지 우회율 극대화
-- 토큰 기반 P2P 경제 → 중개 수수료 제거
-- 암호학적 데이터 검증 → 금융/법률 활용 가능
-- 무제한 확장성 → 노드 추가만으로 용량 증가
+Agents systematically collect data from diverse web sources while maintaining provenance chains for all information. Verifiable timestamps and source attribution support research integrity and fact-checking workflows.
 
----
+## Network Participants
 
-## 비전: AI 시대의 HTTP
+### AI Agent Developers
 
-### 과거: HTTP가 웹을 연결했다
+For developers building autonomous systems with frameworks like LangChain or AutoGPT, Sela abstracts web interaction complexity behind a consistent API. Instead of managing browser automation, proxy rotation, CAPTCHA solving, and HTML parsing, developers access structured data through standardized interfaces. Self-healing selectors eliminate maintenance overhead when target websites change.
 
-```
-1990년: HTTP 탄생
-1995년: 웹사이트 폭발적 증가
-2000년: 인터넷 경제 시작
-2024년: 수조 달러 규모 웹 경제
-```
+### Node Operators
 
-### 미래: Sela가 AI-Web을 연결한다
+Individuals and organizations contribute computational resources by running browser nodes. Participants install client software, stake tokens, and earn rewards proportional to their contribution. The decentralized infrastructure model creates opportunities for passive income through resource sharing, similar to other DePIN networks in storage, computing, and bandwidth.
 
-```
-2024년: Sela 런칭
-2025년: AI 에이전트가 Sela 채택
-2027년: Sela가 산업 표준화
-2030년: 모든 AI가 Sela로 웹 접근
-```
+### Data Consumers
 
-### 궁극적 목표
+Enterprises and applications requiring verified web data access Sela's marketplace for pre-structured datasets and extraction templates. Cryptographic verification enables use in contexts requiring data authenticity guarantees—financial audits, legal proceedings, compliance reporting.
 
-> **"2030년, 수백만 AI 에이전트가 Sela Network를 통해
-> 전 세계 웹과 인터랙션하며,
-> 새로운 자율 경제를 창출한다"**
+## Long-Term Vision
 
----
+The objective is to establish Sela Network as the foundational operating layer enabling AI agents to reliably use the internet—the HTTP/TCP/IP equivalent for the AI agent era.
 
-## 참여 방법
+In the same way HTTP provided a standard protocol for human web access, enabling the creation of the modern internet economy, Sela aims to provide standardized, verifiable web access for autonomous agents.
 
-### 노드 운영자
+This infrastructure enables:
 
-1. 크롬 확장 프로그램 설치
-2. 최소 100 SELA 스테이킹
-3. 즉시 보상 수령 시작
-   → [노드 판매 페이지](/node-sale/introduction/what-is-sela-node/)
+- Autonomous economic agents conducting transactions across web platforms
+- Verifiable data provenance for AI training and decision-making
+- Decentralized coordination between agents and web services
+- Trustless verification of agent actions and outcomes
 
-### 개발자
+As AI capabilities expand beyond text generation toward autonomous action, reliable web interaction infrastructure becomes foundational. Current solutions—centralized browser services and brittle scraping tools—cannot scale to support an ecosystem of millions of autonomous agents. Sela Network addresses this infrastructure requirement through decentralized coordination, cryptographic verification, and economic sustainability.
 
-1. SDK 설치 (Python/JS)
-2. 첫 번째 Agent 구축
-3. 마켓플레이스에 Parser/Script 판매
-   → [기술 문서](/technology/solution/)
+## Conclusion
 
-### 투자자
+Sela Network provides the infrastructure layer enabling AI agents to interact with the web reliably, verifiably, and at scale. By combining distributed browser networks, semantic interpretation engines, and cryptographic verification protocols, Sela addresses the fundamental barriers preventing autonomous agent deployment.
 
-1. 토크노믹스 검토
-2. 시장 기회 분석
-3. 커뮤니티 참여
-   → [토크노믹스](/tokenomics/overview/)
-
----
-
-**Sela Network는 AI가 웹을 읽고, 이해하고, 실행하며,
-이 모든 과정을 검증 가능하게 만드는 차세대 웹 프로토콜입니다.**
-
-지금 바로 AI 에이전트 혁명에 참여하세요.
+The convergence of AI agent adoption and decentralized infrastructure creates a market opportunity measured in tens of billions of dollars. Sela's technical architecture, strategic positioning, and economic model position the network to capture significant value in this emerging ecosystem.
