@@ -448,7 +448,7 @@ Concentrated Liquidity (Uniswap V3):
 ### 스마트 컨트랙트 감사
 
 ```
-✅ 감사 완료:
+감사 완료:
 - CertiK (2024.01)
 - Quantstamp (2024.02)
 - Trail of Bits (2024.03)
@@ -548,26 +548,26 @@ https://github.com/sela-network/audits
 
 ### 2025 Q1-Q2
 
-- ✅ 기본 유틸리티 (Gas, Staking)
-- ✅ 마켓플레이스 결제
+- 기본 유틸리티 (Gas, Staking)
+- 마켓플레이스 결제
 
 ### 2025 Q3-Q4
 
-- 🔄 크로스체인 브리지 (BSC, Polygon)
-- 🔄 Liquid Staking (stSELA)
-- 🔄 DAO 거버넌스 토큰
+- 크로스체인 브리지 (BSC, Polygon)
+- Liquid Staking (stSELA)
+- DAO 거버넌스 토큰
 
 ### 2026
 
-- 🔄 DeFi 통합 (Lending, Yield Farming)
-- 🔄 NFT 유틸리티 (Node License NFT)
-- 🔄 보험 프로토콜
+- DeFi 통합 (Lending, Yield Farming)
+- NFT 유틸리티 (Node License NFT)
+- 보험 프로토콜
 
 ### 2027+
 
-- 🔄 자체 L2 체인 Gas 토큰
-- 🔄 AI Agent 간 P2P 결제 표준
-- 🔄 글로벌 결제 네트워크 통합
+- 자체 L2 체인 Gas 토큰
+- AI Agent 간 P2P 결제 표준
+- 글로벌 결제 네트워크 통합
 
 ---
 
@@ -602,7 +602,7 @@ https://github.com/sela-network/audits
 ## 법적 고지사항
 
 ```
-⚠️ 중요:
+중요:
 
 $SELA 토큰은 Sela Network 플랫폼의 유틸리티 토큰입니다.
 

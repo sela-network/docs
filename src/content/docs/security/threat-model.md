@@ -24,18 +24,18 @@ STRIDE는 Microsoft에서 개발한 위협 모델링 방법론입니다.
 **인증 강화:**
 
 ```
-✅ API Key + Secret 조합
-✅ IP 화이트리스트 (선택사항)
-✅ 디바이스 지문 (Fingerprinting)
-✅ 이상 행위 패턴 감지
+- API Key + Secret 조합
+- IP 화이트리스트 (선택사항)
+- 디바이스 지문 (Fingerprinting)
+- 이상 행위 패턴 감지
 ```
 
 **노드 검증:**
 
 ```
-✅ 스테이킹 요구 (Proof of Stake)
-✅ 평판 시스템
-✅ 주기적 검증 요청
+- 스테이킹 요구 (Proof of Stake)
+- 평판 시스템
+- 주기적 검증 요청
 ```
 
 ---
@@ -55,17 +55,17 @@ STRIDE는 Microsoft에서 개발한 위협 모델링 방법론입니다.
 **전송 보호:**
 
 ```
-✅ TLS 1.3 암호화
-✅ Message Authentication Code (HMAC)
-✅ End-to-End 암호화
+- TLS 1.3 암호화
+- Message Authentication Code (HMAC)
+- End-to-End 암호화
 ```
 
 **데이터 검증:**
 
 ```
-✅ zk-TLS Proof
-✅ 다중 노드 검증
-✅ 체크섬 확인
+- zk-TLS Proof
+- 다중 노드 검증
+- 체크섬 확인
 ```
 
 ---
@@ -85,10 +85,10 @@ STRIDE는 Microsoft에서 개발한 위협 모델링 방법론입니다.
 **감사 추적:**
 
 ```
-✅ 모든 API 호출 로깅
-✅ 블록체인 기록 (불변성)
-✅ 디지털 서명
-✅ 타임스탬프 서버
+- 모든 API 호출 로깅
+- 블록체인 기록 (불변성)
+- 디지털 서명
+- 타임스탬프 서버
 ```
 
 **증거 보존:**
@@ -116,10 +116,10 @@ STRIDE는 Microsoft에서 개발한 위협 모델링 방법론입니다.
 **데이터 보호:**
 
 ```
-✅ 저장 데이터 암호화 (AES-256)
-✅ 전송 데이터 암호화 (TLS 1.3)
-✅ 민감 정보 마스킹
-✅ 접근 제어 (RBAC)
+- 저장 데이터 암호화 (AES-256)
+- 전송 데이터 암호화 (TLS 1.3)
+- 민감 정보 마스킹
+- 접근 제어 (RBAC)
 ```
 
 **최소 권한 원칙:**
@@ -145,19 +145,19 @@ STRIDE는 Microsoft에서 개발한 위협 모델링 방법론입니다.
 **DDoS 방어:**
 
 ```
-✅ Cloudflare DDoS Protection
-✅ Rate Limiting (다층)
-✅ Auto-Scaling
-✅ Traffic Analysis
+- Cloudflare DDoS Protection
+- Rate Limiting (다층)
+- Auto-Scaling
+- Traffic Analysis
 ```
 
 **리소스 관리:**
 
 ```
-✅ Request Timeout
-✅ Queue Management
-✅ Circuit Breaker
-✅ Load Balancing
+- Request Timeout
+- Queue Management
+- Circuit Breaker
+- Load Balancing
 ```
 
 ---
@@ -177,17 +177,17 @@ STRIDE는 Microsoft에서 개발한 위협 모델링 방법론입니다.
 **입력 검증:**
 
 ```
-✅ 모든 입력 검증 (Whitelist)
-✅ Parameterized Queries
-✅ Output Encoding
+- 모든 입력 검증 (Whitelist)
+- Parameterized Queries
+- Output Encoding
 ```
 
 **권한 분리:**
 
 ```
-✅ 최소 권한 원칙
-✅ 정기적 권한 검토
-✅ Sudo 사용 최소화
+- 최소 권한 원칙
+- 정기적 권한 검토
+- Sudo 사용 최소화
 ```
 
 ---
@@ -304,9 +304,9 @@ Low: 5개 (일부 수정 중)
 
 **권장사항:**
 
-- API Rate Limiting 강화 ✅ 완료
-- 로그 보관 기간 연장 ✅ 완료
-- 모니터링 알림 개선 🔄 진행 중
+- API Rate Limiting 강화
+- 로그 보관 기간 연장
+- 모니터링 알림 개선
 
 ---
 
@@ -314,19 +314,19 @@ Low: 5개 (일부 수정 중)
 
 ### 2025 Q1
 
-- ✅ 침투 테스트 (분기별)
-- 🔄 Bug Bounty 프로그램 런칭
-- 🔄 보안 교육 강화
+- 침투 테스트 (분기별)
+- Bug Bounty 프로그램 런칭
+- 보안 교육 강화
 
 ### 2025 Q2
 
-- 🔄 SOC 2 Type II 인증
-- 🔄 자동화된 보안 스캔
+- SOC 2 Type II 인증
+- 자동화된 보안 스캔
 
 ### 2025 Q3-Q4
 
-- 🔄 ISO 27001 인증
-- 🔄 GDPR 컴플라이언스 강화
+- ISO 27001 인증
+- GDPR 컴플라이언스 강화
 
 ---
 

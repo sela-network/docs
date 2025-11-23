@@ -236,8 +236,8 @@ store(encrypted_data)
 
 ```
 수집 데이터:
-✅ 필요: API 사용량, 에러 로그
-❌ 불필요: 웹 페이지 내용 (저장 안 함)
+- 필요: API 사용량, 에러 로그
+- 불필요: 웹 페이지 내용 (저장 안 함)
 
 보관 기간:
 - API 로그: 30일
@@ -255,9 +255,9 @@ store(encrypted_data)
 프로덕션: HashiCorp Vault
 
 절대 금지:
-❌ 코드에 하드코딩
-❌ Git 커밋
-❌ 평문 로그
+- 코드에 하드코딩
+- Git 커밋
+- 평문 로그
 ```
 
 **자동 회전:**
@@ -387,10 +387,10 @@ log_disconnections = on
 **대응:**
 
 ```
-✅ 강력한 인증 (API Key, OAuth, mTLS)
-✅ 노드 스테이킹 (Proof of Stake)
-✅ IP 평판 시스템
-✅ 디바이스 지문 (Fingerprinting)
+- 강력한 인증 (API Key, OAuth, mTLS)
+- 노드 스테이킹 (Proof of Stake)
+- IP 평판 시스템
+- 디바이스 지문 (Fingerprinting)
 ```
 
 #### Tampering (변조)
@@ -403,10 +403,10 @@ log_disconnections = on
 **대응:**
 
 ```
-✅ TLS로 전송 중 변조 방지
-✅ zk-TLS Proof로 데이터 무결성 증명
-✅ Message Signing (HMAC)
-✅ Immutable Audit Logs
+- TLS로 전송 중 변조 방지
+- zk-TLS Proof로 데이터 무결성 증명
+- Message Signing (HMAC)
+- Immutable Audit Logs
 ```
 
 #### Repudiation (부인)
@@ -419,10 +419,10 @@ log_disconnections = on
 **대응:**
 
 ```
-✅ 모든 작업 로깅 (Audit Trail)
-✅ 디지털 서명
-✅ 타임스탬프
-✅ 온체인 기록 (블록체인)
+- 모든 작업 로깅 (Audit Trail)
+- 디지털 서명
+- 타임스탬프
+- 온체인 기록 (블록체인)
 ```
 
 #### Information Disclosure (정보 노출)
@@ -435,10 +435,10 @@ log_disconnections = on
 **대응:**
 
 ```
-✅ 암호화 (전송 및 저장)
-✅ 접근 제어 (RBAC)
-✅ 데이터 최소화
-✅ Secrets 관리
+- 암호화 (전송 및 저장)
+- 접근 제어 (RBAC)
+- 데이터 최소화
+- Secrets 관리
 ```
 
 #### Denial of Service (서비스 거부)
@@ -451,10 +451,10 @@ log_disconnections = on
 **대응:**
 
 ```
-✅ DDoS 방어 (Cloudflare)
-✅ Rate Limiting
-✅ Auto-Scaling
-✅ Circuit Breaker
+- DDoS 방어 (Cloudflare)
+- Rate Limiting
+- Auto-Scaling
+- Circuit Breaker
 ```
 
 #### Elevation of Privilege (권한 상승)
@@ -467,10 +467,10 @@ log_disconnections = on
 **대응:**
 
 ```
-✅ 최소 권한 원칙
-✅ 입력 검증
-✅ Parameterized Queries (SQL Injection 방지)
-✅ Content Security Policy
+- 최소 권한 원칙
+- 입력 검증
+- Parameterized Queries (SQL Injection 방지)
+- Content Security Policy
 ```
 
 ---
@@ -593,30 +593,30 @@ Severity 3 (Medium):
 **GDPR (EU 일반 데이터 보호 규정):**
 
 ```
-✅ 데이터 최소화
-✅ 동의 기반 수집
-✅ 삭제권 보장 (Right to be Forgotten)
-✅ 데이터 이동권
-✅ 72시간 내 유출 알림
+- 데이터 최소화
+- 동의 기반 수집
+- 삭제권 보장 (Right to be Forgotten)
+- 데이터 이동권
+- 72시간 내 유출 알림
 ```
 
 **CCPA (캘리포니아 소비자 프라이버시법):**
 
 ```
-✅ 데이터 수집 고지
-✅ 판매 거부권
-✅ 삭제 요청 처리
-✅ 차별 금지
+- 데이터 수집 고지
+- 판매 거부권
+- 삭제 요청 처리
+- 차별 금지
 ```
 
 **SOC 2 Type II:**
 
 ```
-✅ Security (보안)
-✅ Availability (가용성)
-✅ Processing Integrity (처리 무결성)
-✅ Confidentiality (기밀성)
-✅ Privacy (프라이버시)
+- Security (보안)
+- Availability (가용성)
+- Processing Integrity (처리 무결성)
+- Confidentiality (기밀성)
+- Privacy (프라이버시)
 
 감사 주기: 연 1회
 감사 기관: Big 4 회계법인
@@ -687,15 +687,15 @@ Severity 3 (Medium):
 **감사 완료:**
 
 ```
-✅ CertiK (2024.01)
+- CertiK (2024.01)
    - 발견: 3 Medium, 5 Low
    - 상태: 모두 수정 완료
 
-✅ Quantstamp (2024.02)
+- Quantstamp (2024.02)
    - 발견: 2 Medium, 3 Low
    - 상태: 모두 수정 완료
 
-✅ Trail of Bits (2024.03)
+- Trail of Bits (2024.03)
    - 발견: 1 High, 4 Medium
    - 상태: 모두 수정 완료
 ```
@@ -723,15 +723,15 @@ https://github.com/sela-network/audits
 URL: https://hackerone.com/sela-network
 
 대상:
-✅ api.sela.network
-✅ dashboard.sela.network
-✅ Smart Contracts
-✅ SDK Libraries
+- api.sela.network
+- dashboard.sela.network
+- Smart Contracts
+- SDK Libraries
 
 제외:
-❌ 소셜 엔지니어링
-❌ DDoS
-❌ 이미 알려진 취약점
+- 소셜 엔지니어링
+- DDoS
+- 이미 알려진 취약점
 ```
 
 ---
@@ -767,22 +767,22 @@ URL: https://hackerone.com/sela-network
 
 ### 2025 Q1
 
-- ✅ SOC 2 Type II 인증 완료
-- 🔄 Penetration Testing 강화
+- SOC 2 Type II 인증 완료
+- Penetration Testing 강화
 
 ### 2025 Q2
 
-- 🔄 ISO 27001 인증
-- 🔄 Bug Bounty 프로그램 확대
+- ISO 27001 인증
+- Bug Bounty 프로그램 확대
 
 ### 2025 Q3
 
-- 🔄 Zero Knowledge Proof 강화
-- 🔄 Homomorphic Encryption 연구
+- Zero Knowledge Proof 강화
+- Homomorphic Encryption 연구
 
 ### 2025 Q4
 
-- 🔄 Quantum-Safe Cryptography 준비
+- Quantum-Safe Cryptography 준비
 
 ---
 
@@ -809,11 +809,12 @@ Response SLA: 24시간 이내
 Sela Network는 **최고 수준의 보안**을 제공하기 위해 지속적으로 투자하고 개선합니다.
 
 **핵심 보안 원칙:**
-✅ Defense in Depth
-✅ Zero Trust Architecture
-✅ Privacy by Design
-✅ Continuous Monitoring
-✅ Rapid Response
+
+- Defense in Depth
+- Zero Trust Architecture
+- Privacy by Design
+- Continuous Monitoring
+- Rapid Response
 
 ---
 

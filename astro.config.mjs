@@ -5,14 +5,12 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   redirects: {
-    '/': '/overview/executive-summary',
+    "/": "/overview/executive-summary",
   },
   integrations: [
     starlight({
       title: "Sela Network",
-      customCss: [
-        './src/styles/custom.css',
-      ],
+      customCss: ["./src/styles/custom.css"],
       social: [
         {
           icon: "github",
@@ -30,9 +28,7 @@ export default defineConfig({
         },
         {
           label: "백서",
-          items: [
-            { label: "소개", slug: "whitepaper/introduction" },
-          ],
+          items: [{ label: "소개", slug: "whitepaper/introduction" }],
         },
         {
           label: "기술",
@@ -45,15 +41,11 @@ export default defineConfig({
         },
         {
           label: "활용 사례",
-          items: [
-            { label: "개요", slug: "use-cases/overview" },
-          ],
+          items: [{ label: "개요", slug: "use-cases/overview" }],
         },
         {
           label: "토크노믹스",
-          items: [
-            { label: "개요", slug: "tokenomics/overview" },
-          ],
+          items: [{ label: "개요", slug: "tokenomics/overview" }],
         },
         {
           label: "로드맵",
@@ -74,15 +66,11 @@ export default defineConfig({
         },
         {
           label: "API 레퍼런스",
-          items: [
-            { label: "API 개요", slug: "api/overview" },
-          ],
+          items: [{ label: "API 개요", slug: "api/overview" }],
         },
         {
           label: "성능 & 벤치마크",
-          items: [
-            { label: "성능 벤치마크", slug: "benchmarks/performance" },
-          ],
+          items: [{ label: "성능 벤치마크", slug: "benchmarks/performance" }],
         },
         {
           label: "보안",
@@ -101,7 +89,10 @@ export default defineConfig({
         {
           label: "기술 사양",
           items: [
-            { label: "시스템 요구사항", slug: "technical-specs/system-requirements" },
+            {
+              label: "시스템 요구사항",
+              slug: "technical-specs/system-requirements",
+            },
           ],
         },
       ],
