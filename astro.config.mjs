@@ -50,12 +50,12 @@ export default defineConfig({
           label: "Use Cases",
           items: [{ label: "Overview", slug: "use-cases/overview" }],
         },
-        {
-          label: "Node Operators",
-          items: [
-            { label: "Complete Guide", slug: "node-operators/complete-guide" },
-          ],
-        },
+        // {
+        //   label: "Node Operators",
+        //   items: [
+        //     { label: "Complete Guide", slug: "node-operators/complete-guide" },
+        //   ],
+        // },
         // {
         //   label: "Rewards",
         //   items: [
