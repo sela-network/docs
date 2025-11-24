@@ -419,33 +419,6 @@ Explaining token economics operation and how Sela becomes global standard.
 
 ---
 
-## Reading Guide
-
-### Quick Overview (15 minutes)
-
-1. Executive Summary - complete picture
-2. Solution Overview - technical solution
-3. Use Cases - real applications
-
-### Technical Depth (1 hour)
-
-1. Part 1 complete (problem definition)
-2. Part 2 complete (technical solution)
-3. Core Technologies thorough reading
-
-### Investment Analysis (45 minutes)
-
-1. Executive Summary - market opportunity
-2. Competitive Analysis - competitive advantages
-3. Tokenomics - economic model
-4. Roadmap - execution plan
-
-### Complete Understanding (3 hours)
-
-Read entire whitepaper sequentially. Each chapter builds on previous content; sequential reading is recommended.
-
----
-
 ## Transparency Statement
 
 ### What We Promise

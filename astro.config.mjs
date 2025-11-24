@@ -66,10 +66,7 @@ export default defineConfig({
         // },
         {
           label: "Roadmap",
-          items: [
-            { label: "Vision", slug: "roadmap/vision" },
-            { label: "Development Phases", slug: "roadmap/phases" },
-          ],
+          items: [{ label: "Vision", slug: "roadmap/vision" }],
         },
         {
           label: "Competitive Analysis",
