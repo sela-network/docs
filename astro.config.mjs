@@ -56,14 +56,10 @@ export default defineConfig({
         //     { label: "Complete Guide", slug: "node-operators/complete-guide" },
         //   ],
         // },
-        // {
-        //   label: "Rewards",
-        //   items: [
-        //     { label: "Rewards System", slug: "rewards/rewards-system" },
-        //     { label: "Node Rewards", slug: "rewards/node-rewards" },
-        //     { label: "$SPWR", slug: "rewards/points" },
-        //   ],
-        // },
+        {
+          label: "Rewards",
+          items: [{ label: "Rewards System", slug: "rewards/rewards-system" }],
+        },
         {
           label: "Roadmap",
           items: [{ label: "Vision", slug: "roadmap/vision" }],

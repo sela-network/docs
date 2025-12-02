@@ -1051,22 +1051,9 @@ print(detail.proof)  # zkTLS 증명 (있는 경우)
 
 ### 🚀 튜토리얼
 
-- [빠른 시작 가이드](/api/quickstart/) - 15분 안에 첫 Agent 만들기
-- [LangChain 통합](/api/integrations/langchain/) - LangChain 완벽 가이드
-- [AutoGPT 플러그인](/api/integrations/autogpt/) - AutoGPT와 연결
-
 ### 📖 API 레퍼런스
 
-- [Browse API 상세](/api/endpoints/browse/) - 모든 옵션 및 파라미터
-- [Interact API](/api/endpoints/interact/) - 웹 인터랙션 액션
-- [Proofs API](/api/endpoints/proofs/) - zkTLS 증명 관리
-- [Sessions API](/api/endpoints/sessions/) - 세션 및 로그인 관리
-
 ### 🎓 고급 가이드
-
-- [성능 최적화](/api/guides/performance/) - 응답 시간 50% 단축
-- [비용 최적화](/api/guides/cost-optimization/) - SELA 사용량 70% 절감
-- [프로덕션 체크리스트](/api/guides/production/) - 배포 전 확인사항
 
 ---
 
@@ -1074,7 +1061,6 @@ print(detail.proof)  # zkTLS 증명 (있는 경우)
 
 **문제가 있으신가요?**
 
-- 📚 [FAQ](/api/faq/) - 자주 묻는 질문
 - 💬 [Discord](https://discord.gg/sela) - 실시간 커뮤니티 지원
 - 🐛 [GitHub Issues](https://github.com/sela-network/sdk/issues) - 버그 리포트
 - 📧 support@sela.network - 이메일 지원
@@ -1342,8 +1328,6 @@ Content-Type: application/json
 POST /v1/browse
 ```
 
-[상세 문서 →](/api/browse/)
-
 ### 2. Actions API
 
 웹 인터랙션 자동화
@@ -1351,8 +1335,6 @@ POST /v1/browse
 ```http
 POST /v1/actions
 ```
-
-[상세 문서 →](/api/actions/)
 
 ### 3. Parsers API
 
@@ -1363,8 +1345,6 @@ GET /v1/parsers
 POST /v1/parsers
 ```
 
-[상세 문서 →](/api/parsers/)
-
 ### 4. Sessions API
 
 로그인 세션 관리
@@ -1374,8 +1354,6 @@ POST /v1/sessions
 GET /v1/sessions/:id
 ```
 
-[상세 문서 →](/api/sessions/)
-
 ### 5. Proofs API
 
 zk-TLS 증명 조회
@@ -1384,8 +1362,6 @@ zk-TLS 증명 조회
 GET /v1/proofs/:id
 POST /v1/proofs/verify
 ```
-
-[상세 문서 →](/api/proofs/)
 
 ---
 

@@ -1,317 +1,359 @@
 ---
-title: 보상 시스템 개요
-description: Sela Network 보상 시스템 전체 개요
+title: Rewards System Overview
+description: Comprehensive overview of Sela Network's incentive and rewards architecture
 ---
 
-## 설계 철학
+## Design Principles
 
-### 핵심 원칙
+Sela Network's rewards system is designed to ensure sustainable network growth and equitable value distribution among participants in a decentralized infrastructure.
 
-1. **기여도 기반 보상**
+### Core Principles
 
-   - 실제 네트워크 기여에 비례한 보상
-   - 품질과 성과 중심 평가
+**Contribution-Proportional Rewards**
 
-2. **장기적 인센티브**
+Rewards are distributed in proportion to network contribution. Node operators receive differentiated compensation based on request volume processed, performance tier, and uptime. Developers earn revenue based on ecosystem tool usage and quality.
 
-   - 단기 투기보다 장기 참여 장려
-   - 베스팅(Vesting) 메커니즘 적용
+**Long-Term Participation Incentives**
 
-3. **투명성**
+Vesting mechanisms are applied to encourage long-term contribution over short-term speculation. Staking requirements and performance-based reward structures ensure stable network operation.
 
-   - 모든 보상 온체인 기록
-   - 누구나 검증 가능
+**Transparency**
 
-4. **지속 가능성**
-   - 네트워크 성장과 함께 보상 증가
-   - 선순환 구조
+All reward distributions are recorded on-chain and verifiable by anyone. Smart contracts execute automatically according to predefined rules, implementing a trustless reward system.
 
----
+**Sustainability**
 
-## 보상 대상
-
-### 1. 노드 운영자
-
-분산 브라우저 네트워크를 운영하는 참여자
-
-**보상 방식:**
-
-- 네트워크 기본 보상
-- API 요청 처리 수수료
-- 성능 인센티브
-- 스테이킹 보상
-
-**[상세 보기 →](/rewards/node-rewards/)**
+The system maintains a virtuous cycle where the reward pool expands naturally as network usage increases. Token burn mechanisms and treasury management ensure long-term economic stability.
 
 ---
 
-### 2. 개발자
+## Participant Roles and Rewards
 
-생태계 도구와 서비스를 개발하는 참여자
+### Node Operators
 
-**보상 방식:**
+Node operators provide web access infrastructure to AI agents by operating distributed browser nodes within the network.
 
-- 마켓플레이스 판매 수익
-- Grant 프로그램
-- Bug Bounty
-- 오픈소스 기여 보상
+**Reward Components:**
 
-**[상세 보기 →](/rewards/developer-rewards/)**
+- Base network rewards: Distributed per epoch proportional to staking ratio
+- API request processing fees: Direct compensation for processed requests (70% of fees)
+- Performance incentives: Bonuses based on response time, uptime, and success rate (up to +30%)
+- Staking rewards: Base yield on tokens provided as network security collateral
 
----
+**Tier Structure:**
 
-### 3. 사용자
-
-플랫폼을 사용하고 커뮤니티에 참여하는 사용자
-
-**인센티브:**
-
-- 포인트 시스템
-- Early Adopter 보너스
-- Referral 프로그램
-- 거버넌스 참여
-
-**[상세 보기 →](/rewards/points/)**
+Node operators are classified into tiers based on staking amount: Bronze (100 SELA), Silver (500 SELA), Gold (2,000 SELA), Platinum (10,000 SELA), and Diamond (50,000 SELA). Higher tiers receive priority task assignment, governance participation rights, and dedicated support.
 
 ---
 
-## 보상 계층 구조
+### Developers
+
+Developers extend network functionality by creating ecosystem tools, parsers, scripts, and SDKs.
+
+**Reward Components:**
+
+- Marketplace sales revenue: 70% of parser and script sales proceeds
+- Grant program: Funding for projects contributing to ecosystem development
+- Bug bounty: Rewards for security vulnerability discovery and reporting
+- Open-source contribution rewards: Incentives for core protocol improvement contributions
+
+**Marketplace Revenue Distribution:**
 
 ```
-┌─────────────────────────────────────┐
-│  Layer 1: 노드 운영자 보상           │
-│  - 네트워크 유지 및 서비스 제공      │
-├─────────────────────────────────────┤
-│  Layer 2: 개발자 보상               │
-│  - 생태계 도구 및 서비스 개발        │
-├─────────────────────────────────────┤
-│  Layer 3: 사용자 인센티브            │
-│  - 네트워크 사용 및 커뮤니티 기여    │
-├─────────────────────────────────────┤
-│  Layer 4: 생태계 펀드               │
-│  - 장기 성장 및 발전 지원            │
-└─────────────────────────────────────┘
+Parser sale price: Developer-determined
+  ├─ 70% → Developer
+  ├─ 20% → Protocol treasury
+  └─ 10% → Token burn
 ```
 
 ---
 
-## 토큰 이코노미
+### Users
 
-### $SELA 토큰 역할
+Individual and enterprise users who utilize the platform and participate in the community.
 
-**1. 네트워크 수수료**
+**Incentive Structure:**
 
-- API 호출 시 지불 수단
-- 가스 비용
+- Points system: Earn Sela Points proportional to API usage
+- Early adopter bonus: Additional points and token rewards for initial users
+- Referral program: Rewards for both referrer and referee upon new user acquisition
+- Governance participation: Token holders participate in network policy decisions through voting
 
-**2. 스테이킹**
+**Points-to-Token Conversion:**
 
-- 노드 운영 시 요구사항
-- 보안 담보
-
-**3. 거버넌스**
-
-- 네트워크 정책 결정 투표권
-
-**4. 마켓플레이스 결제**
-
-- 파서, 스크립트 구매
-
-**[토큰 상세 정보 →](/rewards/sela-token/)**
+Sela Points is an off-chain point system convertible to $SELA tokens upon meeting certain conditions. Points can be used for API discounts, premium feature access, and other purposes.
 
 ---
 
-## 보상 분배 메커니즘
+## Token Economics
 
-### 자동 분배
+### $SELA Token Functions
 
-**블록체인 기반:**
+$SELA is the native utility token of Sela Network, serving the following functions:
 
-- 스마트 컨트랙트 자동 실행
-- 사람 개입 없는 공정한 분배
-- 투명한 기록
+**Network Fees**
 
-### 주기
+AI agents pay fees in $SELA when calling APIs or requesting zk-TLS proofs. Fees are dynamically adjusted based on network congestion, request complexity, and region.
 
-| 보상 유형   | 분배 주기 | 방식 |
-| ----------- | --------- | ---- |
-| API 수수료  | 실시간    | 자동 |
-| 기본 보상   | 매 블록   | 자동 |
-| 성능 보너스 | 주간      | 자동 |
-| Grant       | 마일스톤  | 수동 |
+**Staking Collateral**
 
----
+Node operators must stake a minimum of 100 SELA to acquire network participation eligibility. Staking acts as security collateral and is subject to slashing (partial or full forfeiture) for malicious behavior.
 
-## 수수료 구조
+**Governance**
 
-### API 사용 수수료
+$SELA holders possess voting rights on network policies, protocol upgrades, and treasury expenditures. Voting power is proportional to holdings and staking duration.
 
-**기본 구조:**
+**Marketplace Payments**
 
-```
-요청당 비용: 시장 수요에 따라 변동
-
-예상 범위: 0.001 - 0.1 SELA
-
-수수료 배분:
-├─ 70% → 노드 운영자
-├─ 20% → 프로토콜 재무
-└─ 10% → 소각 (Burn)
-```
-
-**변동 요인:**
-
-- 네트워크 혼잡도
-- 요청 복잡도 (VLM, zk-TLS 등)
-- 노드 지역
+Parsers, scripts, and datasets created by developers are purchased with $SELA. The marketplace is a core mechanism for network ecosystem expansion.
 
 ---
 
-## 슬래싱 (Slashing)
+## Reward Distribution Mechanisms
 
-### 패널티 시스템
+### Automated Distribution
 
-**목적:**
+**Smart Contract-Based Execution**
 
-- 악의적 행위 방지
-- 서비스 품질 유지
+All rewards are distributed automatically through blockchain smart contracts. Execution is fair according to predefined rules without human intervention, with all transactions transparently recorded on-chain.
 
-**대상:**
+**Distribution Cycles**
+
+| Reward Type          | Distribution Cycle | Method    | Description                                               |
+| -------------------- | ------------------ | --------- | --------------------------------------------------------- |
+| API fees             | Real-time          | Automatic | Paid to node operators immediately upon processing        |
+| Base network rewards | Per epoch          | Automatic | Periodic distribution proportional to staking ratio       |
+| Performance bonuses  | Weekly             | Automatic | Bonuses paid by tier after performance metric aggregation |
+| Grant program        | Upon milestone     | Manual    | Approval and payment after project progress review        |
+
+### Fee Structure
+
+**API Usage Fees**
+
+Per-request cost varies dynamically based on network demand, request complexity, and node region. Expected range is 0.001~0.1 SELA.
+
+**Fee Distribution:**
 
 ```
-심각: 데이터 조작, 거짓 증명 → 스테이킹 전액 몰수
-중간: 저품질 서비스 → 일부 감액
-경미: 일시적 다운타임 → 경고
+User-paid fee: 100%
+  ├─ 70% → Request processing node operator
+  ├─ 20% → Protocol treasury (development, operations, grant program)
+  └─ 10% → Burn (deflationary mechanism)
 ```
+
+**Variable Factors:**
+
+- Network congestion: Fees increase with rising demand
+- Request complexity: Additional fees for VLM analysis and zk-TLS proof generation
+- Node region: Fees increase in regions with rising node demand
 
 ---
 
-## 생태계 펀드
+## Slashing
 
-### Treasury 관리
+### Purpose and Principles
 
-**수입:**
+Slashing is an economic penalty mechanism in Proof of Stake networks designed to prevent malicious or negligent behavior. Staked tokens serve as collateral to ensure honest node operator conduct.
 
-- 프로토콜 수수료 (20%)
-- 마켓플레이스 수수료
-- 파트너십 수익
+### Violation Types and Penalties
 
-**사용:**
+**Severe Violations (Immediate Full Forfeiture):**
 
-```
-40% → Grant 프로그램
-30% → 마케팅 및 성장
-20% → R&D
-10% → 비상 준비금
-```
+- Data manipulation: Providing false data in API responses
+- Fraudulent proof generation: Forgery or manipulation of zk-TLS proofs
+- Network attacks: Participation in DDoS, Sybil attacks, etc.
+- Double signing: Simultaneous execution of identical validator keys on multiple nodes
 
-**거버넌스:**
+**Minor Violations (Warnings and Progressive Penalties):**
 
-- 커뮤니티 투표로 결정
-- 투명한 지출 기록
+| Violation Type          | 1st Violation | 2nd Violation        | 3rd Violation        |
+| ----------------------- | ------------- | -------------------- | -------------------- |
+| Low performance (< 80%) | Warning       | 10% reward reduction | 30% reward reduction |
+| Downtime (< 95%)        | Warning       | Warning              | 20% reward reduction |
+| SLA violation           | Warning       | 5% reward reduction  | Temporary suspension |
+
+**Penalty Structure:**
+
+Slashing consists of three stages: immediate penalty, exit waiting period, and correlation penalty (penalties increase when multiple nodes simultaneously violate). Slashed nodes cannot rejoin the network and require new validator keys and staking.
 
 ---
 
-## 포인트 프로그램
+## Ecosystem Fund
+
+### Treasury Management
+
+**Revenue Sources:**
+
+- Protocol fees: 20% of API fees
+- Marketplace fees: 20% of parser sales revenue
+- Partnership revenue: Corporate partnerships and licensing agreements
+
+**Expenditure Allocation:**
+
+```
+Total treasury income: 100%
+  ├─ 40% → Grant program (ecosystem development support)
+  ├─ 30% → Marketing and growth (user acquisition, partnerships)
+  ├─ 20% → R&D (protocol improvement, new technology research)
+  └─ 10% → Emergency reserves (network crisis response)
+```
+
+**Governance:**
+
+Treasury expenditures are determined through $SELA token holder voting. All proposals are published on-chain, with voting results and expenditure details transparently recorded.
+
+---
+
+## Points Program
 
 ### Sela Points
 
-**오프체인 포인트 시스템:**
+**Concept:**
 
-- API 사용으로 획득
-- $SELA 토큰으로 교환 가능
-- Early Adopter 보너스
+Sela Points is an off-chain point system earned through API usage, community participation, and network contributions. Points are convertible to $SELA tokens upon meeting certain conditions.
 
-**용도:**
+**Earning Methods:**
 
-- 토큰 교환
-- 할인
-- 프리미엄 기능 이용
+- API usage: Points accrual per request
+- Early adopter bonus: Multiplier bonuses for initial users
+- Referral: Points awarded to both referrer and referee
+- Community contribution: Bug reports, documentation contributions, educational content creation
 
-**[포인트 시스템 상세 →](/rewards/points/)**
+**Utilization Methods:**
 
----
+- $SELA token exchange: Conversion to tokens upon point accumulation
+- API discounts: Fee discounts when using points
+- Premium features: Access to advanced analysis tools and priority support
+- Marketplace purchases: Point usage for parser and script purchases
 
-## 시작하기
-
-### 노드 운영자가 되려면
-
-1. 최소 100 SELA 스테이킹
-2. 노드 소프트웨어 설치
-3. 네트워크 참여 시작
-
-### 개발자로 참여하려면
-
-1. 개발자 계정 생성
-2. SDK 다운로드
-3. 파서/스크립트 개발 시작
-
-### 사용자로 시작하려면
-
-1. 회원가입
-2. API Key 발급
-3. 포인트 적립 시작
+[Points System Details →](/rewards/points/)
 
 ---
 
-## 보상 계산 예시
+## Getting Started
 
-### 노드 운영자 (예시)
+### Node Operator Participation
+
+**Requirements:**
+
+- Minimum 100 SELA staking (varies by tier)
+- Recommended hardware: Dual-core CPU, 8GB RAM, 128GB SSD, 10 Mbps network
+- Browser extension or standalone node software installation
+
+**Startup Procedure:**
+
+1. Create Sela Network account and complete KYC
+2. Connect wallet and deposit minimum staking amount
+3. Install and configure node software
+4. Begin network participation and request processing
+
+### Developer Participation
+
+**Requirements:**
+
+- Developer account creation
+- SDK and API documentation familiarity
+- Parser or script development capability
+
+**Startup Procedure:**
+
+1. Create account on developer portal
+2. Download SDK and configure local development environment
+3. Develop and test parser or script
+4. Register on marketplace and begin sales
+
+### User Participation
+
+**Requirements:**
+
+- Email or social account
+- API usage purpose and expected usage volume
+
+**Startup Procedure:**
+
+1. Sign up on Sela Network website
+2. Issue API key
+3. Begin API calls and point accrual
+4. Exchange points for tokens or utilize discount benefits
+
+---
+
+## Reward Calculation Examples
+
+### Node Operator Revenue Projection
+
+**Silver Node (S-tier Performance):**
 
 ```
-스테이킹: 1,000 SELA
-월 요청 처리: 10,000건
-평균 수수료: 0.01 SELA
-성능 등급: A (+20%)
+Staking: 500 SELA
+Monthly requests processed: 5,000
+Average fee per request: 0.02 SELA
+Performance tier: S (98% uptime, excellent response time)
 
-월 예상 수익:
-  수수료: 10,000 × 0.01 × 0.7 = 70 SELA
-  보너스: 70 × 0.20 = 14 SELA
-  총: 84 SELA
+Monthly projected revenue:
+  Base network rewards: 50 SELA
+  API fees: 5,000 × 0.02 × 0.7 = 70 SELA
+  Performance bonus: 50 × 0.30 = 15 SELA
+  Total revenue: 135 SELA
 
-* 실제 수익은 시장 조건에 따라 변동
+Operating costs:
+  Electricity: $5/month (home PC)
+  Internet: $0 (existing internet usage)
+  Total cost: $5/month
+
+Net revenue: 135 SELA - $5 equivalent
+Monthly yield: 27% (assuming stable token price)
 ```
 
-### 개발자 (예시)
+### Developer Revenue Projection
+
+**Popular Parser Creator:**
 
 ```
-파서 판매:
-  가격: 20 SELA
-  월 판매: 10건
-  개발자 몫: 70%
+Parser price: 30 SELA
+Monthly sales: 15 units
+Developer revenue ratio: 70%
 
-월 수익: 10 × 20 × 0.7 = 140 SELA
+Monthly revenue:
+  Sales revenue: 15 × 30 × 0.7 = 315 SELA
+
+Additional revenue (optional):
+  Grant program: 500 SELA (one-time)
+  Bug bounty: 100 SELA (upon vulnerability discovery)
+
+Total revenue: 315 SELA (recurring) + 600 SELA (non-recurring)
 ```
 
-**주의:** 모든 수치는 예시이며 실제와 다를 수 있습니다.
+**Disclaimer:**
+
+All figures are examples and do not guarantee actual returns. Actual rewards vary based on network usage, token market price, competing node count, performance tier, and other factors. Cryptocurrency investment is high-risk with possibility of principal loss.
 
 ---
 
 ## FAQ
 
-**Q: 보상은 언제 받나요?**
-A: 보상 유형에 따라 다릅니다. API 수수료는 실시간, 기본 보상은 매 블록, 보너스는 주간 단위입니다.
+**Q: When are rewards received?**
 
-**Q: 최소 스테이킹은 얼마인가요?**
-A: 노드 운영 시 최소 100 SELA가 필요합니다.
+A: Varies by reward type. API fees accumulate in real-time and are automatically paid upon reaching threshold. Base network rewards are distributed per epoch, and performance bonuses are distributed weekly.
 
-**Q: 수익을 예측할 수 있나요?**
-A: 네트워크 사용량과 토큰 가격에 따라 변동되므로 정확한 예측은 어렵습니다.
+**Q: What is the minimum staking amount?**
 
-**Q: 세금은 어떻게 되나요?**
-A: 각 국가의 세법을 확인하시기 바랍니다. Sela Network는 세무 자문을 제공하지 않습니다.
+A: Bronze Node requires 100 SELA, Silver Node 500 SELA, Gold Node 2,000 SELA, Platinum Node 10,000 SELA, and Diamond Node 50,000 SELA.
 
----
+**Q: Can revenue be predicted?**
 
-## 다음 단계
+A: Network usage and token price fluctuate based on market demand, making accurate prediction difficult. Past returns do not guarantee future returns.
 
-- [노드 운영자 보상 상세](/rewards/node-rewards/)
-- [개발자 보상 상세](/rewards/developer-rewards/)
-- [포인트 시스템](/rewards/points/)
-- [$SELA 토큰](/rewards/sela-token/)
-- [토크노믹스](/tokenomics/overview/)
+**Q: What is the slashing risk level?**
+
+A: Slashing risk is very low when operating nodes honestly and adhering to recommended specifications. Most slashing results from intentional malicious behavior or critical errors such as running identical validator keys on multiple nodes.
+
+**Q: How are taxes handled?**
+
+A: Tax treatment of cryptocurrency rewards varies by country. Verify local tax laws and consult tax professionals as needed. Sela Network does not provide tax advice.
 
 ---
 
-**면책 조항:**
-이 문서의 모든 수치와 예시는 설명을 위한 것이며, 실제 보상을 보장하지 않습니다. 암호화폐 투자는 고위험이며 손실 가능성이 있습니다.
+**Disclaimer:**
+
+All figures and examples in this document are for illustrative purposes and do not guarantee actual rewards. Cryptocurrency investment is high-risk with possibility of principal loss. Conduct thorough research and risk assessment before investing.

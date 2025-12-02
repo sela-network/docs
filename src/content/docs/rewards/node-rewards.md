@@ -697,9 +697,6 @@ A: 성능 등급은 다음 지표의 가중 평균으로 계산됩니다:
 노드 운영과 관련된 추가 정보는 다음 페이지를 참고하세요:
 
 - [보상 시스템 전체 개요](/rewards/rewards-system/)
-- [포인트 시스템](/rewards/points/)
-- [$SELA 토큰](/rewards/sela-token/)
-- [개발자 보상](/rewards/developer-rewards/)
 
 ---
 

@@ -465,5 +465,3 @@ print(f"Transaction ID: {tx.id}")
 더 자세한 정보:
 
 - [보상 시스템](/rewards/rewards-system/)
-- [$SELA 토큰](/rewards/sela-token/)
-- [토크노믹스](/tokenomics/overview/)

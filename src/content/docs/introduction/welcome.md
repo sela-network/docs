@@ -158,8 +158,6 @@ Individuals and organizations contribute computational resources by running brow
 
 The decentralized infrastructure model creates opportunities for passive income through resource sharing, similar to other DePIN networks in storage, computing, and bandwidth.
 
-Node operation guide: [/node-operators/complete-guide/](/node-operators/complete-guide/)
-
 ### Data Consumers
 
 Enterprises and applications requiring verified web data access Sela's marketplace for pre-structured datasets and extraction templates. Cryptographic verification enables use in contexts requiring data authenticity guarantees.
@@ -213,23 +211,13 @@ pip install sela-network
 
 Developer documentation: [/technology/solution/](/technology/solution/)
 
-API reference: [/api/overview/](/api/overview/)
-
 ### For Node Operators
 
-Node operation requires client installation and token staking:
-
-Installation guide: [/reference/installation-guide/](/reference/installation-guide/)
-
-Rewards information: [/rewards/node-rewards/](/rewards/node-rewards/)
+Node operation requires client installation and token staking.
 
 ### For Technical Evaluation
 
 Architecture overview: [/technology/architecture/](/technology/architecture/)
-
-Security model: [/security/architecture/](/security/architecture/)
-
-Performance benchmarks: [/performance/performance/](/performance/performance/)
 
 ---
 

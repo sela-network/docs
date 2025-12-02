@@ -1039,12 +1039,9 @@ Sela의 준수:
 이 기술 사양을 이해했다면:
 
 **개발자**:
-→ [API 빠른 시작](/api/overview/)  
 → [Python SDK 튜토리얼](https://github.com/sela-network/python-sdk)
 
 **노드 운영자**:
-→ [노드 설치 가이드](/setup/installation-guide/)  
-→ [노드 보상 계산기](/rewards/node-rewards/)
 
 **DevOps**:
 → [Docker 배포 가이드](#)  
