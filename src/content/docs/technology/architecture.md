@@ -780,5 +780,5 @@ Token-based permission management:
 **Sela Network's three-layer architecture achieves scalability, security, and verifiability, becoming the web infrastructure standard for the AI agent era.**
 
 **Project Start**: 2024
-**Last Updated**: November 23, 2024
+**Last Updated**: December 9, 2025
 **Version**: 2.0 (Comprehensive English Edition)

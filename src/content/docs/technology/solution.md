@@ -48,7 +48,7 @@ Sela Network adopts a DePIN (Decentralized Physical Infrastructure Network) mode
 
 3. **Geographic Distribution**
 
-   - Access to region-restricted content through nodes distributed across 100+ countries.
+   - Access to region-restricted content through nodes distributed across 150+ countries.
    - When requests arrive, the system automatically selects the nearest node or nodes from specific regions.
 
 4. **Elastic Scalability**
@@ -125,7 +125,7 @@ Step 2: Use LLM
 JSON output
 ```
 
-This strategy achieves **82% cost reduction** compared to Browserbase.
+This strategy achieves **70-87% cost reduction** compared to Browserbase.
 
 **4. JSON-LD Standard Utilization**
 
@@ -537,5 +537,5 @@ Sela Network transforms the AI agent web interaction paradigm through three core
 ---
 
 **Project Start**: 2024
-**Last Updated**: November 23, 2024
+**Last Updated**: December 9, 2025
 **Version**: 2.0 (Comprehensive English Edition)

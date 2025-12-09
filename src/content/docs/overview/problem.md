@@ -100,7 +100,7 @@ These technical barriers represent substantial market opportunity. The constrain
 
 ### AI Agent Market Growth Trajectory
 
-Market research indicates that the AI agent sector is experiencing rapid expansion. Projections forecast growth from $5.4 billion in 2024 to $50-53 billion by 2030, representing a compound annual growth rate of 45-46%.
+Market research indicates that the AI agent sector is experiencing rapid expansion. Projections forecast growth from $5.4 billion in 2024 to $93 billion by 2030-2032, representing a compound annual growth rate of 45-46%.
 
 Enterprise adoption drives this growth, with research indicating that 85% of organizations plan AI agent implementation by end of 2025. This adoption rate demonstrates that AI agents are transitioning from experimental technology to production infrastructure.
 

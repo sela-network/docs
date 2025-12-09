@@ -10,7 +10,7 @@ Sela Network operates at the convergence of four distinct markets, creating a ne
 ```
 Web Scraping Market ($2.87B by 2034)
          +
-AI Agent Market ($50.31B by 2030)
+AI Agent Market ($93B by 2030-2032)
          +
 DePIN Infrastructure ($30B+ market cap)
          +
@@ -23,7 +23,7 @@ Sela Network: AI-Native Web Interaction Layer
 
 **Traditional Market**: Web scraping services valued at $754M in 2024, growing at 14.3% CAGR
 
-**Emerging Market**: AI agents valued at $5.40B in 2024, projected to reach $50.31B by 2030 at 45.8% CAGR
+**Emerging Market**: AI agents valued at $5.40B in 2024, projected to reach $93B by 2030-2032 at 45.8% CAGR
 
 **Sela Position**: Essential infrastructure layer enabling AI agents to interact with the web
 
@@ -109,7 +109,7 @@ Segmentation:
 AI Agent Market (Sela's primary TAM):
 ├─ 2024: $5.40B
 ├─ 2028: $25B (estimated)
-├─ 2030: $50.31B
+├─ 2030-2032: $93B
 ├─ CAGR: 45.8% (exponential growth)
 └─ Source: Grand View Research
 
@@ -127,15 +127,15 @@ AI agents require infrastructure to interact with the web, creating fundamental 
 ```
 Conservative estimate:
 15% of AI agent market = web interaction infrastructure
-2030 TAM: $50.31B × 15% = $7.5B
+2030-2032 TAM: $93B × 15% = $14B
 
 Optimistic estimate:
 25% of AI agent market = web interaction infrastructure
-2030 TAM: $50.31B × 25% = $12.6B
+2030-2032 TAM: $93B × 25% = $23.25B
 
 Sela targets:
 2027: 5% market share = $625M-1.2B
-2030: 10-15% market share = $5.3B-8.8B
+2030-2032: 10-15% market share = $9.3B-14B
 ```
 
 **Rationality Verification**:
@@ -959,7 +959,7 @@ Paradigm shift:
 
 ### Market Opportunity
 
-**AI Agent Market**: $50.31B (2030)
+**AI Agent Market**: $93B (2030-2032)
 **First Mover Advantage**: AI-native web layer
 **Network Effect**: DePIN ecosystem
 

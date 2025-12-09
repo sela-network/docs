@@ -35,14 +35,94 @@ Node operators provide web access infrastructure to AI agents by operating distr
 
 **Reward Components:**
 
-- Base network rewards: Distributed per epoch proportional to staking ratio
+- Base network rewards: Distributed from the Node Contributor allocation (420M SELA) per epoch proportional to staking ratio
 - API request processing fees: Direct compensation for processed requests (70% of fees)
 - Performance incentives: Bonuses based on response time, uptime, and success rate (up to +30%)
 - Staking rewards: Base yield on tokens provided as network security collateral
+- **$SPWR (Sela Power Points)**: Earned through node operation and web access request processing
+
+**$SPWR (Sela Power Points) System**
+
+$SPWR is a points-based reward system that recognizes node operator contributions to network infrastructure. Sela Network tracks node operator contributions through $SPWR points.
+
+**Earning $SPWR:**
+
+Node operators earn $SPWR points through:
+
+- **Node Operation**: Continuous uptime and network participation
+  - Base points per hour of active node operation
+  - Bonus points for maintaining high uptime (95%+)
+  - Geographic distribution bonuses for underserved regions
+
+- **Web Access Request Processing**: Direct contribution to network utility
+  - Points proportional to requests processed
+  - Quality bonuses for high success rates
+  - Performance bonuses for fast response times
+  - Complexity bonuses for handling zk-TLS requests
+
+**Point Calculation Example:**
+
+```
+Daily $SPWR Earnings:
+├─ Base operation: 24 hours × 10 points/hour = 240 points
+├─ Request processing: 1,000 requests × 0.5 points = 500 points
+├─ Performance bonus (S-tier): +30% = 150 points
+└─ Total: 890 $SPWR points/day
+```
+
+**$SPWR Utility:**
+
+**1. Governance Participation**
+
+$SPWR points grant governance voting rights in network decision-making. Points holders can:
+
+- Vote on protocol upgrades and parameter changes
+- Propose and vote on treasury expenditure
+- Participate in network policy decisions
+- Influence development roadmap priorities
+
+Voting power is proportional to $SPWR holdings, ensuring active contributors have meaningful influence over network evolution.
+
+**2. Token Conversion**
+
+$SPWR points can be converted to $SELA tokens through a conversion mechanism, providing liquidity and direct value realization.
+
+**Conversion Mechanism:**
+
+- **Conversion Rate**: Dynamic rate based on network demand and token economics
+- **Conversion Windows**: Periodic conversion periods to manage token supply
+- **Minimum Threshold**: Minimum $SPWR balance required for conversion
+- **Vesting Options**: Option for immediate conversion or vested conversion with bonus rates
+
+**Conversion Example:**
+
+```
+10,000 $SPWR points
+├─ Immediate conversion: 10,000 × 0.001 = 10 SELA
+└─ Vested conversion (12 months): 10,000 × 0.0012 = 12 SELA (+20% bonus)
+```
+
+**3. Network Benefits**
+
+$SPWR points provide additional network benefits:
+
+- Priority node selection for high-value requests
+- Reduced staking requirements for higher tiers
+- Access to exclusive node operator features
+- Early access to new network capabilities
+
+**Token Allocation:**
+
+Node operators receive rewards from the **420,000,000 SELA (42% of total supply)** allocated to the Node Contributor pool. This allocation is distributed over time based on:
+- Network participation and uptime
+- Staking amount and duration
+- Performance metrics (response time, success rate)
+- Geographic distribution needs
+- $SPWR point accumulation
 
 **Tier Structure:**
 
-Node operators are classified into tiers based on staking amount: Bronze (100 SELA), Silver (500 SELA), Gold (2,000 SELA), Platinum (10,000 SELA), and Diamond (50,000 SELA). Higher tiers receive priority task assignment, governance participation rights, and dedicated support.
+Node operators are classified into tiers based on staking amount: Bronze (100 SELA), Silver (500 SELA), Gold (2,000 SELA), Platinum (10,000 SELA), and Diamond (50,000 SELA). Higher tiers receive priority task assignment, governance participation rights, and dedicated support. $SPWR points can supplement staking requirements for tier advancement.
 
 ---
 
@@ -53,9 +133,16 @@ Developers extend network functionality by creating ecosystem tools, parsers, sc
 **Reward Components:**
 
 - Marketplace sales revenue: 70% of parser and script sales proceeds
-- Grant program: Funding for projects contributing to ecosystem development
-- Bug bounty: Rewards for security vulnerability discovery and reporting
-- Open-source contribution rewards: Incentives for core protocol improvement contributions
+- Grant program: Funding from Foundation Treasury (150M SELA allocation) for projects contributing to ecosystem development
+- Bug bounty: Rewards from Community allocation (30M SELA) for security vulnerability discovery and reporting
+- Open-source contribution rewards: Incentives from Community allocation for core protocol improvement contributions
+
+**Token Allocation:**
+
+Developers benefit from multiple token allocations:
+- **Foundation Treasury (150M SELA)**: Grant programs for significant ecosystem contributions
+- **Community (30M SELA)**: Bug bounties, open-source contributions, and community initiatives
+- **Marketplace revenue**: Direct revenue from parser and script sales
 
 **Marketplace Revenue Distribution:**
 
@@ -75,17 +162,78 @@ Individual and enterprise users who utilize the platform and participate in the 
 **Incentive Structure:**
 
 - Points system: Earn Sela Points proportional to API usage
-- Early adopter bonus: Additional points and token rewards for initial users
-- Referral program: Rewards for both referrer and referee upon new user acquisition
+- Early adopter bonus: Additional points and token rewards from Community allocation (30M SELA) for initial users
+- Referral program: Rewards from Community allocation for both referrer and referee upon new user acquisition
 - Governance participation: Token holders participate in network policy decisions through voting
+
+**Token Allocation:**
+
+Users receive incentives from the **Community allocation (30M SELA - 3% of total supply)**, which includes:
+- Early adopter bonuses
+- Referral program rewards
+- Community contribution rewards
+- Points-to-token conversion programs
 
 **Points-to-Token Conversion:**
 
-Sela Points is an off-chain point system convertible to $SELA tokens upon meeting certain conditions. Points can be used for API discounts, premium feature access, and other purposes.
+Sela Points is an off-chain point system convertible to $SELA tokens upon meeting certain conditions. Points can be used for API discounts, premium feature access, and other purposes. Token conversion draws from the Community allocation.
 
 ---
 
 ## Token Economics
+
+### Token Supply and Distribution
+
+$SELA has a total supply of **1,000,000,000 (1 billion) tokens**, allocated as follows:
+
+**Token Distribution:**
+
+```
+Total Supply: 1,000,000,000 SELA (100%)
+
+├─ Ecosystem: 600,000,000 SELA (60%)
+│  ├─ Foundation Treasury: 150,000,000 SELA (25% of Ecosystem)
+│  ├─ Node Contributor: 420,000,000 SELA (70% of Ecosystem)
+│  └─ Community: 30,000,000 SELA (5% of Ecosystem)
+│
+├─ Investors: 100,000,000 SELA (10%)
+│  ├─ Private: 75,000,000 SELA (75% of Investors)
+│  ├─ Public: 15,000,000 SELA (15% of Investors)
+│  └─ KOL: 10,000,000 SELA (10% of Investors)
+│
+├─ Team & Advisors: 100,000,000 SELA (10%)
+│  ├─ Team: 80,000,000 SELA (80% of Team & Advisors)
+│  └─ Advisors: 20,000,000 SELA (20% of Team & Advisors)
+│
+├─ Marketing: 100,000,000 SELA (10%)
+│
+└─ Liquidity: 100,000,000 SELA (10%)
+   ├─ CEX: 80,000,000 SELA (80% of Liquidity)
+   └─ DEX: 20,000,000 SELA (20% of Liquidity)
+```
+
+**Allocation Details:**
+
+**Ecosystem (60% - 600M SELA)**
+- **Node Contributor (420M SELA)**: Distributed to node operators over time based on network participation, staking, and performance. This allocation incentivizes infrastructure provision and network growth.
+- **Foundation Treasury (150M SELA)**: Managed by the foundation for protocol development, grants, partnerships, and strategic initiatives. Expenditure requires governance approval.
+- **Community (30M SELA)**: Allocated for community programs, early adopter rewards, referral bonuses, bug bounties, and ecosystem development initiatives.
+
+**Investors (10% - 100M SELA)**
+- **Private (75M SELA)**: Early investors with vesting schedules aligned with network milestones.
+- **Public (15M SELA)**: Public sale allocation for broader community participation.
+- **KOL (10M SELA)**: Key opinion leaders and strategic partners supporting network growth.
+
+**Team & Advisors (10% - 100M SELA)**
+- **Team (80M SELA)**: Core team members with multi-year vesting schedules to ensure long-term commitment.
+- **Advisors (20M SELA)**: Strategic advisors contributing expertise and network connections.
+
+**Marketing (10% - 100M SELA)**
+- Dedicated allocation for marketing campaigns, user acquisition, partnerships, and brand development.
+
+**Liquidity (10% - 100M SELA)**
+- **CEX (80M SELA)**: Centralized exchange liquidity pools for trading accessibility.
+- **DEX (20M SELA)**: Decentralized exchange liquidity pools for decentralized trading.
 
 ### $SELA Token Functions
 
@@ -144,7 +292,7 @@ User-paid fee: 100%
 **Variable Factors:**
 
 - Network congestion: Fees increase with rising demand
-- Request complexity: Additional fees for VLM analysis and zk-TLS proof generation
+- Request complexity: Additional fees for zk-TLS proof generation
 - Node region: Fees increase in regions with rising node demand
 
 ---
@@ -180,12 +328,15 @@ Slashing consists of three stages: immediate penalty, exit waiting period, and c
 
 ## Ecosystem Fund
 
-### Treasury Management
+### Foundation Treasury
+
+The Foundation Treasury holds **150,000,000 SELA (15% of total supply)**, allocated from the Ecosystem pool. This treasury supports long-term network development and sustainability.
 
 **Revenue Sources:**
 
-- Protocol fees: 20% of API fees
-- Marketplace fees: 20% of parser sales revenue
+- Initial allocation: 150M SELA from token distribution
+- Protocol fees: 20% of API fees (ongoing revenue)
+- Marketplace fees: 20% of parser sales revenue (ongoing revenue)
 - Partnership revenue: Corporate partnerships and licensing agreements
 
 **Expenditure Allocation:**
@@ -202,11 +353,22 @@ Total treasury income: 100%
 
 Treasury expenditures are determined through $SELA token holder voting. All proposals are published on-chain, with voting results and expenditure details transparently recorded.
 
+### Community Fund
+
+The Community allocation of **30,000,000 SELA (3% of total supply)** supports community-driven initiatives:
+
+- Early adopter rewards
+- Referral program bonuses
+- Bug bounty programs
+- Open-source contribution rewards
+- Community events and initiatives
+- Points-to-token conversion
+
 ---
 
 ## Points Program
 
-### Sela Points
+### Sela Points (User Points)
 
 **Concept:**
 
@@ -226,7 +388,21 @@ Sela Points is an off-chain point system earned through API usage, community par
 - Premium features: Access to advanced analysis tools and priority support
 - Marketplace purchases: Point usage for parser and script purchases
 
-[Points System Details →](/rewards/points/)
+### $SPWR vs Sela Points
+
+**Key Differences:**
+
+| Feature | $SPWR (Sela Power Points) | Sela Points |
+|---------|---------------------------|-------------|
+| **Target Audience** | Node operators | All users (developers, end users) |
+| **Earning Method** | Node operation, request processing | API usage, community activities |
+| **Governance Rights** | Yes (voting power) | No |
+| **Token Conversion** | Yes (to $SELA) | Yes (to $SELA) |
+| **Primary Purpose** | Infrastructure contribution rewards | User engagement and loyalty |
+
+**Relationship:**
+
+Both point systems contribute to the Sela Network ecosystem but serve different participant groups. $SPWR focuses on infrastructure providers (node operators), while Sela Points rewards platform users and community members. Both systems enable conversion to $SELA tokens, creating a unified value proposition across all network participants.
 
 ---
 
@@ -351,6 +527,32 @@ A: Slashing risk is very low when operating nodes honestly and adhering to recom
 **Q: How are taxes handled?**
 
 A: Tax treatment of cryptocurrency rewards varies by country. Verify local tax laws and consult tax professionals as needed. Sela Network does not provide tax advice.
+
+**Q: What is $SPWR and how do I earn it?**
+
+A: $SPWR (Sela Power Points) is a points system for node operators that tracks contributions to network infrastructure. You earn $SPWR through:
+- Operating your node continuously (base points per hour)
+- Processing web access requests (points per request)
+- Maintaining high performance (bonus points for uptime and response time)
+- Contributing to underserved geographic regions (distribution bonuses)
+
+$SPWR can be used for governance voting and converted to $SELA tokens.
+
+**Q: How do I convert $SPWR to $SELA?**
+
+A: $SPWR conversion to $SELA occurs during periodic conversion windows. The conversion rate is dynamic and based on network economics. You can choose between:
+- Immediate conversion at the current rate
+- Vested conversion with a bonus (typically 20% additional) over a 12-month period
+
+Minimum $SPWR balance requirements apply. Check the conversion dashboard for current rates and windows.
+
+**Q: Can I use $SPWR for governance voting?**
+
+A: Yes. $SPWR points grant governance voting rights proportional to your holdings. You can vote on protocol upgrades, treasury expenditures, network policies, and development roadmap priorities.
+
+**Q: What's the difference between $SPWR and Sela Points?**
+
+A: $SPWR is specifically for node operators who contribute infrastructure (browser nodes and request processing). Sela Points are for all users (developers, end users) who use the API or participate in community activities. Both can be converted to $SELA, but only $SPWR provides governance voting rights.
 
 ---
 

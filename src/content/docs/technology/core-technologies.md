@@ -732,5 +732,5 @@ Perfect AI Web Agent
 Through perfect combination of these three core technologies, Sela Network provides an environment where AI agents can operate **securely**, **efficiently**, and **verifiably** on the web.
 
 **Project Start**: 2024
-**Last Updated**: November 23, 2024
+**Last Updated**: December 9, 2025
 **Version**: 2.0 (Comprehensive English Edition)

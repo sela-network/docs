@@ -589,4 +589,4 @@ _"The best time to plant a tree was 20 years ago. The second best time is now."_
 
 **Sela Network Whitepaper v1.1**
 **© 2024-2025 Sela Network Foundation**
-**Last Updated: November 23, 2024**
+**Last Updated: December 9, 2025**
