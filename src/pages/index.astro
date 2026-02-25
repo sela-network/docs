@@ -10,13 +10,13 @@ const slides = [
   "How It Works",
   "Use Cases",
   "Traction",
-  "Team",
   "Why We Win",
   "Flywheel",
   "Business Model",
   "Go-to-Market",
   "Financials",
   "Roadmap",
+  "Team",
   "The Ask",
 ];
 ---
@@ -237,8 +237,258 @@ const slides = [
       </div>
     </section>
 
-    <!-- ============ 8. TEAM ============ -->
-    <section class="slide" data-slide="7" style="padding-top:3.5rem; padding-bottom:3.5rem;">
+    <!-- ============ 8. WHY WE WIN ============ -->
+    <section class="slide" data-slide="7">
+      <div class="slide-inner">
+        <span class="badge">Why We Win</span>
+        <h2>Competitive Landscape</h2>
+        <p>Others sell tools or access. Selanet builds the infrastructure layer AI depends on.</p>
+
+        <div class="quadrant">
+          <!-- Axes -->
+          <div class="q-y-axis"></div>
+          <div class="q-x-axis"></div>
+          <!-- Axis labels -->
+          <div class="q-y-label-top">High (Large/Parallel)</div>
+          <div class="q-y-label-bottom">Low (Local/Serial)</div>
+          <div class="q-x-label-left">Centralized</div>
+          <div class="q-x-label-right">Distributed<br/>Human-like</div>
+          <div class="q-y-title">AI Workload Scale</div>
+          <div class="q-x-title">Execution Environment</div>
+          <!-- Competitors -->
+          <div class="q-item" style="left:18%; top:18%;">Tavily</div>
+          <div class="q-item" style="left:32%; top:22%;">Browserbase</div>
+          <div class="q-item" style="left:25%; top:38%;">Browser Use</div>
+          <div class="q-item" style="left:18%; top:72%;">Playwright</div>
+          <div class="q-item" style="left:48%; top:18%;">Bright Data</div>
+          <div class="q-item" style="left:70%; top:72%;">Grass</div>
+          <!-- Selanet (highlighted) -->
+          <div class="q-item q-sela" style="left:78%; top:10%;">Selanet</div>
+        </div>
+
+        <div class="q-footnotes">
+          <span>Tavily: '25 Seed $25m</span>
+          <span>Browserbase: '25 Series-B $40m @ $300m</span>
+          <span>Browser Use: '25 Seed $17m</span>
+        </div>
+
+        <div class="q-callouts">
+          <div class="q-callout">
+            <strong>Developer Tools (Playwright)</strong>
+            <span>&rarr; Don't scale parallel AI workloads</span>
+          </div>
+          <div class="q-callout">
+            <strong>Centralized APIs (Tavily, Browserbase)</strong>
+            <span>&rarr; Centralized, failing at high scale workflows</span>
+          </div>
+          <div class="q-callout">
+            <strong>Proxy/Bandwidth (Bright, Grass)</strong>
+            <span>&rarr; Not designed for agent native execution</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9. FLYWHEEL ============ -->
+    <section class="slide" data-slide="8">
+      <div class="slide-inner">
+        <span class="badge">Network Effect</span>
+        <h2>The Flywheel</h2>
+        <p>AI Agent Node breaks the DePIN growth ceiling — operators join for personal AI utility (social automation, work delegation), not just tokens.</p>
+
+        <div class="flywheel">
+          <div class="flywheel-ring">
+            <div class="flywheel-step">
+              <div class="step-num">Step 1</div>
+              <div class="step-title">More Nodes</div>
+              <div class="step-desc">AI agent utility (social automation, work delegation) drives organic growth</div>
+            </div>
+            <div class="flywheel-step">
+              <div class="step-num">Step 2</div>
+              <div class="step-title">Richer Access</div>
+              <div class="step-desc">Broader geographic and platform coverage</div>
+            </div>
+            <div class="flywheel-step">
+              <div class="step-num">Step 3</div>
+              <div class="step-title">More Usage</div>
+              <div class="step-desc">Demand and transactions increase, BM diversifies</div>
+            </div>
+            <div class="flywheel-step">
+              <div class="step-num">Step 4</div>
+              <div class="step-title">Higher Revenue</div>
+              <div class="step-desc">B2B API fees compound with network scale</div>
+            </div>
+            <div class="flywheel-step">
+              <div class="step-num">Step 5</div>
+              <div class="step-title">Stronger Incentives</div>
+              <div class="step-desc">Network revenue reinvested into operator economics</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10. BUSINESS MODEL ============ -->
+    <section class="slide" data-slide="9">
+      <div class="slide-inner">
+        <span class="badge">Revenue</span>
+        <h2>Business Model</h2>
+        <p>Browse API — web execution as a service for AI agent builders.</p>
+
+        <div class="stats-row" style="margin-bottom: 2.5rem;">
+          <div class="stat">
+            <span class="value">$8</span>
+            <span class="label">per 1,000 Requests</span>
+          </div>
+          <div class="stat">
+            <span class="value">~60%</span>
+            <span class="label">Gross Margin</span>
+          </div>
+          <div class="stat">
+            <span class="value">$25K</span>
+            <span class="label">Projected MRR</span>
+          </div>
+        </div>
+
+        <h3>Pricing Ladder</h3>
+        <div class="flow" style="margin-bottom: 2.5rem;">
+          <span class="flow-step">Free Tier</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span class="flow-step">PAYG</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span class="flow-step">Subscription</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span class="flow-step highlight">Enterprise</span>
+        </div>
+
+        <h3>Revenue Expansion</h3>
+        <div class="three-col">
+          <div>
+            <p><strong>Usage Growth</strong></p>
+            <p>Clients scale from pilot to production volumes</p>
+          </div>
+          <div>
+            <p><strong>Platform Upsell</strong></p>
+            <p>Free tier to enterprise SLA conversion</p>
+          </div>
+          <div>
+            <p><strong>Network Effect</strong></p>
+            <p>More nodes = broader coverage = higher-value use cases</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 11. GO-TO-MARKET ============ -->
+    <section class="slide" data-slide="10">
+      <div class="slide-inner">
+        <span class="badge">Go-to-Market</span>
+        <h2>Win Long-tail,<br/>Then Scale Up</h2>
+        <p>Start with agent-first startups, expand to platforms serving thousands of enterprise clients.</p>
+
+        <div class="three-col">
+          <div>
+            <h3>Segment 1 &mdash; Now</h3>
+            <p><strong>Long-tail Agent Startups</strong></p>
+            <p>Agent-first SMBs needing post-login access and reliable web execution. PLG acquisition.</p>
+          </div>
+          <div>
+            <h3>Segment 2 &mdash; Q3 2026</h3>
+            <p><strong>Vertical AI Builders</strong></p>
+            <p>Companies adopting AI agents for core business growth and cost reduction.</p>
+          </div>
+          <div>
+            <h3>Segment 3 &mdash; Q4 2026</h3>
+            <p><strong>Platform Partners</strong></p>
+            <p>Infrastructure and marketplaces serving thousands of downstream enterprise clients.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 12. FINANCIALS ============ -->
+    <section class="slide" data-slide="11">
+      <div class="slide-inner">
+        <span class="badge">Financials</span>
+        <h2>Financial Projection</h2>
+
+        <div class="stats-row" style="margin-bottom: 2rem;">
+          <div class="stat">
+            <span class="value">$78M</span>
+            <span class="label">Cumulative Revenue (3Y)</span>
+          </div>
+          <div class="stat">
+            <span class="value">47.5x</span>
+            <span class="label">Revenue Multiple</span>
+          </div>
+          <div class="stat">
+            <span class="value">1,910</span>
+            <span class="label">B2B Clients</span>
+          </div>
+        </div>
+
+        <div class="projection-bars">
+          <div class="projection-bar">
+            <div class="bar-label">$1.3M</div>
+            <div class="bar" style="height: 8%;"></div>
+            <div class="bar-year">Year 1</div>
+          </div>
+          <div class="projection-bar">
+            <div class="bar-label">$15.0M</div>
+            <div class="bar" style="height: 40%;"></div>
+            <div class="bar-year">Year 2</div>
+          </div>
+          <div class="projection-bar">
+            <div class="bar-label">$61.7M</div>
+            <div class="bar" style="height: 100%;"></div>
+            <div class="bar-year">Year 3</div>
+          </div>
+        </div>
+
+        <p style="margin-top:1.5rem; font-size:0.9rem; color:var(--text-muted); max-width:none; text-align:center;">Y1: 8 LOI clients converting at ~$3K avg MRR + new pipeline growth. Y2–3: node scaling to 100K+, $8/1K requests.<br/>Benchmarked against Bright Data ($300M ARR).</p>
+      </div>
+    </section>
+
+    <!-- ============ 13. ROADMAP ============ -->
+    <section class="slide" data-slide="12">
+      <div class="slide-inner">
+        <span class="badge">Roadmap</span>
+        <h2>Roadmap 2026–2030</h2>
+
+        <div class="three-col" style="margin-top: 2rem;">
+          <div>
+            <h3>Phase 1 &mdash; Foundation</h3>
+            <ul>
+              <li>AI Agent Node launch (April 2026)</li>
+              <li>LOI &rarr; paid conversion</li>
+              <li>2,000+ active nodes</li>
+              <li>B2C premium rollout</li>
+              <li>SDK/API for AI agents</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Phase 2 &mdash; 2027–28</h3>
+            <ul>
+              <li>100K+ nodes across 150 countries</li>
+              <li>Diversified web/platform access</li>
+              <li>Vertical AI agent partnerships</li>
+              <li>Dedicated node device</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Phase 3 &mdash; 2029–30</h3>
+            <ul>
+              <li>1M+ nodes &mdash; default web layer for AI agents</li>
+              <li>Open protocol standard for agentic web access</li>
+              <li>Market leadership as vertical infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 14. TEAM ============ -->
+    <section class="slide" data-slide="13" style="padding-top:3.5rem; padding-bottom:3.5rem;">
       <div class="slide-inner">
         <span class="badge">Team</span>
         <h2>Team — BC Labs</h2>
@@ -304,256 +554,6 @@ const slides = [
           <div class="backer-logos">
             <span class="backer-name">SBVA</span>
             <span class="backer-name">KB Investment</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 9. WHY WE WIN ============ -->
-    <section class="slide" data-slide="8">
-      <div class="slide-inner">
-        <span class="badge">Why We Win</span>
-        <h2>Competitive Landscape</h2>
-        <p>Others sell tools or access. Selanet builds the infrastructure layer AI depends on.</p>
-
-        <div class="quadrant">
-          <!-- Axes -->
-          <div class="q-y-axis"></div>
-          <div class="q-x-axis"></div>
-          <!-- Axis labels -->
-          <div class="q-y-label-top">High (Large/Parallel)</div>
-          <div class="q-y-label-bottom">Low (Local/Serial)</div>
-          <div class="q-x-label-left">Centralized</div>
-          <div class="q-x-label-right">Distributed<br/>Human-like</div>
-          <div class="q-y-title">AI Workload Scale</div>
-          <div class="q-x-title">Execution Environment</div>
-          <!-- Competitors -->
-          <div class="q-item" style="left:18%; top:18%;">Tavily</div>
-          <div class="q-item" style="left:32%; top:22%;">Browserbase</div>
-          <div class="q-item" style="left:25%; top:38%;">Browser Use</div>
-          <div class="q-item" style="left:18%; top:72%;">Playwright</div>
-          <div class="q-item" style="left:48%; top:18%;">Bright Data</div>
-          <div class="q-item" style="left:70%; top:72%;">Grass</div>
-          <!-- Selanet (highlighted) -->
-          <div class="q-item q-sela" style="left:78%; top:10%;">Selanet</div>
-        </div>
-
-        <div class="q-footnotes">
-          <span>Tavily: '25 Seed $25m</span>
-          <span>Browserbase: '25 Series-B $40m @ $300m</span>
-          <span>Browser Use: '25 Seed $17m</span>
-        </div>
-
-        <div class="q-callouts">
-          <div class="q-callout">
-            <strong>Developer Tools (Playwright)</strong>
-            <span>&rarr; Don't scale parallel AI workloads</span>
-          </div>
-          <div class="q-callout">
-            <strong>Centralized APIs (Tavily, Browserbase)</strong>
-            <span>&rarr; Centralized, failing at high scale workflows</span>
-          </div>
-          <div class="q-callout">
-            <strong>Proxy/Bandwidth (Bright, Grass)</strong>
-            <span>&rarr; Not designed for agent native execution</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 10. FLYWHEEL ============ -->
-    <section class="slide" data-slide="9">
-      <div class="slide-inner">
-        <span class="badge">Network Effect</span>
-        <h2>The Flywheel</h2>
-        <p>AI Agent Node breaks the DePIN growth ceiling — operators join for personal AI utility (social automation, work delegation), not just tokens.</p>
-
-        <div class="flywheel">
-          <div class="flywheel-ring">
-            <div class="flywheel-step">
-              <div class="step-num">Step 1</div>
-              <div class="step-title">More Nodes</div>
-              <div class="step-desc">AI agent utility (social automation, work delegation) drives organic growth</div>
-            </div>
-            <div class="flywheel-step">
-              <div class="step-num">Step 2</div>
-              <div class="step-title">Richer Access</div>
-              <div class="step-desc">Broader geographic and platform coverage</div>
-            </div>
-            <div class="flywheel-step">
-              <div class="step-num">Step 3</div>
-              <div class="step-title">More Usage</div>
-              <div class="step-desc">Demand and transactions increase, BM diversifies</div>
-            </div>
-            <div class="flywheel-step">
-              <div class="step-num">Step 4</div>
-              <div class="step-title">Higher Revenue</div>
-              <div class="step-desc">B2B API fees compound with network scale</div>
-            </div>
-            <div class="flywheel-step">
-              <div class="step-num">Step 5</div>
-              <div class="step-title">Stronger Incentives</div>
-              <div class="step-desc">Network revenue reinvested into operator economics</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 11. BUSINESS MODEL ============ -->
-    <section class="slide" data-slide="10">
-      <div class="slide-inner">
-        <span class="badge">Revenue</span>
-        <h2>Business Model</h2>
-        <p>Browse API — web execution as a service for AI agent builders.</p>
-
-        <div class="stats-row" style="margin-bottom: 2.5rem;">
-          <div class="stat">
-            <span class="value">$8</span>
-            <span class="label">per 1,000 Requests</span>
-          </div>
-          <div class="stat">
-            <span class="value">~60%</span>
-            <span class="label">Gross Margin</span>
-          </div>
-          <div class="stat">
-            <span class="value">$25K</span>
-            <span class="label">Projected MRR</span>
-          </div>
-        </div>
-
-        <h3>Pricing Ladder</h3>
-        <div class="flow" style="margin-bottom: 2.5rem;">
-          <span class="flow-step">Free Tier</span>
-          <span class="flow-arrow">&rarr;</span>
-          <span class="flow-step">PAYG</span>
-          <span class="flow-arrow">&rarr;</span>
-          <span class="flow-step">Subscription</span>
-          <span class="flow-arrow">&rarr;</span>
-          <span class="flow-step highlight">Enterprise</span>
-        </div>
-
-        <h3>Revenue Expansion</h3>
-        <div class="three-col">
-          <div>
-            <p><strong>Usage Growth</strong></p>
-            <p>Clients scale from pilot to production volumes</p>
-          </div>
-          <div>
-            <p><strong>Platform Upsell</strong></p>
-            <p>Free tier to enterprise SLA conversion</p>
-          </div>
-          <div>
-            <p><strong>Network Effect</strong></p>
-            <p>More nodes = broader coverage = higher-value use cases</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 12. GO-TO-MARKET ============ -->
-    <section class="slide" data-slide="11">
-      <div class="slide-inner">
-        <span class="badge">Go-to-Market</span>
-        <h2>Win Long-tail,<br/>Then Scale Up</h2>
-        <p>Start with agent-first startups, expand to platforms serving thousands of enterprise clients.</p>
-
-        <div class="three-col">
-          <div>
-            <h3>Segment 1 &mdash; Now</h3>
-            <p><strong>Long-tail Agent Startups</strong></p>
-            <p>Agent-first SMBs needing post-login access and reliable web execution. PLG acquisition.</p>
-          </div>
-          <div>
-            <h3>Segment 2 &mdash; Q3 2026</h3>
-            <p><strong>Vertical AI Builders</strong></p>
-            <p>Companies adopting AI agents for core business growth and cost reduction.</p>
-          </div>
-          <div>
-            <h3>Segment 3 &mdash; Q4 2026</h3>
-            <p><strong>Platform Partners</strong></p>
-            <p>Infrastructure and marketplaces serving thousands of downstream enterprise clients.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 13. FINANCIALS ============ -->
-    <section class="slide" data-slide="12">
-      <div class="slide-inner">
-        <span class="badge">Financials</span>
-        <h2>Financial Projection</h2>
-
-        <div class="stats-row" style="margin-bottom: 2rem;">
-          <div class="stat">
-            <span class="value">$78M</span>
-            <span class="label">Cumulative Revenue (3Y)</span>
-          </div>
-          <div class="stat">
-            <span class="value">47.5x</span>
-            <span class="label">Revenue Multiple</span>
-          </div>
-          <div class="stat">
-            <span class="value">1,910</span>
-            <span class="label">B2B Clients</span>
-          </div>
-        </div>
-
-        <div class="projection-bars">
-          <div class="projection-bar">
-            <div class="bar-label">$1.3M</div>
-            <div class="bar" style="height: 8%;"></div>
-            <div class="bar-year">Year 1</div>
-          </div>
-          <div class="projection-bar">
-            <div class="bar-label">$15.0M</div>
-            <div class="bar" style="height: 40%;"></div>
-            <div class="bar-year">Year 2</div>
-          </div>
-          <div class="projection-bar">
-            <div class="bar-label">$61.7M</div>
-            <div class="bar" style="height: 100%;"></div>
-            <div class="bar-year">Year 3</div>
-          </div>
-        </div>
-
-        <p style="margin-top:1.5rem; font-size:0.9rem; color:var(--text-muted); max-width:none; text-align:center;">Y1: 8 LOI clients converting at ~$3K avg MRR + new pipeline growth. Y2–3: node scaling to 100K+, $8/1K requests.<br/>Benchmarked against Bright Data ($300M ARR).</p>
-      </div>
-    </section>
-
-    <!-- ============ 14. ROADMAP ============ -->
-    <section class="slide" data-slide="13">
-      <div class="slide-inner">
-        <span class="badge">Roadmap</span>
-        <h2>Roadmap 2026–2030</h2>
-
-        <div class="three-col" style="margin-top: 2rem;">
-          <div>
-            <h3>Phase 1 &mdash; Foundation</h3>
-            <ul>
-              <li>AI Agent Node launch (April 2026)</li>
-              <li>LOI &rarr; paid conversion</li>
-              <li>2,000+ active nodes</li>
-              <li>B2C premium rollout</li>
-              <li>SDK/API for AI agents</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Phase 2 &mdash; 2027–28</h3>
-            <ul>
-              <li>100K+ nodes across 150 countries</li>
-              <li>Diversified web/platform access</li>
-              <li>Vertical AI agent partnerships</li>
-              <li>Dedicated node device</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Phase 3 &mdash; 2029–30</h3>
-            <ul>
-              <li>1M+ nodes &mdash; default web layer for AI agents</li>
-              <li>Open protocol standard for agentic web access</li>
-              <li>Market leadership as vertical infrastructure</li>
-            </ul>
           </div>
         </div>
       </div>
