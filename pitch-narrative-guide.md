@@ -202,7 +202,7 @@
 
 ### Slide 15. The Ask (45s) — **Closing**
 
-> "$1M Seed at $20M FDV."
+> "$2M Seed at $20M FDV."
 
 - Use of Funds quickly: "60% engineering, 20% ecosystem, 15% BD, 5% legal"
 - **Closing line** — slow down, eye contact:
