@@ -22,6 +22,66 @@ const { title, description } = Astro.props;
     />
   </head>
   <body>
-    <slot />
+    <!-- Password Gate -->
+    <div id="gate" style="position:fixed;inset:0;z-index:9999;background:#fff;display:flex;align-items:center;justify-content:center;font-family:'Inter',system-ui,sans-serif;">
+      <div style="text-align:center;max-width:360px;padding:2rem;">
+        <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:2.4rem;font-weight:900;margin-bottom:0.5rem;color:#171717;">Selanet.ai</h1>
+        <p style="color:#737373;font-size:0.95rem;margin-bottom:2rem;">Enter password to view the deck.</p>
+        <form id="gateForm" style="display:flex;gap:0.5rem;">
+          <input id="gateInput" type="password" placeholder="Password" autocomplete="off" style="flex:1;padding:0.75rem 1rem;border:2px solid #e5e5e5;border-radius:8px;font-size:1rem;outline:none;font-family:inherit;transition:border-color 0.2s;" />
+          <button type="submit" style="padding:0.75rem 1.5rem;background:#171717;color:#fff;border:none;border-radius:8px;font-size:0.95rem;font-weight:600;cursor:pointer;font-family:inherit;">Enter</button>
+        </form>
+        <p id="gateError" style="color:#dc2626;font-size:0.85rem;margin-top:0.75rem;display:none;">Incorrect password.</p>
+      </div>
+    </div>
+
+    <!-- Deck Content (hidden until auth) -->
+    <div id="deckWrap" style="display:none;">
+      <slot />
+    </div>
+
+    <script is:inline>
+      // SHA-256 hashed passwords — add more hashes here for multiple passwords
+      const VALID_HASHES = [
+        "dabf653d87e94ab47d76752a7f45af82fb95f5a99bfd395dab729836c09d355d"
+      ];
+
+      async function sha256(text) {
+        const data = new TextEncoder().encode(text);
+        const buf = await crypto.subtle.digest("SHA-256", data);
+        return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+      }
+
+      function unlock() {
+        document.getElementById("gate").style.display = "none";
+        document.getElementById("deckWrap").style.display = "block";
+      }
+
+      // Check session
+      if (sessionStorage.getItem("deck_auth") === "1") {
+        unlock();
+      }
+
+      document.getElementById("gateForm").addEventListener("submit", async function(e) {
+        e.preventDefault();
+        var pw = document.getElementById("gateInput").value;
+        var hash = await sha256(pw);
+        if (VALID_HASHES.includes(hash)) {
+          sessionStorage.setItem("deck_auth", "1");
+          unlock();
+        } else {
+          var err = document.getElementById("gateError");
+          err.style.display = "block";
+          document.getElementById("gateInput").style.borderColor = "#dc2626";
+          setTimeout(function() {
+            err.style.display = "none";
+            document.getElementById("gateInput").style.borderColor = "#e5e5e5";
+          }, 2000);
+        }
+      });
+
+      // Focus input
+      document.getElementById("gateInput").focus();
+    </script>
   </body>
 </html>
