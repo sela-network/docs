@@ -4,8 +4,8 @@ import "../styles/pitch.css";
 
 const slides = [
   "Cover",
-  "The Opportunity",
   "The Problem",
+  "The Opportunity",
   "The Solution",
   "How It Works",
   "Use Cases",
@@ -15,6 +15,7 @@ const slides = [
   "Business Model",
   "Go-to-Market",
   "Financials",
+  "Why Monad",
   "Roadmap",
   "Team",
   "The Ask",
@@ -22,216 +23,444 @@ const slides = [
 ---
 
 <PitchDeck
-  title="Selanet — Pitch Deck"
+  title="Selanet Pitch Deck"
   description="AI Agent Nodes as Web Infrastructure"
 >
-  <!-- Slide Number -->
-  <div class="slide-number" id="slideNumber">1 / 15</div>
-
-  <!-- Dot Navigator -->
-  <nav class="dot-nav" id="dotNav">
-    {
-      slides.map((name, i) => (
-        <button data-index={i} data-label={name} aria-label={`Go to ${name}`} />
-      ))
-    }
-  </nav>
+  <!-- ============================== -->
+  <!-- LEFT SIDEBAR                   -->
+  <!-- ============================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Selanet.ai</span>
+      <button class="present-btn" id="presentBtn" title="Start Presentation">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 2L14 8L4 14V2Z" fill="currentColor"/></svg>
+        Present
+      </button>
+    </div>
+    <div class="sidebar-slides" id="sidebarSlides">
+      {
+        slides.map((name, i) => (
+          <button class="sidebar-slide" data-index={i}>
+            <span class="sidebar-slide-num">{i + 1}</span>
+            <span class="sidebar-slide-name">{name}</span>
+          </button>
+        ))
+      }
+    </div>
+  </aside>
 
   <!-- ============================== -->
-  <!-- SLIDE CONTAINER                -->
+  <!-- MAIN AREA                      -->
   <!-- ============================== -->
-  <div class="deck" id="deck">
+  <div class="main-area" id="mainArea">
+    <!-- Slide Number -->
+    <div class="slide-number" id="slideNumber">1 / 16</div>
+
+    <!-- Dot Navigator -->
+    <nav class="dot-nav" id="dotNav">
+      {
+        slides.map((name, i) => (
+          <button data-index={i} data-label={name} aria-label={`Go to ${name}`} />
+        ))
+      }
+    </nav>
+
+    <!-- Exit Presentation Button -->
+    <button class="exit-present-btn" id="exitPresentBtn" title="Exit Presentation (Esc)">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 2L14 14M14 2L2 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <!-- ============================== -->
+    <!-- SLIDE CONTAINER                -->
+    <!-- ============================== -->
+    <div class="deck" id="deck">
 
     <!-- ============ 1. COVER ============ -->
     <section class="slide slide-cover" data-slide="0">
-      <div class="slide-inner">
-        <h1><a href="https://selanet.ai" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">Selanet.ai</a></h1>
-        <p class="tagline">AI Agent Nodes as Web Infrastructure</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <h1><a href="https://selanet.ai" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">Selanet.ai</a></h1>
+          <p class="tagline">The Web Execution Layer for AI Agents</p>
+          <p class="sub-tagline" style="font-size:var(--fs-sm); color:var(--text-secondary); margin-top:0.25rem; font-weight:400;">1.3B AI agents by 2028. The web has no layer for them.</p>
 
-        <div class="stats-row">
-          <div class="stat">
-            <span class="value">2,700+</span>
-            <span class="label">Nodes Settled</span>
-          </div>
-          <div class="stat">
-            <span class="value">90+</span>
-            <span class="label">Regions</span>
-          </div>
-          <div class="stat">
-            <span class="value">30K TXs/day</span>
-            <span class="label">On Monad</span>
+          <div class="stats-row">
+            <div class="stat">
+              <span class="value">3,600+</span>
+              <span class="label">Nodes across 94+ Countries</span>
+            </div>
+            <div class="stat">
+              <span class="value">30K+</span>
+              <span class="label">Daily On-Chain TXs</span>
+            </div>
+            <div class="stat">
+              <span class="value">20+ LOIs</span>
+              <span class="label">Enterprise Pipeline</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 2. THE OPPORTUNITY ============ -->
+    <!-- ============ 2. THE PROBLEM ============ -->
     <section class="slide" data-slide="1">
-      <div class="slide-inner">
-        <span class="badge">Opportunity</span>
-        <h2>AI Agents Are Exploding.<br/>The Web Isn't Ready.</h2>
-        <p>Every vertical is deploying AI agents — research, sales, support, logistics. But these agents need to access the real web: post-login data, dynamic UIs, multi-step actions.</p>
-        <p>Less than 10% of websites offer APIs. The other 90% is locked behind browsers built for humans.</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Problem</span>
+          <h2>Why AI Agents Fail<br/>on the Real Web</h2>
+          <p>AI agents access the web like bots. <strong>That breaks at scale.</strong></p>
 
-        <div class="stats-row">
-          <div class="stat">
-            <span class="value">$220B+</span>
-            <span class="label">AI Agent Market by 2034</span>
+          <div class="slide-content">
+          <div class="problem-cards">
+            <div class="problem-card">
+              <div class="problem-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h3>Web Blocks AI Traffic</h3>
+              <p><strong>Bans, CAPTCHAs, and costs explode</strong> at scale. AI agents are frequently blocked by major sites.</p>
+            </div>
+            <div class="problem-card">
+              <div class="problem-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23" stroke-width="2"/></svg>
+              </div>
+              <h3>Post-Login Blindness</h3>
+              <p>Agents can't access data behind authentication. <strong>The most valuable 90% of the web</strong> is invisible to AI.</p>
+            </div>
+            <div class="problem-card">
+              <div class="problem-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <h3>Reliability Collapses</h3>
+              <p>Fragile automation, broken workflows, and data quality issues. <strong>No verification</strong> of data authenticity.</p>
+            </div>
           </div>
-          <div class="stat">
-            <span class="value">1.3B+</span>
-            <span class="label">AI Agents by 2028 <small style="display:block;color:var(--text-muted);font-size:0.75rem;">vs. millions in 2025 &mdash; Source: Microsoft</small></span>
+
+          <div class="callout-bar">
+            <span class="callout-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </span>
+            <span><strong>25&ndash;40% of AI agent operating cost</strong> goes to web access alone. <em>(Based on pilot client data)</em></span>
           </div>
-          <div class="stat">
-            <span class="value">90%</span>
-            <span class="label">of web has no API</span>
-          </div>
-          <div class="stat">
-            <span class="value">25–40%</span>
-            <span class="label">of agent cost is web access</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 3. THE PROBLEM ============ -->
+    <!-- ============ 3. THE OPPORTUNITY ============ -->
     <section class="slide" data-slide="2">
-      <div class="slide-inner">
-        <span class="badge">Problem</span>
-        <h2>Why AI Agents Fail<br/>on the Real Web</h2>
-        <p>AI agents access the web like bots — and that breaks at scale.</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Opportunity</span>
+          <h2>AI Agents Are Scaling Fast.<br/>The Web Can't Keep Up.</h2>
+          <p>Every vertical is deploying AI agents. They all need the real web: <strong>post-login data, dynamic UIs, multi-step actions</strong>. Less than 10% of websites offer APIs.</p>
 
-        <ul>
-          <li><strong>Web blocks AI traffic</strong> — Bans, CAPTCHAs, and costs explode at scale. GPTBot and ClaudeBot are frequently blocked.</li>
-          <li><strong>Post-login blindness</strong> — Agents can't access data behind authentication — the most valuable data on the web.</li>
-          <li><strong>Reliability collapses</strong> — Fragile automation, broken workflows, and data quality issues at scale.</li>
-        </ul>
+          <div class="slide-content">
+          <div class="stats-row" style="margin-bottom: 1.5rem;">
+            <div class="stat">
+              <span class="value">$220B+</span>
+              <span class="label">AI Agent Market by 2034</span>
+            </div>
+            <div class="stat">
+              <span class="value">1.3B+</span>
+              <span class="label">AI Agents by 2028 <small style="display:block;color:var(--text-muted);font-size:var(--fs-xs);">Source: Microsoft</small></span>
+            </div>
+            <div class="stat">
+              <span class="value">90%</span>
+              <span class="label">of web has no API</span>
+            </div>
+          </div>
+
+          <div class="tam-funnel">
+            <div class="tam-row">
+              <div class="tam-bar tam-bar-tam"></div>
+              <div class="tam-info">
+                <span class="tam-label">TAM</span>
+                <span class="tam-value">$220B</span>
+                <span class="tam-desc">Total AI Agent market</span>
+              </div>
+            </div>
+            <div class="tam-row">
+              <div class="tam-bar tam-bar-sam"></div>
+              <div class="tam-info">
+                <span class="tam-label">SAM</span>
+                <span class="tam-value">$18B</span>
+                <span class="tam-desc">Web data infra + browser automation</span>
+              </div>
+            </div>
+            <div class="tam-row">
+              <div class="tam-bar tam-bar-som"></div>
+              <div class="tam-info">
+                <span class="tam-label">SOM</span>
+                <span class="tam-value">$500M</span>
+                <span class="tam-desc">Authenticated web execution (Y5)</span>
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size:var(--fs-xs); color:var(--text-muted); margin-top:0.5rem;">Bottom-up: 1.3B agents &times; ~30% need web access &times; $46 avg annual spend = $18B SAM</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============ 4. THE SOLUTION ============ -->
     <section class="slide" data-slide="3">
-      <div class="slide-inner">
-        <span class="badge">Solution</span>
-        <h2>Authenticated, Decentralized<br/>Web Execution &mdash; Live Now</h2>
-        <p>Selanet is a decentralized web execution network powered by real users' devices and logged-in sessions. Infrastructure is live across 90+ regions.</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Solution</span>
+          <h2>Authenticated, Decentralized<br/>Web Execution. Live Now.</h2>
+          <p>A decentralized web execution network powered by <strong>user-consented browser environments with authenticated context</strong>. Live across 94+ countries.</p>
 
-        <ul>
-          <li><strong>Authenticated & Decentralized</strong> — Real users' logged-in sessions. No centralized IP bottlenecks. Access post-login data that no other provider can reach.</li>
-          <li><strong>Native to AI</strong> — Agent-native execution environment with structured data extraction. Open API/SDK for any agent framework.</li>
-          <li><strong>Trustless & Verifiable</strong> — Cryptographic proof of execution via zk-TLS. Permissionless participation.</li>
-        </ul>
+          <div class="slide-content">
+          <div class="solution-cards">
+            <div class="solution-card">
+              <div class="solution-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h3>Agent Node</h3>
+              <p>Users install a personal AI agent on their device. Each node contributes <strong>residential IP and browser environment</strong> to the network. Consent-based, decentralized supply.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3>Native to AI</h3>
+              <p>AI agents control the web through <strong>MCP, API, SDK, CLI, and Stream</strong>. Browse, interact, and extract. Drop-in integration with any agent framework.</p>
+            </div>
+            <div class="solution-card">
+              <div class="solution-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h3>Trustless & Verifiable</h3>
+              <p><strong>Cryptographic proof of execution</strong> via zk-TLS. Zero-knowledge verification without exposing session data.</p>
+            </div>
+          </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============ 5. HOW IT WORKS ============ -->
     <section class="slide" data-slide="4">
-      <div class="slide-inner">
-        <span class="badge">Architecture</span>
-        <h2>How It Works</h2>
-        <p>AI agents connect to the web through Selanet's distributed node network — real devices, real IPs, real logged-in sessions.</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Architecture</span>
+          <h2>How It Works</h2>
+          <p>AI agents connect through Selanet's distributed node network: <strong>real devices, real IPs, user-consented sessions</strong>.</p>
 
-        <div class="flow">
-          <span class="flow-step">AI Agent / Client</span>
-          <span class="flow-arrow">&rarr;</span>
-          <span class="flow-step highlight">Selanet Protocol</span>
-          <span class="flow-arrow">&rarr;</span>
-          <span class="flow-step highlight">AI Agent Nodes</span>
-          <span class="flow-arrow">&rarr;</span>
-          <span class="flow-step">Web / Platforms</span>
+          <div class="slide-content">
+          <div class="arch-flow">
+            <div class="arch-step">
+              <div class="arch-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+              </div>
+              <div class="arch-label">AI Agent</div>
+              <div class="arch-sublabel">Any framework</div>
+            </div>
+            <div class="arch-arrow">
+              <svg width="32" height="16" viewBox="0 0 40 20"><path d="M0 10h32M28 4l8 6-8 6" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>
+            </div>
+            <div class="arch-step arch-highlight">
+              <div class="arch-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div class="arch-label">Selanet</div>
+              <div class="arch-sublabel">Task routing</div>
+            </div>
+            <div class="arch-arrow">
+              <svg width="32" height="16" viewBox="0 0 40 20"><path d="M0 10h32M28 4l8 6-8 6" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>
+            </div>
+            <div class="arch-step arch-highlight">
+              <div class="arch-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div class="arch-label">Agent Nodes</div>
+              <div class="arch-sublabel">3,600+ real devices</div>
+            </div>
+            <div class="arch-arrow">
+              <svg width="32" height="16" viewBox="0 0 40 20"><path d="M0 10h32M28 4l8 6-8 6" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>
+            </div>
+            <div class="arch-step">
+              <div class="arch-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div class="arch-label">Web / Platforms</div>
+              <div class="arch-sublabel">Authenticated access</div>
+            </div>
+          </div>
+
+          <div class="three-col" style="margin-top:1.25rem;">
+            <div>
+              <h3>Real Devices</h3>
+              <p style="font-size:var(--fs-xs); margin:0;"><strong>Desktop, mobile, data center</strong> nodes across 94+ countries</p>
+            </div>
+            <div>
+              <h3>Full Browser</h3>
+              <p style="font-size:var(--fs-xs); margin:0;">Read, act, authenticate on every node</p>
+            </div>
+            <div>
+              <h3>Privacy First</h3>
+              <p style="font-size:var(--fs-xs); margin:0;"><strong>Credentials encrypted locally</strong>, user-initiated &amp; consent-based, per-action rate limiting</p>
+            </div>
+          </div>
+          </div>
         </div>
-
-        <ul style="margin-top:2rem;">
-          <li><strong>Real devices</strong> — Desktop, mobile, and data center nodes across 90+ regions</li>
-          <li><strong>Full browser capabilities</strong> — Read, act, authenticate, and verify via zk-TLS</li>
-          <li><strong>Sessions stay on-device</strong> — Credentials encrypted locally, per-action rate limiting</li>
-        </ul>
       </div>
     </section>
 
-    <!-- ============ 6. LIVE DEMO ============ -->
+    <!-- ============ 6. USE CASES ============ -->
     <section class="slide" data-slide="5">
-      <div class="slide-inner">
-        <span class="badge">Use Cases</span>
-        <h2>Same Question,<br/>Different Result</h2>
-        <p>ChatGPT stops at login walls, gets blocked by CAPTCHAs, returns shallow data. Selanet-powered agents execute behind authentication.</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Use Cases</span>
+          <h2>Who's Building on Selanet</h2>
+          <p><strong>20+ LOI-signed clients</strong> and active POCs across fintech, marketing, media, and intelligence.</p>
 
-        <div class="two-col">
-          <div class="case-card">
-            <h3>Upflux &mdash; Biz Lead Generation</h3>
-            <p class="case-prompt">"Find Korean companies that uses Salesforce"</p>
-            <ul>
-              <li><strong>AI Reasoning</strong> — Planning &amp; decision-making</li>
-              <li><strong>Real Web Access</strong> — LinkedIn via real user sessions</li>
-              <li><strong>Verified Leads</strong> — Enriched from authenticated data</li>
-            </ul>
+          <div class="slide-content">
+          <div class="client-grid">
+            <div class="client-card">
+              <div class="client-header">
+                <div>
+                  <div class="client-name">Cizion</div>
+                  <div class="client-category">PR / Social</div>
+                </div>
+                <span class="client-status status-loi">LOI</span>
+              </div>
+              <p class="client-desc">Real-time monitoring of brand mentions across gated communities for social reputation management.</p>
+              <div class="client-metric">
+                <span class="client-metric-value">200K</span>
+                <span class="client-metric-label">est. req/month</span>
+              </div>
+            </div>
+
+            <div class="client-card">
+              <div class="client-header">
+                <div>
+                  <div class="client-name">DeepSearch</div>
+                  <div class="client-category">Fintech / Intelligence</div>
+                </div>
+                <span class="client-status status-loi">LOI</span>
+              </div>
+              <p class="client-desc">Daily social sentiment from X (Twitter) for listed companies across U.S. and Korean markets.</p>
+              <div class="client-metric">
+                <span class="client-metric-value">150K</span>
+                <span class="client-metric-label">est. req/month</span>
+              </div>
+            </div>
+
+            <div class="client-card">
+              <div class="client-header">
+                <div>
+                  <div class="client-name">Sapiens</div>
+                  <div class="client-category">Generative Media</div>
+                </div>
+                <span class="client-status status-active">Active POC</span>
+              </div>
+              <p class="client-desc">AI-native media pipeline consuming real-time inputs from X, Medium, Reddit.</p>
+              <div class="client-metric">
+                <span class="client-metric-value">180K</span>
+                <span class="client-metric-label">est. req/month</span>
+              </div>
+            </div>
+
+            <div class="client-card">
+              <div class="client-header">
+                <div>
+                  <div class="client-name">LinqAlpha</div>
+                  <div class="client-category">FinTech / Research</div>
+                </div>
+                <span class="client-status status-loi">LOI</span>
+              </div>
+              <p class="client-desc">Live product data from Xiaohongshu and global news for automated stock analysis.</p>
+              <div class="client-metric">
+                <span class="client-metric-value">120K</span>
+                <span class="client-metric-label">est. req/month</span>
+              </div>
+            </div>
+
+            <div class="client-card">
+              <div class="client-header">
+                <div>
+                  <div class="client-name">Animoca Brands</div>
+                  <div class="client-category">Web3 Research</div>
+                </div>
+                <span class="client-status status-poc">POC</span>
+              </div>
+              <p class="client-desc">Web3 gaming ecosystem research. Tracking community growth and dApp metrics.</p>
+              <div class="client-metric">
+                <span class="client-metric-value">45K</span>
+                <span class="client-metric-label">est. req/month</span>
+              </div>
+            </div>
+
+            <div class="client-card">
+              <div class="client-header">
+                <div>
+                  <div class="client-name">Featuring</div>
+                  <div class="client-category">Marketing Platform</div>
+                </div>
+                <span class="client-status status-loi">LOI</span>
+              </div>
+              <p class="client-desc">Social marketing and content management platform needing reliable access to influencer metrics and engagement data.</p>
+              <div class="client-metric">
+                <span class="client-metric-value">160K</span>
+                <span class="client-metric-label">est. req/month</span>
+              </div>
+            </div>
           </div>
-          <div class="case-card">
-            <h3>LinqAlpha &mdash; Investment Research</h3>
-            <p class="case-prompt">"Analyze trending cosmetics brands on Xiaohongshu"</p>
-            <ul>
-              <li><strong>Post-login Access</strong> — Xiaohongshu behind auth wall</li>
-              <li><strong>Real-time Signals</strong> — Trend data for investment reports</li>
-              <li><strong>Geo-specific Data</strong> — China-only platform, local sessions</li>
-            </ul>
+
+          <p style="margin-top:0.75rem; font-size:var(--fs-xs); color:var(--text-muted); text-align:center;">+ 16 additional LOI clients across retail, B2B, and venture capital verticals</p>
           </div>
         </div>
-
-        <blockquote style="margin-top:1.5rem">
-          <p>AI can answer questions. <strong>Selanet lets agents execute behind login walls.</strong></p>
-        </blockquote>
       </div>
     </section>
 
     <!-- ============ 7. TRACTION ============ -->
     <section class="slide" data-slide="6">
-      <div class="slide-inner">
-        <span class="badge">Traction</span>
-        <h2>Live Infrastructure.<br/>Real Pipeline.</h2>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Traction</span>
+          <h2>Live Infrastructure.<br/>Real Pipeline.</h2>
 
-        <div class="stats-grid-6">
-          <div class="stat">
-            <span class="value">8 LOIs</span>
-            <span class="label">$25K MRR Projected</span>
+          <div class="slide-content">
+          <div class="traction-grid">
+            <div class="traction-card traction-highlight">
+              <span class="traction-value">2,000+</span>
+              <span class="traction-label">Daily Browse API Requests</span>
+              <span class="traction-detail">As of Mar 20, 2026. LOI clients project 120K&ndash;200K req/mo each at production</span>
+            </div>
+            <div class="traction-card">
+              <span class="traction-value">20+ LOIs</span>
+              <span class="traction-label">Signed Pipeline</span>
+              <span class="traction-detail">2 active POCs, <strong>15 converting to paid</strong></span>
+            </div>
+            <div class="traction-card">
+              <span class="traction-value">3,600+</span>
+              <span class="traction-label">Active Nodes</span>
+              <span class="traction-detail">Real devices across 94+ countries</span>
+            </div>
+            <div class="traction-card">
+              <span class="traction-value">30K+</span>
+              <span class="traction-label">Daily On-Chain TXs</span>
+              <span class="traction-detail">Node heartbeats + task settlements on Monad</span>
+            </div>
+            <div class="traction-card">
+              <span class="traction-value">99%+</span>
+              <span class="traction-label">Success Rate</span>
+              <span class="traction-detail">Across all node types and regions</span>
+            </div>
+            <div class="traction-card">
+              <span class="traction-value">4.2s</span>
+              <span class="traction-label">Avg Latency</span>
+              <span class="traction-detail">End-to-end task execution</span>
+            </div>
           </div>
-          <div class="stat">
-            <span class="value">25+</span>
-            <span class="label">POC Pipeline</span>
-          </div>
-          <div class="stat">
-            <span class="value">4.2s</span>
-            <span class="label">Median Latency</span>
-          </div>
-          <div class="stat">
-            <span class="value">99%+</span>
-            <span class="label">Success Rate</span>
-          </div>
-          <div class="stat">
-            <span class="value">&lt;1%</span>
-            <span class="label">Ban Rate</span>
-          </div>
-          <div class="stat">
-            <span class="value">440</span>
-            <span class="label">Developer Waitlist</span>
-          </div>
-        </div>
 
-        <div class="two-col" style="margin-top:2.5rem;">
-          <div>
-            <h3>Live Now</h3>
-            <ul>
-              <li><strong>Browse API</strong> &mdash; $8/1K requests, production-ready</li>
-              <li><strong>Node Client</strong> &mdash; 2,700+ nodes across 90+ regions</li>
-              <li><strong>9,000+ social followers</strong> &mdash; growing developer community</li>
-            </ul>
+          <div class="callout-bar" style="margin-top:1rem;">
+            <span class="callout-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </span>
+            <span><strong>Pre-revenue.</strong> Infrastructure live. Paid conversion starts this quarter.</span>
           </div>
-          <div>
-            <h3>Converting Now</h3>
-            <ul>
-              <li><strong>8 LOI-signed clients</strong> &mdash; contracts in legal review</li>
-              <li><strong>First invoices</strong> &mdash; scheduled this quarter</li>
-              <li><strong>2 clients completing integration</strong> &mdash; live deployment in progress</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -239,51 +468,58 @@ const slides = [
 
     <!-- ============ 8. WHY WE WIN ============ -->
     <section class="slide" data-slide="7">
-      <div class="slide-inner">
-        <span class="badge">Why We Win</span>
-        <h2>Competitive Landscape</h2>
-        <p>Others sell tools or access. Selanet builds the infrastructure layer AI depends on.</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Why We Win</span>
+          <h2>Competitive Landscape</h2>
 
-        <div class="quadrant">
-          <!-- Axes -->
-          <div class="q-y-axis"></div>
-          <div class="q-x-axis"></div>
-          <!-- Axis labels -->
-          <div class="q-y-label-top">High (Large/Parallel)</div>
-          <div class="q-y-label-bottom">Low (Local/Serial)</div>
-          <div class="q-x-label-left">Centralized</div>
-          <div class="q-x-label-right">Distributed<br/>Human-like</div>
-          <div class="q-y-title">AI Workload Scale</div>
-          <div class="q-x-title">Execution Environment</div>
-          <!-- Competitors -->
-          <div class="q-item" style="left:18%; top:18%;">Tavily</div>
-          <div class="q-item" style="left:32%; top:22%;">Browserbase</div>
-          <div class="q-item" style="left:25%; top:38%;">Browser Use</div>
-          <div class="q-item" style="left:18%; top:72%;">Playwright</div>
-          <div class="q-item" style="left:55%; top:18%;">Bright Data</div>
-          <div class="q-item" style="left:70%; top:72%;">Grass</div>
-          <!-- Selanet (highlighted) -->
-          <div class="q-item q-sela" style="left:78%; top:10%;">Selanet</div>
-        </div>
-
-        <div class="q-footnotes">
-          <span>Tavily: '25 Seed $25m</span>
-          <span>Browserbase: '25 Series-B $40m @ $300m</span>
-          <span>Browser Use: '25 Seed $17m</span>
-        </div>
-
-        <div class="q-callouts">
-          <div class="q-callout">
-            <strong>Developer Tools (Playwright)</strong>
-            <span>&rarr; Don't scale parallel AI workloads</span>
+          <div class="slide-content">
+          <div class="quadrant">
+            <div class="q-y-axis"></div>
+            <div class="q-x-axis"></div>
+            <div class="q-y-label-top">High (Large/Parallel)</div>
+            <div class="q-y-label-bottom">Low (Local/Serial)</div>
+            <div class="q-x-label-left">Centralized</div>
+            <div class="q-x-label-right">Distributed<br/>Human-like</div>
+            <div class="q-y-title">AI Workload Scale</div>
+            <div class="q-x-title">Execution Environment</div>
+            <div class="q-item" style="left:18%; top:18%;">Tavily</div>
+            <div class="q-item" style="left:32%; top:22%;">Browserbase</div>
+            <div class="q-item" style="left:25%; top:38%;">Browser Use</div>
+            <div class="q-item" style="left:18%; top:72%;">Playwright</div>
+            <div class="q-item" style="left:55%; top:18%;">Bright Data</div>
+            <div class="q-item" style="left:70%; top:72%;">Grass</div>
+            <div class="q-item q-sela" style="left:78%; top:10%;">Selanet</div>
           </div>
-          <div class="q-callout">
-            <strong>Centralized APIs (Tavily, Browserbase)</strong>
-            <span>&rarr; Centralized, failing at high scale workflows</span>
+
+          <div class="q-footnotes">
+            <span>Tavily: '25 Seed $25m</span>
+            <span>Browserbase: '25 Series-B $40m @ $300m</span>
+            <span>Browser Use: '25 Seed $17m</span>
           </div>
-          <div class="q-callout">
-            <strong>Proxy/Bandwidth (Bright, Grass)</strong>
-            <span>&rarr; Not designed for agent native execution</span>
+
+          <div class="q-callouts">
+            <div class="q-callout">
+              <strong>Dev Tools (Playwright)</strong>
+              <span>&rarr; Don't scale parallel AI workloads</span>
+            </div>
+            <div class="q-callout">
+              <strong>Centralized (Tavily, Browserbase)</strong>
+              <span>&rarr; Failing at high-scale workflows</span>
+            </div>
+            <div class="q-callout">
+              <strong>Proxy/BW (Bright, Grass)</strong>
+              <span>&rarr; Not agent-native execution</span>
+            </div>
+          </div>
+
+          <div class="moat-box">
+            <div class="moat-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <strong>Moat vs. Bright Data ($300M ARR)</strong>
+            </div>
+            <p style="margin:0.25rem 0 0; font-size:var(--fs-xs); color:var(--text-secondary); line-height:var(--lh-snug);">Bright Data sells raw proxy bandwidth (IP-level). Selanet provides <strong>agent-native browser execution</strong> with authenticated sessions + on-chain verification. <strong>Different stack entirely.</strong> Can't be retrofitted.</p>
+          </div>
           </div>
         </div>
       </div>
@@ -291,38 +527,62 @@ const slides = [
 
     <!-- ============ 9. FLYWHEEL ============ -->
     <section class="slide" data-slide="8">
-      <div class="slide-inner">
-        <span class="badge">Network Effect</span>
-        <h2>The Flywheel</h2>
-        <p>AI Agent Node breaks the DePIN growth ceiling — operators join for personal AI utility (social automation, work delegation), not just tokens.</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Flywheel</span>
+          <h2>Not Another DePIN.<br/>A New Model.</h2>
 
-        <div class="flywheel">
-          <div class="flywheel-ring">
-            <div class="flywheel-step">
-              <div class="step-num">Step 1</div>
-              <div class="step-title">More Nodes</div>
-              <div class="step-desc">AI agent utility (social automation, work delegation) drives organic growth</div>
+          <div class="slide-content">
+          <div class="two-col" style="margin-bottom: 1rem;">
+            <div class="versus-card versus-old">
+              <h3>Old DePIN</h3>
+              <ul>
+                <li>Install and forget. Nodes sit idle.</li>
+                <li>Only incentive is token rewards.</li>
+                <li>Token inflation kills economics.</li>
+                <li>No real demand, no sustainable revenue.</li>
+              </ul>
             </div>
-            <div class="flywheel-step">
-              <div class="step-num">Step 2</div>
-              <div class="step-title">Richer Access</div>
-              <div class="step-desc">Broader geographic and platform coverage</div>
+            <div class="versus-card versus-new">
+              <h3>Selanet Agent Node</h3>
+              <ul>
+                <li>Users install to use a <strong>personal AI agent</strong>.</li>
+                <li>Nodes process web requests and earn.</li>
+                <li>Rewards in <strong>$USDC + $SELA</strong>. Real revenue.</li>
+                <li>Demand drives supply. Usage drives rewards.</li>
+              </ul>
             </div>
-            <div class="flywheel-step">
-              <div class="step-num">Step 3</div>
-              <div class="step-title">More Usage</div>
-              <div class="step-desc">Demand and transactions increase, BM diversifies</div>
+          </div>
+
+          <div class="flywheel">
+            <div class="flywheel-ring">
+              <div class="flywheel-step">
+                <div class="step-num">Step 1</div>
+                <div class="step-title"><strong>Personal AI Agent</strong></div>
+                <div class="step-desc">Users install for AI utility, not mining</div>
+              </div>
+              <div class="flywheel-step">
+                <div class="step-num">Step 2</div>
+                <div class="step-title">Coverage</div>
+                <div class="step-desc">More nodes = broader regions & sessions</div>
+              </div>
+              <div class="flywheel-step">
+                <div class="step-num">Step 3</div>
+                <div class="step-title">API Demand</div>
+                <div class="step-desc">Enterprises pay for web execution</div>
+              </div>
+              <div class="flywheel-step">
+                <div class="step-num">Step 4</div>
+                <div class="step-title">Revenue</div>
+                <div class="step-desc"><strong>$USDC + $SELA</strong> flows to operators</div>
+              </div>
+              <div class="flywheel-step">
+                <div class="step-num">Step 5</div>
+                <div class="step-title">Growth</div>
+                <div class="step-desc">Revenue attracts more operators</div>
+              </div>
             </div>
-            <div class="flywheel-step">
-              <div class="step-num">Step 4</div>
-              <div class="step-title">Higher Revenue</div>
-              <div class="step-desc">B2B API fees compound with network scale</div>
-            </div>
-            <div class="flywheel-step">
-              <div class="step-num">Step 5</div>
-              <div class="step-title">Stronger Incentives</div>
-              <div class="step-desc">Network revenue reinvested into operator economics</div>
-            </div>
+          </div>
           </div>
         </div>
       </div>
@@ -330,50 +590,51 @@ const slides = [
 
     <!-- ============ 10. BUSINESS MODEL ============ -->
     <section class="slide" data-slide="9">
-      <div class="slide-inner">
-        <span class="badge">Revenue</span>
-        <h2>Business Model</h2>
-        <p>Browse API — web execution as a service for AI agent builders.</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Revenue</span>
+          <h2>Business Model</h2>
+          <p><strong>Browse API</strong>: web execution as a service for AI agent builders.</p>
 
-        <div class="stats-row" style="margin-bottom: 2.5rem;">
-          <div class="stat">
-            <span class="value">$8</span>
-            <span class="label">per 1,000 Requests</span>
+          <div class="slide-content">
+          <div class="stats-row" style="margin-bottom: 1.5rem;">
+            <div class="stat">
+              <span class="value">$8</span>
+              <span class="label">per 1,000 Requests</span>
+            </div>
+            <div class="stat">
+              <span class="value">~60%</span>
+              <span class="label">Gross Margin</span>
+            </div>
+            <div class="stat">
+              <span class="value">$120K</span>
+              <span class="label">Y1 Exit MRR</span>
+            </div>
           </div>
-          <div class="stat">
-            <span class="value">~60%</span>
-            <span class="label">Gross Margin</span>
-          </div>
-          <div class="stat">
-            <span class="value">$25K</span>
-            <span class="label">Projected MRR</span>
-          </div>
-        </div>
 
-        <h3>Pricing Ladder</h3>
-        <div class="flow" style="margin-bottom: 2.5rem;">
-          <span class="flow-step">Free Tier</span>
-          <span class="flow-arrow">&rarr;</span>
-          <span class="flow-step">PAYG</span>
-          <span class="flow-arrow">&rarr;</span>
-          <span class="flow-step">Subscription</span>
-          <span class="flow-arrow">&rarr;</span>
-          <span class="flow-step highlight">Enterprise</span>
-        </div>
+          <h3>Pricing Ladder</h3>
+          <div class="flow">
+            <span class="flow-step">Free Tier</span>
+            <span class="flow-arrow">&rarr;</span>
+            <span class="flow-step">PAYG</span>
+            <span class="flow-arrow">&rarr;</span>
+            <span class="flow-step">Subscription</span>
+            <span class="flow-arrow">&rarr;</span>
+            <span class="flow-step highlight">Enterprise</span>
+          </div>
 
-        <h3>Revenue Expansion</h3>
-        <div class="three-col">
-          <div>
-            <p><strong>Usage Growth</strong></p>
-            <p>Clients scale from pilot to production volumes</p>
+          <h3>Revenue Expansion</h3>
+          <div class="three-col">
+            <div>
+              <p style="font-size:var(--fs-xs);"><strong>Usage Growth</strong><br/>Clients scale from pilot to production volumes</p>
+            </div>
+            <div>
+              <p style="font-size:var(--fs-xs);"><strong>Platform Upsell</strong><br/>Free tier to enterprise SLA conversion</p>
+            </div>
+            <div>
+              <p style="font-size:var(--fs-xs);"><strong>Network Effect</strong><br/>More nodes = broader coverage = higher-value use cases</p>
+            </div>
           </div>
-          <div>
-            <p><strong>Platform Upsell</strong></p>
-            <p>Free tier to enterprise SLA conversion</p>
-          </div>
-          <div>
-            <p><strong>Network Effect</strong></p>
-            <p>More nodes = broader coverage = higher-value use cases</p>
           </div>
         </div>
       </div>
@@ -381,26 +642,51 @@ const slides = [
 
     <!-- ============ 11. GO-TO-MARKET ============ -->
     <section class="slide" data-slide="10">
-      <div class="slide-inner">
-        <span class="badge">Go-to-Market</span>
-        <h2>Win Long-tail,<br/>Then Scale Up</h2>
-        <p>Start with agent-first startups, expand to platforms serving thousands of enterprise clients.</p>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Go-to-Market</span>
+          <h2>Supply First,<br/>Then Monetize</h2>
+          <p>Selanet's Agent Node is itself an AI agent. Users install it <strong>to use, not to mine</strong>.</p>
 
-        <div class="three-col">
-          <div>
-            <h3>Segment 1 &mdash; Now</h3>
-            <p><strong>Long-tail Agent Startups</strong></p>
-            <p>Agent-first SMBs needing post-login access and reliable web execution. PLG acquisition.</p>
+          <div class="slide-content">
+          <div class="three-col">
+            <div>
+              <h3>Phase 1: Supply</h3>
+              <ul>
+                <li><strong>Regular users</strong> install Agent Node as a personal AI assistant.</li>
+                <li><strong>Developers</strong> install for free Browse API credits.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Phase 2: Demand</h3>
+              <ul>
+                <li>Enterprise API sales for post-login web data at scale.</li>
+                <li>High-frequency, repeatable use cases first.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Phase 3: Platform</h3>
+              <ul>
+                <li>Supply scales with demand automatically.</li>
+                <li>Default web execution layer for AI agent frameworks.</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h3>Segment 2 &mdash; Q3 2026</h3>
-            <p><strong>Vertical AI Builders</strong></p>
-            <p>Companies adopting AI agents for core business growth and cost reduction.</p>
+
+          <div class="gtm-growth-points">
+            <div class="gtm-point">
+              <strong>Usage, Not Headcount</strong>
+              <span>As clients' agents scale, our revenue scales.</span>
+            </div>
+            <div class="gtm-point">
+              <strong>Product-Led</strong>
+              <span>Growth built into the product. No sales needed.</span>
+            </div>
+            <div class="gtm-point">
+              <strong>Supply = Demand</strong>
+              <span>More API requests = more nodes = more supply.</span>
+            </div>
           </div>
-          <div>
-            <h3>Segment 3 &mdash; Q4 2026</h3>
-            <p><strong>Platform Partners</strong></p>
-            <p>Infrastructure and marketplaces serving thousands of downstream enterprise clients.</p>
           </div>
         </div>
       </div>
@@ -408,201 +694,330 @@ const slides = [
 
     <!-- ============ 12. FINANCIALS ============ -->
     <section class="slide" data-slide="11">
-      <div class="slide-inner">
-        <span class="badge">Financials</span>
-        <h2>Financial Projection</h2>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Financials</span>
+          <h2>Financial Projection</h2>
+          <p>Exit-rate ARR based on <strong>bottom-up unit economics</strong>. All numbers derived from Browse API pricing ($8 / 1K requests).</p>
 
-        <div class="stats-row" style="margin-bottom: 2rem;">
-          <div class="stat">
-            <span class="value">$78M</span>
-            <span class="label">Cumulative Revenue (3Y)</span>
+          <div class="slide-content">
+          <div class="stats-row" style="margin-bottom: 0.75rem;">
+            <div class="stat">
+              <span class="value">$1.5M</span>
+              <span class="label">Year 1 Exit ARR</span>
+            </div>
+            <div class="stat">
+              <span class="value">$19M</span>
+              <span class="label">Year 2 Exit ARR</span>
+            </div>
+            <div class="stat">
+              <span class="value">$80M</span>
+              <span class="label">Year 3 Exit ARR</span>
+            </div>
           </div>
-          <div class="stat">
-            <span class="value">47.5x</span>
-            <span class="label">Revenue Multiple</span>
+
+          <div class="projection-bars">
+            <div class="projection-bar">
+              <div class="bar-label">$1.5M</div>
+              <div class="bar" style="height: 6%;"></div>
+              <div class="bar-year">Year 1</div>
+            </div>
+            <div class="projection-bar">
+              <div class="bar-label">$19M</div>
+              <div class="bar" style="height: 33%;"></div>
+              <div class="bar-year">Year 2</div>
+            </div>
+            <div class="projection-bar">
+              <div class="bar-label">$80M</div>
+              <div class="bar" style="height: 100%;"></div>
+              <div class="bar-year">Year 3</div>
+            </div>
           </div>
-          <div class="stat">
-            <span class="value">1,910</span>
-            <span class="label">B2B Clients</span>
+
+          <div class="assumptions-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Driver</th>
+                  <th>Year 1</th>
+                  <th>Year 2</th>
+                  <th>Year 3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Paying Clients (exit)</td><td>15</td><td>80</td><td>300</td></tr>
+                <tr><td>Avg Requests / Client / Mo</td><td>1.0M</td><td>2.5M</td><td>3.0M</td></tr>
+                <tr><td>Blended Price / 1K Req</td><td>$8.0</td><td>$8.0</td><td>$7.5</td></tr>
+                <tr><td><strong>Exit MRR</strong></td><td><strong>$120K</strong></td><td><strong>$1.6M</strong></td><td><strong>$6.75M</strong></td></tr>
+                <tr><td>Active Nodes</td><td>50K</td><td>200K</td><td>500K+</td></tr>
+                <tr><td>Gross Margin</td><td>~55%</td><td>~60%</td><td>~65%</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="two-col" style="margin-top:0.5rem;">
+            <div>
+              <h3 style="margin-top:0.5rem;">Growth Logic</h3>
+              <ul>
+                <li><strong>Y1&rarr;Y2 (13x):</strong> Clients 5.3x (15&rarr;80) &times; usage/client 2.5x as agents scale to production</li>
+                <li><strong>Y2&rarr;Y3 (4.2x):</strong> Clients 3.75x (80&rarr;300) &times; slight price compression ($8&rarr;$7.5) via volume</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="margin-top:0.5rem;">Comparables</h3>
+              <ul>
+                <li><strong>Bright Data</strong> $300M ARR (proxy infra)</li>
+                <li><strong>Tavily</strong> $25M Seed (AI search)</li>
+                <li><strong>Browserbase</strong> $40M @ $300M val (browser)</li>
+              </ul>
+            </div>
+          </div>
+
+          <p style="font-size:var(--fs-xs); color:var(--text-muted); margin-top:0.5rem;">Check: 15 clients &times; 1M req &times; $8/1K = $120K MRR &times; 12 = <strong>$1.44M &asymp; $1.5M</strong> &nbsp;|&nbsp; Current LOI pipeline avg est. requests: 120K&ndash;200K/mo per client, scaling to 1M+ at production.</p>
           </div>
         </div>
-
-        <div class="projection-bars">
-          <div class="projection-bar">
-            <div class="bar-label">$1.3M</div>
-            <div class="bar" style="height: 8%;"></div>
-            <div class="bar-year">Year 1</div>
-          </div>
-          <div class="projection-bar">
-            <div class="bar-label">$15.0M</div>
-            <div class="bar" style="height: 40%;"></div>
-            <div class="bar-year">Year 2</div>
-          </div>
-          <div class="projection-bar">
-            <div class="bar-label">$61.7M</div>
-            <div class="bar" style="height: 100%;"></div>
-            <div class="bar-year">Year 3</div>
-          </div>
-        </div>
-
-        <p style="margin-top:1.5rem; font-size:0.9rem; color:var(--text-muted); max-width:none; text-align:center;">Y1: 8 LOI clients converting at ~$3K avg MRR + new pipeline growth. Y2–3: node scaling to 100K+, $8/1K requests.<br/>Benchmarked against Bright Data ($300M ARR).</p>
       </div>
     </section>
 
-    <!-- ============ 13. ROADMAP ============ -->
+    <!-- ============ 13. WHY MONAD ============ -->
     <section class="slide" data-slide="12">
-      <div class="slide-inner">
-        <span class="badge">Roadmap</span>
-        <h2>Roadmap 2026–2030</h2>
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Why Monad</span>
+          <h2>Built on Monad.<br/>Built for AI Scale.</h2>
+          <p>Live on Monad mainnet. <strong>Parallel execution</strong> and <strong>sub-second finality</strong> match AI agent speed and throughput demands.</p>
 
-        <div class="three-col" style="margin-top: 2rem;">
-          <div>
-            <h3>Phase 1 &mdash; Foundation</h3>
-            <ul>
-              <li>AI Agent Node launch (April 2026)</li>
-              <li>LOI &rarr; paid conversion</li>
-              <li>2,000+ active nodes</li>
-              <li>B2C premium rollout</li>
-              <li>SDK/API for AI agents</li>
-            </ul>
+          <div class="slide-content">
+          <div class="stats-row" style="margin-bottom: 1.5rem;">
+            <div class="stat">
+              <span class="value">30K+</span>
+              <span class="label">Daily TXs on Monad</span>
+            </div>
+            <div class="stat">
+              <span class="value">400ms</span>
+              <span class="label">Block Time</span>
+            </div>
+            <div class="stat">
+              <span class="value">10K TPS</span>
+              <span class="label">Parallel Execution</span>
+            </div>
           </div>
-          <div>
-            <h3>Phase 2 &mdash; 2027–28</h3>
-            <ul>
-              <li>100K+ nodes across 150 countries</li>
-              <li>Diversified web/platform access</li>
-              <li>Vertical AI agent partnerships</li>
-              <li>Dedicated node device</li>
-            </ul>
+
+          <div class="three-col">
+            <div>
+              <h3>Why Monad Matters</h3>
+              <ul>
+                <li><strong>Parallel EVM.</strong> Thousands of concurrent verifications</li>
+                <li><strong>Sub-second finality.</strong> Real-time zk-TLS settlement</li>
+              </ul>
+            </div>
+            <div>
+              <h3>What We Bring</h3>
+              <ul>
+                <li><strong>Real volume.</strong> 30K+ TXs/day, not speculation</li>
+                <li><strong>AI onramp.</strong> Every agent settles on Monad</li>
+              </ul>
+            </div>
+            <div>
+              <h3>On-Chain Roadmap</h3>
+              <ul>
+                <li><strong>Payment rails.</strong> $USDC micropayments per request</li>
+                <li><strong>Reputation.</strong> On-chain node quality scoring</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h3>Phase 3 &mdash; 2029–30</h3>
-            <ul>
-              <li>1M+ nodes &mdash; default web layer for AI agents</li>
-              <li>Open protocol standard for agentic web access</li>
-              <li>Market leadership as vertical infrastructure</li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 14. TEAM ============ -->
-    <section class="slide" data-slide="13" style="padding-top:3.5rem; padding-bottom:3.5rem;">
-      <div class="slide-inner">
-        <span class="badge">Team</span>
-        <h2>Team — BC Labs</h2>
-        <p>Backed by SBVA (SoftBank Ventures Asia) and KB Investment.</p>
+    <!-- ============ 14. ROADMAP ============ -->
+    <section class="slide" data-slide="13">
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Roadmap</span>
+          <h2>Execution Roadmap</h2>
+          <p>Three phases: <strong>build the network, monetize it, own the category.</strong></p>
 
-        <div class="team-grid-9">
-          <div class="team-member">
-            <div class="member-name">Stephen</div>
-            <div class="member-role">CEO</div>
-            <div class="member-bg">Mirae Asset Financial &middot; Ilshin Ventures VC &middot; Hewlett-Packard PM</div>
-            <div class="member-edu">Yonsei Univ. M.S. EE &middot; Georgia Tech M.S. MoT</div>
+          <div class="slide-content">
+          <div class="roadmap-timeline">
+            <div class="roadmap-phase">
+              <div class="roadmap-marker active"></div>
+              <h3>Phase 1: Launch &amp; Network Growth <span class="roadmap-date">2026</span></h3>
+              <ul>
+                <li><strong>Q2:</strong> AI Agent Node launch (Desktop) &middot; LOI &rarr; paid conversion</li>
+                <li><strong>Q2:</strong> Linux / Docker version for developers &amp; server operators</li>
+                <li><strong>Q3:</strong> Mobile Agent Node (remote control, proxy, mobile IP pool)</li>
+                <li><strong>Q4:</strong> x402 integration: per-request $USDC micropayments via HTTP 402</li>
+                <li><strong>Q4:</strong> 50K+ nodes &middot; SDK/API GA &middot; $1M+ ARR exit rate</li>
+              </ul>
+            </div>
+            <div class="roadmap-phase">
+              <div class="roadmap-marker"></div>
+              <h3>Phase 2: Enterprise &amp; Protocol <span class="roadmap-date">2027&ndash;28</span></h3>
+              <ul>
+                <li>Enterprise SLA tiers &amp; dedicated node clusters for Fortune 500</li>
+                <li>On-chain reputation system: node quality scoring &amp; staking</li>
+                <li>zk-TLS v2: multi-party proof generation for compliance-grade verification</li>
+                <li>200K+ nodes across 150+ countries &middot; Dedicated node hardware</li>
+                <li>$SELA token launch &amp; on-chain governance</li>
+              </ul>
+            </div>
+            <div class="roadmap-phase">
+              <div class="roadmap-marker"></div>
+              <h3>Phase 3: Protocol Standard <span class="roadmap-date">2029&ndash;30</span></h3>
+              <ul>
+                <li>1M+ nodes. Default web execution layer for AI agents</li>
+                <li>Open protocol: third-party node clients &amp; verifiers</li>
+                <li>Cross-chain settlement (Monad, Ethereum L2s)</li>
+                <li>Fully decentralized governance. Protocol-owned infrastructure</li>
+              </ul>
+            </div>
           </div>
-          <div class="team-member">
-            <div class="member-name">Spock</div>
-            <div class="member-role">CTO</div>
-            <div class="member-bg">Oasis CEX Exchange CTO &middot; Traport CTO &middot; Alpine Research CTO</div>
-            <div class="member-edu">Soongsil Univ. Computer Science</div>
-          </div>
-          <div class="team-member">
-            <div class="member-name">Jayden</div>
-            <div class="member-role">Advisor</div>
-            <div class="member-bg">Samsung Electronics LLM RAG Architect &middot; Humax Embedded SW Developer</div>
-            <div class="member-edu">Sungkyunkwan Univ. Ph.D in MoT</div>
-          </div>
-          <div class="team-member">
-            <div class="member-expertise">Web3 Strategy Expert</div>
-            <div class="member-name">TW</div>
-            <div class="member-role">CSO</div>
-            <div class="member-bg">Dunamu Investment Head of BD &middot; Samsung Securities Credit Analyst &middot; Nielsen Data Scientist</div>
-            <div class="member-edu">Columbia Univ. M.A. Statistics</div>
-          </div>
-          <div class="team-member">
-            <div class="member-expertise">SW Expert</div>
-            <div class="member-name">Dean</div>
-            <div class="member-role">SW Engineer</div>
-            <div class="member-bg">BC Labs. SW Architect &middot; Oasis Exchange SW Developer</div>
-            <div class="member-edu">Hanyang Univ. M.S. Engineering</div>
-          </div>
-          <div class="team-member">
-            <div class="member-expertise">SW Expert</div>
-            <div class="member-name">Vincent</div>
-            <div class="member-role">Blockchain Engineer</div>
-            <div class="member-bg">Probit Global Full Stack Dev &middot; DXM (Dunamu) Full Stack Dev</div>
-            <div class="member-edu">Univ of Philippines. Computer Science</div>
-          </div>
-          <div class="team-member">
-            <div class="member-expertise">Product Expert</div>
-            <div class="member-name">JB</div>
-            <div class="member-role">PM</div>
-            <div class="member-bg">Mindshift Inc. Product Manager &middot; Findex Chain Product Manager</div>
-            <div class="member-edu">Stony Brook University (SUNY) Business</div>
-          </div>
-          <div class="team-member">
-            <div class="member-expertise">Business and Partnership</div>
-            <div class="member-name">Carl</div>
-            <div class="member-role">BD</div>
-            <div class="member-bg">SOOHOIO Business Development &middot; Fingerlabs Head of Blockchain Strategy &middot; Crominnovation PM</div>
-          </div>
-        </div>
-
-        <div class="backed-by">
-          <p>Backed by</p>
-          <div class="backer-logos">
-            <span class="backer-name">SBVA</span>
-            <span class="backer-name">KB Investment</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 15. THE ASK ============ -->
-    <section class="slide slide-cover" data-slide="14">
-      <div class="slide-inner">
-        <span class="badge">Investment</span>
-        <h2>The Ask</h2>
+    <!-- ============ 15. TEAM ============ -->
+    <section class="slide" data-slide="14">
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Team</span>
+          <h2>Team, BC Labs</h2>
 
-        <div class="stats-row" style="margin-bottom: 2.5rem;">
-          <div class="stat">
-            <span class="value">$2M Seed</span>
-            <span class="label">Current Round</span>
+          <div class="slide-content">
+          <div class="team-why">
+            <p><strong>Why this team wins:</strong> Deep crypto exchange infra (Oasis CEX, Probit, Dunamu), VC/financial markets (Mirae Asset, SBVA-backed), and AI systems (Samsung LLM). We built distributed financial systems. Now building distributed web infrastructure.</p>
           </div>
-          <div class="stat">
-            <span class="value">$20M FDV</span>
-            <span class="label">Fully Diluted Valuation</span>
+
+          <div class="team-grid-9">
+            <div class="team-member">
+              <div class="member-name">Stephen</div>
+              <div class="member-role">CEO</div>
+              <div class="member-bg">Mirae Asset &middot; Ilshin Ventures VC &middot; HP PM</div>
+              <div class="member-edu">Yonsei M.S. EE &middot; Georgia Tech M.S.</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">Spock</div>
+              <div class="member-role">CTO</div>
+              <div class="member-bg">Oasis CEX CTO &middot; Traport CTO &middot; Alpine CTO</div>
+              <div class="member-edu">Soongsil Univ. CS</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">Jayden</div>
+              <div class="member-role">Advisor</div>
+              <div class="member-bg">Samsung LLM RAG Architect &middot; Humax</div>
+              <div class="member-edu">SKKU Ph.D MoT</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">TW</div>
+              <div class="member-role">CSO</div>
+              <div class="member-bg">Dunamu Invest BD &middot; Samsung Securities &middot; Nielsen</div>
+              <div class="member-edu">Columbia M.A. Statistics</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">Dean</div>
+              <div class="member-role">SW Engineer</div>
+              <div class="member-bg">BC Labs Architect &middot; Oasis Exchange</div>
+              <div class="member-edu">Hanyang M.S. Eng.</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">Vincent</div>
+              <div class="member-role">Blockchain Eng.</div>
+              <div class="member-bg">Probit Global &middot; DXM (Dunamu)</div>
+              <div class="member-edu">Univ of Philippines CS</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">JB</div>
+              <div class="member-role">PM</div>
+              <div class="member-bg">Mindshift PM &middot; Findex Chain PM</div>
+              <div class="member-edu">SUNY Stony Brook Business</div>
+            </div>
+            <div class="team-member">
+              <div class="member-name">Carl</div>
+              <div class="member-role">BD</div>
+              <div class="member-bg">SOOHOIO BD &middot; Fingerlabs Strategy</div>
+            </div>
+          </div>
+
+          <div class="backed-by">
+            <p>Backed by</p>
+            <div class="backer-logos">
+              <span class="backer-name">SBVA</span>
+              <span class="backer-name">KB Investment</span>
+            </div>
+          </div>
           </div>
         </div>
-
-        <h3 style="text-align:left; max-width:600px; margin:0 auto;">Use of Funds</h3>
-        <div style="max-width:600px; margin:0 auto;">
-          <div class="fund-bars">
-            <div class="fund-row">
-              <span class="fund-label">Engineering & Node Infra</span>
-              <div class="fund-bar-track"><div class="fund-bar-fill" style="width:60%">60%</div></div>
-            </div>
-            <div class="fund-row">
-              <span class="fund-label">Ecosystem & Agent Integrations</span>
-              <div class="fund-bar-track"><div class="fund-bar-fill" style="width:20%">20%</div></div>
-            </div>
-            <div class="fund-row">
-              <span class="fund-label">BD & Partnerships</span>
-              <div class="fund-bar-track"><div class="fund-bar-fill" style="width:15%">15%</div></div>
-            </div>
-            <div class="fund-row">
-              <span class="fund-label">Legal & Compliance</span>
-              <div class="fund-bar-track"><div class="fund-bar-fill" style="width:5%">5%</div></div>
-            </div>
-          </div>
-        </div>
-
-        <p style="margin-top:2rem; max-width:none; text-align:center; color:var(--text); font-weight:600; font-size:1.15rem;">Infrastructure is done. Revenue is next.</p>
-        <p style="margin-top:0.5rem; max-width:none; text-align:center; color:var(--text-muted);">Backed by SBVA (SoftBank Ventures Asia) &amp; KB Investment</p>
       </div>
     </section>
 
+    <!-- ============ 16. THE ASK ============ -->
+    <section class="slide slide-cover" data-slide="15">
+      <div class="slide-frame">
+        <div class="slide-inner">
+          <span class="badge">Investment</span>
+          <h2>The Ask</h2>
+
+          <div class="stats-row" style="margin-bottom: 1.5rem;">
+            <div class="stat">
+              <span class="value">$2M Seed</span>
+              <span class="label">Token Warrant</span>
+            </div>
+            <div class="stat">
+              <span class="value">$20M FDV</span>
+              <span class="label">Fully Diluted Valuation</span>
+            </div>
+            <div class="stat">
+              <span class="value">18+ Months</span>
+              <span class="label">Runway to Series A</span>
+            </div>
+          </div>
+
+          <h3 style="text-align:left; max-width:560px; margin:0 auto;">Use of Funds</h3>
+          <div style="max-width:560px; margin:0 auto;">
+            <div class="fund-bars">
+              <div class="fund-row">
+                <span class="fund-label">Engineering & Node Infra</span>
+                <div class="fund-bar-track"><div class="fund-bar-fill" style="width:60%">60%</div></div>
+              </div>
+              <div class="fund-row">
+                <span class="fund-label">Ecosystem & Integrations</span>
+                <div class="fund-bar-track"><div class="fund-bar-fill" style="width:20%">20%</div></div>
+              </div>
+              <div class="fund-row">
+                <span class="fund-label">BD & Partnerships</span>
+                <div class="fund-bar-track"><div class="fund-bar-fill" style="width:15%">15%</div></div>
+              </div>
+              <div class="fund-row">
+                <span class="fund-label">Legal & Compliance</span>
+                <div class="fund-bar-track"><div class="fund-bar-fill" style="width:5%">5%</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ask-milestones">
+            <div class="milestone">
+              <span class="milestone-label">Series A Trigger</span>
+              <span class="milestone-value">$1M+ ARR, 50K+ nodes</span>
+            </div>
+            <div class="milestone">
+              <span class="milestone-label">Token</span>
+              <span class="milestone-value">$SELA tokenomics available on request</span>
+            </div>
+          </div>
+
+          <p style="margin-top:1rem; font-size:var(--fs-xs); color:var(--text-muted); text-align:center;">Comparable: Tavily ($25M Seed), Browser Use ($17M Seed), Browserbase ($300M val). <strong>Selanet $20M FDV is conservative.</strong></p>
+
+          <p style="margin-top:0.75rem; text-align:center; color:var(--text); font-weight:600; font-size:var(--fs-md);">Live network. Paid conversion this quarter.</p>
+
+          <p style="margin-top:1.5rem; font-size:var(--fs-xs); color:var(--text-muted); text-align:center; line-height:var(--lh-snug); opacity:0.7;">All node operations are user-initiated and consent-based. No third-party credentials are accessed.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
   </div>
 
   <!-- ============================== -->
@@ -613,6 +1028,9 @@ const slides = [
     const dots = document.querySelectorAll<HTMLButtonElement>(".dot-nav button");
     const slideNum = document.getElementById("slideNumber")!;
     const slides = document.querySelectorAll<HTMLElement>(".slide");
+    const sidebarBtns = document.querySelectorAll<HTMLButtonElement>(".sidebar-slide");
+    const presentBtn = document.getElementById("presentBtn")!;
+    const exitPresentBtn = document.getElementById("exitPresentBtn")!;
     const total = slides.length;
     let current = 0;
 
@@ -620,58 +1038,63 @@ const slides = [
       current = index;
       slideNum.textContent = `${index + 1} / ${total}`;
       dots.forEach((d, i) => d.classList.toggle("active", i === index));
+      sidebarBtns.forEach((b, i) => b.classList.toggle("active", i === index));
+      const activeBtn = sidebarBtns[index];
+      if (activeBtn) {
+        activeBtn.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      }
     }
 
-    // Dot click navigation
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const idx = Number(dot.dataset.index);
-        slides[idx].scrollIntoView({ behavior: "smooth" });
-      });
-    });
+    function goTo(index: number) {
+      slides[index]?.scrollIntoView({ behavior: "smooth" });
+    }
 
-    // Intersection Observer for current slide detection + animations
-    const observer = new IntersectionObserver(
+    dots.forEach((d) =>
+      d.addEventListener("click", () => goTo(Number(d.dataset.index)))
+    );
+
+    sidebarBtns.forEach((b) =>
+      b.addEventListener("click", () => goTo(Number(b.dataset.index)))
+    );
+
+    const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const el = entry.target as HTMLElement;
-            const idx = Number(el.dataset.slide);
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const idx = Number((e.target as HTMLElement).dataset.slide);
             updateUI(idx);
-            el.classList.add("in-view");
+            e.target.classList.add("in-view");
           }
         });
       },
-      { root: deck, threshold: 0.5 }
+      { root: deck, threshold: 0.55 }
     );
 
-    slides.forEach((s) => observer.observe(s));
+    slides.forEach((s) => io.observe(s));
 
-    // Keyboard navigation
     document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === " ") {
         e.preventDefault();
-        if (current < total - 1) {
-          slides[current + 1].scrollIntoView({ behavior: "smooth" });
-        }
+        if (current < total - 1) goTo(current + 1);
       }
       if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
         e.preventDefault();
-        if (current > 0) {
-          slides[current - 1].scrollIntoView({ behavior: "smooth" });
-        }
+        if (current > 0) goTo(current - 1);
       }
-      if (e.key === "Home") {
-        e.preventDefault();
-        slides[0].scrollIntoView({ behavior: "smooth" });
-      }
-      if (e.key === "End") {
-        e.preventDefault();
-        slides[total - 1].scrollIntoView({ behavior: "smooth" });
+      if (e.key === "Escape") {
+        document.body.classList.remove("presenting");
       }
     });
 
-    // Initialize
+    presentBtn.addEventListener("click", () => {
+      document.body.classList.add("presenting");
+    });
+
+    exitPresentBtn.addEventListener("click", () => {
+      document.body.classList.remove("presenting");
+    });
+
     updateUI(0);
+    slides[0]?.classList.add("in-view");
   </script>
 </PitchDeck>

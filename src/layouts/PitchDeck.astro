@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
     />
   </head>
   <body>
-    <!-- Password Gate -->
+    <!-- Password Gate (disabled)
     <div id="gate" style="position:fixed;inset:0;z-index:9999;background:#fff;display:flex;align-items:center;justify-content:center;font-family:'Inter',system-ui,sans-serif;">
       <div style="text-align:center;max-width:360px;padding:2rem;">
         <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:2.4rem;font-weight:900;margin-bottom:0.5rem;color:#171717;">Selanet.ai</h1>
@@ -34,12 +34,14 @@ const { title, description } = Astro.props;
         <p id="gateError" style="color:#dc2626;font-size:0.85rem;margin-top:0.75rem;display:none;">Incorrect password.</p>
       </div>
     </div>
+    -->
 
-    <!-- Deck Content (hidden until auth) -->
-    <div id="deckWrap" style="display:none;">
+    <!-- Deck Content -->
+    <div id="deckWrap">
       <slot />
     </div>
 
+    <!--
     <script is:inline>
       // SHA-256 hashed passwords — add more hashes here for multiple passwords
       const VALID_HASHES = [
@@ -83,5 +85,6 @@ const { title, description } = Astro.props;
       // Focus input
       document.getElementById("gateInput").focus();
     </script>
+    -->
   </body>
 </html>
